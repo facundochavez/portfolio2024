@@ -1,0 +1,68 @@
+.technologies_box {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    padding: 8px;
+    gap: 8px;
+
+    &__technology {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        transition: all 0.3s;
+
+        &__icon {
+            position: relative;
+            height: 30px;
+        }
+
+        &__name {
+            position: absolute;
+            width: min-content;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 200;
+            text-align: center;
+            width: min-content;
+            margin-top: 30px;
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        &:hover {
+            filter: brightness(100);
+
+
+        }
+
+        &:hover &__name {
+            margin-top: 45px;
+            opacity: 1;
+        }
+    }
+
+}
+
+@media(min-width: 900px) {
+    .technologies_box {
+        padding: 10px;
+        gap: 10px;
+
+        &__technology {
+            &__icon {
+                height: 35px;
+            }
+
+            &__name {
+                margin-top: 40px;
+            }
+
+            &:hover &__name {
+                margin-top: 55px;
+                opacity: 1;
+            }
+        }
+    }
+}

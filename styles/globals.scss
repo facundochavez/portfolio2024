@@ -1,0 +1,40 @@
+@import '@/assets/fonts/fonts.scss';
+
+:root {
+  --color-dark-background: #111111;
+  --color--light-grey: #b5b5b5;
+  --color-1: #3df968;
+  --color-2: #00cfff;
+  --color-3: #f239da;
+  --color-4: #8916f7;
+  --color-5: #e9ed4f;
+  --color-6: #fa8b4d;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  overflow-x: hidden;
+  background-color: var(--color-dark-background);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 5vw;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 10
+}

@@ -1,0 +1,183 @@
+.hero {
+    height: 350vh;
+    width: 100vw;
+    contain: paint;
+
+    &__subcontainer {
+        position: sticky;
+        top: 0;
+        width: 200vw;
+        display: flex;
+        
+
+        &__left {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            max-width: 800px;
+            text-align: right;
+            padding: 0 3vw;
+            padding: 5% 0;
+
+            h3 {
+                font-size: 30px;
+                color: var(--color--light-grey);
+            }
+
+            &__name_box {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                padding: 19px;
+                width: min-content;
+                border-radius: 10px;
+                margin: 12px 0;
+
+                @media(min-width: 635px) {
+                    width: max-content;
+                }
+
+                h2 {
+                    display: inline;
+                    font-size: 65px;
+                    line-height: 55px;
+                    font-weight: 500;
+                }
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    overflow: visible;
+                }
+            }
+
+            &__titles_container {
+                display: flex;
+
+                &__titles {
+                    h1 {
+                        font-size: 18px;
+                        line-height: 18px;
+                        font-weight: 200;
+                        color: var(--color--light-grey);
+                    }
+                }
+
+                &__photo {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    min-height: 100px;
+                    min-width: 100px;
+                    border-radius: 10px;
+                    margin: 4px 0 0 20px;
+                }
+            }
+
+        }
+
+        &__right {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            max-width: 1200px;
+            padding: 5% 0;
+
+            &__phrase_box {
+                min-width: max-content;
+                position: relative;
+                margin-bottom: 116px;
+                padding: 19px 22px;
+
+               /*  .auxiliar {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    border: 4px solid blue;
+                    border-radius: 10px;
+                } */
+
+                p {
+                    font-size: 22px;
+                    line-height: 22px;
+                    color: var(--color--light-grey);
+                }
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    overflow: visible ;
+                }
+
+                &__vertical_line {
+                    position: absolute;
+                    left: 0;
+                    width: 4px;
+                    z-index: 50;
+                    background: linear-gradient(to bottom, var(--color-3), var(--color-5));
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 900px) {
+    .hero {
+        &__subcontainer {
+
+            &__left {
+
+                h3 {
+                    font-size: 40px !important;
+                }
+
+                &__name_box {
+                    margin-bottom: 18px !important;
+
+                    h2 {
+                        font-size: 90px !important;
+                        padding: 20px 15px;
+                    }
+                }
+
+                &__titles_container {
+                    &__titles {
+                        h1 {
+                            font-size: 28px !important;
+                            line-height: 28px !important;
+                        }
+                    }
+
+                    &__photo {
+                        height: 120px !important;
+                        width: 120px !important;
+                        margin-left: 25px;
+                    }
+                }
+            }
+
+            &__right {
+                &__phrase_box {
+                    margin-bottom: 144px !important;
+                    padding: 30px 35px;
+
+                    p {
+                        font-size: 28px !important;
+                        line-height: 28px !important;
+                    }
+                }
+            }
+        }
+    }
+}

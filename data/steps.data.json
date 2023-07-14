@@ -1,0 +1,143 @@
+[
+    {
+        "id": "step1",
+        "title": "design brands,",
+        "technologies": [
+            {
+                "name": "Adobe Illustrator",
+                "icon": "icon-adobe-illustrator.svg"
+            },
+            {
+                "name": "Adobe Photoshop",
+                "icon": "icon-adobe-photoshop.svg"
+            }
+        ],
+        "firstColor": "var(--color-5)",
+        "secondColor": "var(--color-1)",
+        "setpContent": "<Step1 />"
+    },
+    {
+        "id": "step2",
+        "title": "create a YouTube channel and its website,",
+        "technologies": [
+            {
+                "name": "Adobe Premiere\u00A0Pro",
+                "icon": "icon-adobe-premiere-pro.svg"
+            },
+            {
+                "name": "Adobe After\u00A0Effects",
+                "icon": "icon-adobe-after-effects.svg"
+            },
+            {
+                "name": "WordPress",
+                "icon": "icon-wordpress.svg"
+            }
+        ],
+        "firstColor": "var(--color-1)",
+        "secondColor": "var(--color-2)"
+    },
+    {
+        "id": "step3",
+        "title": "prototype stuff,",
+        "technologies": [
+            {
+                "name": "Adobe\u00A0XD",
+                "icon": "icon-adobe-xd.svg"
+            },
+            {
+                "name": "Figma",
+                "icon": "icon-figma.svg"
+            }
+        ],
+        "firstColor": "var(--color-2)",
+        "secondColor": "var(--color-3)"
+    },
+    {
+        "id": "step4",
+        "title": "start coding,",
+        "technologies": [
+            {
+                "name": "HTML",
+                "icon": "icon-html.svg"
+            },
+            {
+                "name": "CSS",
+                "icon": "icon-css.svg"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "icon-javascript.svg"
+            }
+        ],
+        "firstColor": "var(--color-3)",
+        "secondColor": "var(--color-6)"
+    },
+    {
+        "id": "step5",
+        "title": "learn better front-end technologies,",
+        "technologies": [
+            {
+                "name": "React\u00A0JS",
+                "icon": "icon-react-js.svg"
+            },
+            {
+                "name": "Sass",
+                "icon": "icon-sass.svg"
+            },
+            {
+                "name": "Ant\u00A0Design",
+                "icon": "icon-ant-design.svg"
+            },
+            {
+                "name": "Framer Motion",
+                "icon": "icon-framer-motion.svg"
+            },
+            {
+                "name": "Vercel",
+                "icon": "icon-vercel.svg"
+            }
+        ],
+        "firstColor": "var(--color-6)",
+        "secondColor": "var(--color-5)"
+    },
+    {
+        "id": "step6",
+        "title": "and learn some back-end.",
+        "technologies": [
+            {
+                "name": "Next.js",
+                "icon": "icon-next-js.svg"
+            },
+            {
+                "name": "Sass",
+                "icon": "icon-sass.svg"
+            },
+            {
+                "name": "Ant\u00A0Design",
+                "icon": "icon-ant-design.svg"
+            },
+            {
+                "name": "Framer Motion",
+                "icon": "icon-framer-motion.svg"
+            },
+            {
+                "name": "Django",
+                "icon": "icon-django.svg"
+            },
+            {
+                "name": "Python",
+                "icon": "icon-python.svg"
+            },
+            {
+                "name": "Firebase",
+                "icon": "icon-firebase.svg"
+            },
+            {
+                "name": "Vercel",
+                "icon": "icon-vercel.svg"
+            }
+        ],
+        "firstColor": "var(--color-5)",
+        "secondColor": "var(--color-1)"
+    }
+]
