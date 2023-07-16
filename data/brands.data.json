@@ -45,14 +45,13 @@
         "name": "Hidronoa"
     },
     {
-        "id": "panacea",
-        "name": "Panacea"
-    },
-    {
         "id": "tatu",
         "name": "Tatú"
     },
-
+    {
+        "id": "panacea",
+        "name": "Panacea"
+    },
     {
         "id": "sineca",
         "name": "SINECA"

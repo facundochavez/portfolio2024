@@ -4,6 +4,7 @@
     border-radius: 8px;
     padding: 7px 8px;
     gap: 8px;
+    margin-top: 16px;
     margin-bottom: 100px;
 
     &__technology {
@@ -46,20 +47,21 @@
 
 @media(min-width: 900px) {
     .technologies_box {
-        padding: 8px 10px;
-        gap: 10px;
+        margin-top: 23px;
+        padding: 8px 9px;
+        gap: 9px;
 
         &__technology {
             &__icon {
-                height: 35px;
+                height: 33px;
             }
 
             &__name {
-                margin-top: 40px;
+                margin-top: 38px;
             }
 
             &:hover &__name {
-                margin-top: 55px;
+                margin-top: 50px;
                 opacity: 1;
             }
         }

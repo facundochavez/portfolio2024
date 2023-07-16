@@ -44,39 +44,6 @@ const BrandsLine = ({ brands, baseVelocity = 100 }) => {
 
   const duplicatedBrands = brands.concat(brands);
 
-  /*   const handleHoverStart = () => {
-    let transitionInterval;
-    const step = baseVelocity >= 0 ? -0.05 : 0.05;
-    transitionInterval = setInterval(() => {
-      setVelocity((prevVelocity) => {
-        const newVelocity = prevVelocity + step;
-        if ((step < 0 && newVelocity <= 0) || (step > 0 && newVelocity >= 0)) {
-          clearInterval(transitionInterval);
-          return 0;
-        }
-        return newVelocity;
-      });
-    }, 0.1);
-  };
-
-  const handleHoverEnd = () => {
-    let transitionInterval;
-    const step = baseVelocity >= 0 ? 0.05 : -0.05;
-    transitionInterval = setInterval(() => {
-      setVelocity((prevVelocity) => {
-        const newVelocity = prevVelocity + step;
-        if (
-          (step > 0 && newVelocity >= baseVelocity) ||
-          (step < 0 && newVelocity <= baseVelocity)
-        ) {
-          clearInterval(transitionInterval);
-          return baseVelocity;
-        }
-        return newVelocity;
-      });
-    }, 0.1);
-  }; */
-
   //// COMPONENT
   return (
     <div className={styles.brands_line}>
