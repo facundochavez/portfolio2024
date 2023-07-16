@@ -1,0 +1,143 @@
+[
+    {
+        "id": "brands",
+        "title": "design brands,",
+        "technologies": [
+            {
+                "id": "adobe-illustrator",
+                "name": "Adobe Illustrator"
+            },
+            {
+                "id": "adobe-photoshop",
+                "name": "Adobe Photoshop"
+            }
+        ],
+        "firstColor": "var(--color-5)",
+        "secondColor": "var(--color-1)",
+        "stepContent": "<Step1 />"
+    },
+    {
+        "id": "youtube",
+        "title": "create a YouTube channel and its website,",
+        "technologies": [
+            {
+                "id": "adobe-premiere-pro",
+                "name": "Adobe Premiere\u00A0Pro"
+            },
+            {
+                "id": "adobe-after-effects",
+                "name": "Adobe After\u00A0Effects"
+            },
+            {
+                "id": "wordpress",
+                "name": "WordPress"
+            }
+        ],
+        "firstColor": "var(--color-1)",
+        "secondColor": "var(--color-2)"
+    },
+    {
+        "id": "prototype",
+        "title": "prototype stuff,",
+        "technologies": [
+            {
+                "id": "adobe-xd",
+                "name": "Adobe\u00A0XD"
+            },
+            {
+                "id": "figma",
+                "name": "Figma"
+            }
+        ],
+        "firstColor": "var(--color-2)",
+        "secondColor": "var(--color-3)"
+    },
+    {
+        "id": "start-coding",
+        "title": "start coding,",
+        "technologies": [
+            {
+                "id": "html",
+                "name": "HTML"
+            },
+            {
+                "id": "css",
+                "name": "CSS"
+            },
+            {
+                "id": "javascript",
+                "name": "JavaScript"
+            }
+        ],
+        "firstColor": "var(--color-3)",
+        "secondColor": "var(--color-6)"
+    },
+    {
+        "id": "front-end",
+        "title": "learn better front-end technologies,",
+        "technologies": [
+            {
+                "id": "react-js",
+                "name": "React\u00A0JS"
+            },
+            {
+                "id": "sass",
+                "name": "Sass"
+            },
+            {
+                "id": "ant-design",
+                "name": "Ant\u00A0Design"
+            },
+            {
+                "id": "framer-motion",
+                "name": "Framer\u00A0Motion"
+            },
+            {
+                "id": "vercel",
+                "name": "Vercel"
+            }
+        ],
+        "firstColor": "var(--color-6)",
+        "secondColor": "var(--color-5)"
+    },
+    {
+        "id": "back-end",
+        "title": "and learn some back-end.",
+        "technologies": [
+            {
+                "id": "next-js",
+                "name": "Next.js"
+            },
+            {
+                "id": "sass",
+                "name": "Sass"
+            },
+            {
+                "id": "ant-design",
+                "name": "Ant\u00A0Design"
+            },
+            {
+                "id": "framer-motion",
+                "name": "Framer\u00A0Motion"
+            },
+            {
+                "id": "django",
+                "name": "Django"
+            },
+            {
+                "id": "python",
+                "name": "Python"
+            },
+            {
+                "id": "firebase",
+                "name": "Firebase"
+            },
+            {
+                "id": "vercel",
+                "name": "Vercel"
+            }
+        ],
+        "firstColor": "var(--color-5)",
+        "secondColor": "var(--color-1)"
+    }
+]

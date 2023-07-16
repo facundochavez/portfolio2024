@@ -1,0 +1,72 @@
+[
+    {
+        "id": "panattio",
+        "name": "Panattio"
+    },
+    {
+        "id": "bago-burguer",
+        "name": "Bago Burguer"
+    },
+    {
+        "id": "gaz-service",
+        "name": "Gaz Service"
+    },
+
+    {
+        "id": "superdescuentos",
+        "name": "Superdescuentos"
+    },
+    {
+        "id": "kimero",
+        "name": "Kimero"
+    },
+    {
+        "id": "de-mata-guemes",
+        "name": "De Mata Güemes"
+    },
+    {
+        "id": "pan-delfino",
+        "name": "Pan Delfino"
+    },
+    {
+        "id": "plaza-pizza",
+        "name": "Plaza Pizza"
+    },
+    {
+        "id": "eme-home",
+        "name": "Eme Home"
+    },
+    {
+        "id": "hazmak",
+        "name": "HazMak"
+    },
+    {
+        "id": "hidronoa",
+        "name": "Hidronoa"
+    },
+    {
+        "id": "panacea",
+        "name": "Panacea"
+    },
+    {
+        "id": "tatu",
+        "name": "Tatú"
+    },
+
+    {
+        "id": "sineca",
+        "name": "SINECA"
+    },
+    {
+        "id": "nias-treats",
+        "name": "Nia's Treats"
+    },
+    {
+        "id": "check",
+        "name": "Check"
+    },
+    {
+        "id": "mamma-gaucha",
+        "name": "Mamma Gaucha"
+    }
+]

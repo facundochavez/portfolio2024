@@ -1,0 +1,12 @@
+.brands_content {
+    width: 100vw;
+    margin: 0 -150px;
+    overflow: hidden;
+    padding: 35px 0;
+    z-index: 0;
+
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -moz-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -o-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}

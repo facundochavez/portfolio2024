@@ -1,15 +1,14 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.scss';
-import HeroSection from './components/HeroSection/HeroSection';
-import ContentSection from './components/ContentSection/ContentSection';
-import steps from '@/data/steps.data.json';
-import Content1 from '@/components/Content1/Content1';
-import Content2 from '@/components/Content2/Content2';
+import HeroSection from './sections/Hero.section/Hero.section';
+import MilestoneSection from './sections/Milestone.section/Milestone.section';
+import milestones from '@/data/milestones.data.json';
+import BrandsContent from './contents/Brands.content/Brands.content';
+import YouTubeContent from './contents/YouTube.content/YouTube.content';
 
 export default function Home() {
-  const contents = [<Content1 />, <Content2 />];
+  const contents = [<BrandsContent/>, <YouTubeContent />];
 
-  console.log(steps);
   return (
     <div id='smoother-container'>
       <Head>
@@ -17,8 +16,8 @@ export default function Home() {
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
       </Head>
       <HeroSection />
-      {steps.map((step, index) => {
-        return <ContentSection key={index} step={step} content={contents[index]} />;
+      {milestones.map((milestone, index) => {
+        return <MilestoneSection key={index} milestone={milestone} content={contents[index]} />;
       })}
     </div>
   );

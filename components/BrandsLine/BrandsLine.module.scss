@@ -1,0 +1,95 @@
+.brands_line {
+    position: relative;
+    z-index: 0;
+
+    &:hover {
+        z-index: 5;
+    }
+
+    &__scroller {
+        display: flex;
+        gap: 20px;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        width: max-content;
+        z-index: 0;
+    }
+}
+
+.brand_box {
+    height: 150px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.75s;
+    z-index: 0;
+
+    &__image_wrapper {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-traslucid-white);
+        border-radius: 15px;
+        transition: all 0.75s;
+        overflow: hidden;
+
+        &__image {
+            position: relative;
+            height: 100%;
+            aspect-ratio: 3/2;
+            transform: scale(2);
+            transition: transform 0.75s, opacity 0.2s;
+            opacity: 0;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        height: 77px;
+        pointer-events: none;
+        opacity: 0.5;
+        padding: 0 50px;
+        transition: transform 0.75s;
+    }
+
+    &:hover {
+        transform: scale(1.4);
+        z-index: 10;
+    }
+
+    &:hover &__image_wrapper {
+        width: 230px;
+
+        &__image {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+    }
+
+
+    &:hover &__logo {
+        opacity: 1;
+        transform: scale(0.85);
+    }
+
+}
+
+@media (min-width: 900px) {
+
+    .brand_box {
+        height: 175px;
+        &__logo {
+            height: 90px;
+            padding: 0 70px;
+        }
+        &:hover &__image_wrapper {
+            width: 270px;
+        }
+    }
+}
