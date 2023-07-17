@@ -140,12 +140,12 @@ const HeroSection = () => {
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
                   <linearGradient id='nameGradient'>
-                    <stop offset='0%' stop-color='var(--color-1)' />
-                    <stop offset='100%' stop-color='var(--color-2)' />
+                    <stop offset='0%' stopColor='var(--color-1)' />
+                    <stop offset='100%' stopColor='var(--color-2)' />
                   </linearGradient>
                   <linearGradient id='horizontalLineGradient'>
-                    <stop offset='0%' stop-color='var(--color-2)' />
-                    <stop offset='100%' stop-color='var(--color-3)' />
+                    <stop offset='0%' stopColor='var(--color-2)' />
+                    <stop offset='100%' stopColor='var(--color-3)' />
                   </linearGradient>
                 </defs>
                 <motion.path
@@ -192,12 +192,12 @@ const HeroSection = () => {
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
                   <linearGradient id='phraseGradient'>
-                    <stop offset='0%' stop-color='var(--color-3)' />
-                    <stop offset='100%' stop-color='var(--color-4)' />
+                    <stop offset='0%' stopColor='var(--color-3)' />
+                    <stop offset='100%' stopColor='var(--color-4)' />
                   </linearGradient>
                   <linearGradient id='verticalLineGradient' x1='0%' y1='0%' x2='0%' y2='100%'>
-                    <stop offset='0%' stop-color='var(--color-3)' />
-                    <stop offset='100%' stop-color='var(--color-5)' />
+                    <stop offset='0%' stopColor='var(--color-3)' />
+                    <stop offset='100%' stopColor='var(--color-5)' />
                   </linearGradient>
                 </defs>
                 <motion.path

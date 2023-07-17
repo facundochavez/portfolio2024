@@ -8,11 +8,6 @@
         "name": "Bago Burguer"
     },
     {
-        "id": "gaz-service",
-        "name": "Gaz Service"
-    },
-
-    {
         "id": "superdescuentos",
         "name": "Superdescuentos"
     },
@@ -21,8 +16,8 @@
         "name": "Kimero"
     },
     {
-        "id": "de-mata-guemes",
-        "name": "De Mata Güemes"
+        "id": "mamma-gaucha",
+        "name": "Mamma Gaucha"
     },
     {
         "id": "pan-delfino",
@@ -45,27 +40,27 @@
         "name": "Hidronoa"
     },
     {
-        "id": "tatu",
-        "name": "Tatú"
-    },
-    {
-        "id": "panacea",
-        "name": "Panacea"
-    },
-    {
-        "id": "sineca",
-        "name": "SINECA"
+        "id": "de-mata-guemes",
+        "name": "De Mata Güemes"
     },
     {
         "id": "nias-treats",
         "name": "Nia's Treats"
     },
     {
+        "id": "sineca",
+        "name": "SINECA"
+    },
+    {
+        "id": "gaz-service",
+        "name": "Gaz Service"
+    },
+    {
         "id": "check",
         "name": "Check"
     },
     {
-        "id": "mamma-gaucha",
-        "name": "Mamma Gaucha"
+        "id": "tatu",
+        "name": "Tatú"
     }
 ]

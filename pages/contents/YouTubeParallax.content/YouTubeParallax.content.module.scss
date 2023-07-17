@@ -1,0 +1,10 @@
+.youtube_parallax {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+    padding-left: 25px;
+
+    @media(min-width: 900px) {
+        padding-left: 35px;
+    }
+}

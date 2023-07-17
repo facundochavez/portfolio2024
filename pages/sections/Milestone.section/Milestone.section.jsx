@@ -2,7 +2,7 @@ import TechnologiesBox from '@/components/TechnologiesBox/TechnologiesBox';
 import styles from './Milestone.section.module.scss';
 import TextBox from '@/components/TextBox/TextBox';
 
-const MilestoneSection = ({ milestone, content }) => {
+const MilestoneSection = ({ milestone, content, isMobile }) => {
   //// COMPONENT
   return (
     <section>
@@ -12,7 +12,11 @@ const MilestoneSection = ({ milestone, content }) => {
           <h3 className={styles.milestone__header__title}>{milestone.title}</h3>
           <div className={styles.milestone__header__subcontainer}>
             <TechnologiesBox milestone={milestone} />
-            {milestone.topText && <TextBox text={milestone.topText} />}
+            {milestone.topText && milestone.id !== 'youtube' && (
+              <div className={styles.milestone__header__subcontainer__top_text}>
+                <TextBox text={milestone.topText} isMobile={isMobile} />
+              </div>
+            )}
           </div>
         </header>
         <main className={styles.milestone__main}>{content ?? null}</main>

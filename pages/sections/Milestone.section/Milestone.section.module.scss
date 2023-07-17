@@ -35,13 +35,21 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+
+            &__top_text {
+                width: 315px;
+                margin-left: auto;
+
+                @media(min-width: 900px) {
+                    width: 330px;
+                }
+            }
         }
     }
 
     &__main {
         width: 100%;
         display: flex;
-        align-items: center;
         justify-content: center;
         overflow: visible;
         position: relative;
