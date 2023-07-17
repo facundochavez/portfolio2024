@@ -8,11 +8,15 @@
     align-items: flex-start;
 
     &__header {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         padding-left: 25px;
+        gap: 15px;
 
         @media(min-width: 900px) {
             padding-left: 35px;
+            gap: 23px;
         }
 
         &__title {
@@ -27,7 +31,10 @@
 
         &__subcontainer {
             width: 100%;
+            gap: 50px;
             display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
     }
 
@@ -39,7 +46,25 @@
         overflow: visible;
         position: relative;
     }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-left: 40px;
+        p {
+            width: 600px;
+            font-size: 15px;
+            text-align: right;
+            color: gray;
+
+            @media(min-width: 900px) {
+                font-size: 17px;
+            }
+        }
+    }
 }
+
 
 .pathline {
     z-index: 50;

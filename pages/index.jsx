@@ -3,11 +3,11 @@ import styles from '@/styles/Home.module.scss';
 import HeroSection from './sections/Hero.section/Hero.section';
 import MilestoneSection from './sections/Milestone.section/Milestone.section';
 import milestones from '@/data/milestones.data.json';
-import BrandsContent from './contents/Brands.content/Brands.content';
-import YouTubeContent from './contents/YouTube.content/YouTube.content';
+import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
+import YouTubeContent from './contents/YouTubeParalax.content/YouTubeParalax.content';
 
 export default function Home() {
-  const contents = [<BrandsContent/>, <YouTubeContent />];
+  const contents = [<BrandsCarousel/>, <YouTubeContent />];
 
   return (
     <div id='smoother-container'>

@@ -1,11 +1,14 @@
-.brands_content {
+.brands_carousel {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
-    margin: 0 -150px;
+    margin: 0 -180px;
     overflow: hidden;
     padding: 40px 0;
+    gap: 15px;
 
     @media(min-width: 900px) {
-
+        gap: 18px;
         mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
         -moz-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);

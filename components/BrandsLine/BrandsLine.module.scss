@@ -8,11 +8,14 @@
 
     &__scroller {
         display: flex;
-        gap: 18px;
+        gap: 15px;
         padding-left: 18px;
-        margin-bottom: 18px;
         width: max-content;
         z-index: 0;
+
+        @media(min-width: 900px) {
+            gap: 18px;
+        }
     }
 }
 
@@ -84,6 +87,7 @@
 
     .brand_box {
         height: 155px;
+
         &__logo {
             height: 80px;
             padding: 0 65px;

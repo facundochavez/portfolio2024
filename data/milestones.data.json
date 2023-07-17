@@ -14,7 +14,9 @@
         ],
         "firstColor": "var(--color-5)",
         "secondColor": "var(--color-1)",
-        "stepContent": "<Step1 />"
+        "stepContent": "<Step1 />",
+        "topText": "For years, I have been dedicated to the study and design of graphic brands from a pragmatic approach, improving my work methodology through the so-called brand performance parameters.",
+        "bottomText": "For years, I have been dedicated to the study and design of graphic brands from a pragmatic approach, improving my work methodology through the so-called brand performance parameters."
     },
     {
         "id": "youtube",

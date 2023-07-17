@@ -1,5 +1,6 @@
 import TechnologiesBox from '@/components/TechnologiesBox/TechnologiesBox';
 import styles from './Milestone.section.module.scss';
+import TextBox from '@/components/TextBox/TextBox';
 
 const MilestoneSection = ({ milestone, content }) => {
   //// COMPONENT
@@ -11,12 +12,12 @@ const MilestoneSection = ({ milestone, content }) => {
           <h3 className={styles.milestone__header__title}>{milestone.title}</h3>
           <div className={styles.milestone__header__subcontainer}>
             <TechnologiesBox milestone={milestone} />
-            {/* {step.up_text && <p className={styles.content__top_box__up_text}>{step.topText}</p>} */}
+            {milestone.topText && <TextBox text={milestone.topText} />}
           </div>
         </header>
         <main className={styles.milestone__main}>{content ?? null}</main>
         <footer className={styles.milestone__footer}>
-          {/*   {step.down_text && <p className={styles.content__bottom_text}>{step.bottomText}</p>} */}
+          {milestone.bottomText && <p>{milestone.bottomText}</p>}
         </footer>
       </div>
     </section>

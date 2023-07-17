@@ -1,0 +1,49 @@
+.text_box {
+    position: relative;
+    padding: 0 25px 20px 15px;
+    width: 315px;
+    right: 0;
+    margin-left: auto;
+    z-index: 50;
+
+    p {
+        font-size: 15px;
+        text-align: right;
+        color: gray;
+    }
+
+    &__path {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: min-content;
+        height: 180%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__line {
+            height: 100%;
+            width: 2px;
+            background-color: gray;
+        }
+
+        &__circle {
+            background-color: gray;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+        }
+    }
+}
+
+@media(min-width: 900px) {
+    .text_box {
+        width: 330px;
+        padding-right: 30px;
+
+        p {
+            font-size: 17px;
+        }
+    }
+}

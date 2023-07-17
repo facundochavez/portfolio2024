@@ -1,9 +1,9 @@
-import styles from './Brands.content.module.scss';
+import styles from './BrandsCarousel.content.module.scss';
 import BrandsLine from '@/components/BrandsLine/BrandsLine';
 import brands from '@/data/brands.data.json';
 import { useEffect, useState } from 'react';
 
-const BrandsContent = () => {
+const BrandsCarousel = () => {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const BrandsContent = () => {
 
   //// COMPONENT
   return (
-    <div className={styles.brands_content}>
+    <div className={styles.brands_carousel}>
       {isMobile ? (
         <>
           <BrandsLine brands={firstLineMobile} baseVelocity={-1} />
@@ -54,4 +54,4 @@ const BrandsContent = () => {
   );
 };
 
-export default BrandsContent;
+export default BrandsCarousel;

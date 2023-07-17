@@ -1,10 +1,10 @@
-import styles from "./YouTube.content.module.scss";
+import styles from "./YouTubeParalax.content.module.scss";
 
 const YouTubeContent = () => {
   
   //// COMPONENT
   return (
-    <div className={styles.youtube}>
+    <div className={styles.youtube_paralax}>
       
     </div>
   );
