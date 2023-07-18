@@ -35,13 +35,14 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            padding-bottom: 20px;
 
             &__top_text {
-                width: 315px;
+                width: 330px;
                 margin-left: auto;
 
                 @media(min-width: 900px) {
-                    width: 330px;
+                    width: 350px;
                 }
             }
         }

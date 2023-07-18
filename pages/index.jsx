@@ -9,27 +9,8 @@ import { useEffect, useState } from 'react';
 
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(true);
 
-  useEffect(() => {
-    const handleIsMobile = () => {
-      if (window.innerWidth < 900) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-
-    handleIsMobile();
-
-    addEventListener('resize', handleIsMobile);
-
-    return () => {
-      removeEventListener('resize', handleIsMobile);
-    };
-  }, []);
-
-  const contents = [<BrandsCarousel isMobile={isMobile}/>, <YouTubeParallax isMobile={isMobile}/>];
+  const contents = [<BrandsCarousel/>, <YouTubeParallax />];
 
   return (
     <div id='smoother-container'>
@@ -39,7 +20,7 @@ export default function Home() {
       </Head>
       <HeroSection />
       {milestones.map((milestone, index) => {
-        return <MilestoneSection key={index} milestone={milestone} content={contents[index]} isMobile={isMobile} />;
+        return <MilestoneSection key={index} milestone={milestone} content={contents[index]} />;
       })}
     </div>
   );
