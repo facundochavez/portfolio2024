@@ -10,6 +10,8 @@
   --color-5: #e9ed4f;
   --color-6: #fa8b4d;
   --color-traslucid-white: rgba(250, 250, 250, 0.03);
+  --color-grey-hover: rgba(255, 255, 255, 0.1);
+  --color-grey-active: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -26,6 +28,27 @@ html {
   scroll-behavior: smooth !important;
   overflow-x: hidden;
   background-color: var(--color-dark-background);
+
+  &::-webkit-scrollbar {
+    width: 12px !important;
+    height: 0 !important;
+
+    
+    &-thumb {
+      width: 10px;
+      background-color: var(--color-grey-hover);
+      border-radius: 6px;
+
+      &:hover {
+        background-color: var(--color-grey-active);
+      }
+    }
+
+    &-button {
+      height: 15px;
+    }
+
+  }
 }
 
 section {

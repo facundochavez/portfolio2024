@@ -17,66 +17,91 @@
         padding-right: 10px;
         margin-left: auto;
 
+        @media(min-width: 500px) {
+            gap: 60px;
+        }
+
         @media(min-width: 820px) {
             flex-direction: row;
             padding-right: 0;
+            gap: 5%;
         }
 
-        &__top_text{
+        &__top_text {
             width: 100%;
-            max-width: 360px;
+            height: fit-content;
+            max-width: 400px;
             margin-left: auto;
 
             @media(min-width: 820px) {
-                max-width: unset;
+                max-width: 450px;
+                padding-top: 1vw;
             }
         }
 
-        &__channel_video {
+        &__mo_channel {
             width: 100%;
+            max-width: 400px;
             padding-right: 25px;
 
             @media(min-width: 500px) {
-                max-width: 350px;
+                padding-left: 15px;
             }
 
             @media(min-width: 820px) {
-                padding-right: 0;
-                max-width: 500px;
+                padding: 0;
             }
-            
+
             &__video {
                 width: 100%;
                 aspect-ratio: 16/9;
                 border-radius: 15px;
                 background-color: red;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    transform: scale(1.05);
+                }
+
             }
         }
     }
 
-    &__bottom_container {
+    &__mo_website {
         width: 100%;
-        margin-top: 25px;
+        height: 450px;
+        margin-top: 30px;
 
         @media(min-width: 500px) {
-            padding-left: 50px;
-        }
-
-        @media(min-width: 820px) {
-            padding-left: 0;
-            padding-right: 100px;
+            padding-left: 75px;
             margin-top: -40px;
         }
 
-        &__website_video {
+        @media(min-width: 820px) {
+            padding-left: 20px;
+            padding-right: 60px;
+            /* margin-top: -40px; */
+        }
+
+        &__image {
             width: 100%;
-            aspect-ratio: 12/9;
+            height: 100%;
             border-radius: 15px;
             background-color: blue;
+            position: relative;
+            overflow: hidden;
+            max-height: 450px;
 
-            @media(min-width: 500px) {
-                aspect-ratio: 16/9;
+            img {
+                object-fit: cover;
+                transform: scale(1.05);
             }
+
+            /*             @media(min-width: 820px) {
+                aspect-ratio: 16/9;
+            } */
         }
     }
 
