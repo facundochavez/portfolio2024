@@ -1,62 +1,29 @@
 import styles from './BrandsLine.module.scss';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame
-} from 'framer-motion';
+import { useState } from 'react';
+import { motion, useTransform, useMotionValue } from 'framer-motion';
 import { wrap } from '@motionone/utils';
+import { handleTranslationX } from '@/utils/handleTranslationX.js';
 
 const BrandsLine = ({ brands, baseVelocity = 100 }) => {
   const [velocity, setVelocity] = useState(baseVelocity);
   const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false
-  });
-
   const x = useTransform(baseX, (v) => `${wrap(0, -50, v)}%`);
-
-  const directionFactor = useRef(1);
-  useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * velocity * (delta / 1000);
-
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
-
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
-    baseX.set(baseX.get() + moveBy);
-  });
+  handleTranslationX(baseX, velocity);
 
   const duplicatedBrands = brands.concat(brands);
 
   //// COMPONENT
   return (
-    <div className={styles.brands_line}>
-      <motion.div
-        className={styles.brands_line__scroller}
-        style={{ x }}
-        onHoverStart={() => setVelocity(baseVelocity * 0.5)}
-        onHoverEnd={() => setVelocity(baseVelocity)}>
-        {duplicatedBrands.map((brand, index) => {
-          return <BrandBox key={index} brand={brand} />;
-        })}
-      </motion.div>
-    </div>
+    <motion.div
+      className={styles.brands_line}
+      style={{ x }}
+      onHoverStart={() => setVelocity(baseVelocity * 0.5)}
+      onHoverEnd={() => setVelocity(baseVelocity)}>
+      {duplicatedBrands.map((brand, index) => {
+        return <BrandBox key={index} brand={brand} />;
+      })}
+    </motion.div>
   );
 };
 

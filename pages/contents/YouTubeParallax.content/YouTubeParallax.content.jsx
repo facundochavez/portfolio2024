@@ -17,7 +17,6 @@ const YoutubeParallax = () => {
 
       const extraTailLength = window.innerWidth < 820 ? 15 : 35;
       const newTailLength = bottomContainerRect.top - topTextRect.bottom + extraTailLength;
-      console.log(bottomContainerRect.top, topTextRect.bottom);
       setTailLength(newTailLength);
     };
     handleTailLength();
@@ -51,7 +50,7 @@ const YoutubeParallax = () => {
       <div className={styles.youtube_parallax__top_container}>
         <div className={styles.youtube_parallax__top_container__top_text} ref={topTextRef}>
           <TextBox
-            text={milestones.find((milestone) => milestone.id === 'youtube').topText}
+            milestone={milestones.find((milestone) => milestone.id === 'youtube')}
             tailLength={tailLength}
           />
         </div>

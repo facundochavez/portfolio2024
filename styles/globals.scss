@@ -12,6 +12,13 @@
   --color-traslucid-white: rgba(250, 250, 250, 0.03);
   --color-grey-hover: rgba(255, 255, 255, 0.1);
   --color-grey-active: rgba(255, 255, 255, 0.2);
+
+  --primary-color-green: #15b54a;
+  --secondary-color-blue: #69bff6;
+  --background-color-light-green: #ddfbf6;
+  --background-color-dark-blue: #3592f1;
+  --selection-gray: #dddddd;
+  --selection-green: #3ace67;
 }
 
 
@@ -33,7 +40,7 @@ html {
     width: 12px !important;
     height: 0 !important;
 
-    
+
     &-thumb {
       width: 10px;
       background-color: var(--color-grey-hover);

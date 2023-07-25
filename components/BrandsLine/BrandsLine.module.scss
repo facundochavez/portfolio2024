@@ -1,22 +1,19 @@
 .brands_line {
-    position: relative;
+    display: flex;
+    gap: 15px;
+    padding-left: 15px;
+    width: max-content;
     z-index: 0;
 
     &:hover {
         z-index: 5;
     }
 
-    &__scroller {
-        display: flex;
-        gap: 15px;
+    @media(min-width: 900px) {
         padding-left: 18px;
-        width: max-content;
-        z-index: 0;
-
-        @media(min-width: 900px) {
-            gap: 18px;
-        }
+        gap: 18px;
     }
+
 }
 
 .brand_box {

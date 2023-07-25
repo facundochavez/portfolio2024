@@ -14,7 +14,7 @@ const MilestoneSection = ({ milestone, content }) => {
             <TechnologiesBox milestone={milestone} />
             {milestone.topText && milestone.id !== 'youtube' && (
               <div className={styles.milestone__header__subcontainer__top_text}>
-                <TextBox text={milestone.topText} />
+                <TextBox milestone={milestone} />
               </div>
             )}
           </div>

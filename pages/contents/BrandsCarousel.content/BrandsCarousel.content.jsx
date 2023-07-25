@@ -2,27 +2,10 @@ import styles from './BrandsCarousel.content.module.scss';
 import BrandsLine from '@/components/BrandsLine/BrandsLine';
 import brands from '@/data/brands.data.json';
 import { useEffect, useState } from 'react';
+import { useIsMobile } from '@/pages/hooks/useIsMobile';
 
 const BrandsCarousel = () => {
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    const handleIsMobile = () => {
-      if (window.innerWidth < 900) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-
-    handleIsMobile();
-
-    addEventListener('resize', handleIsMobile);
-
-    return () => {
-      removeEventListener('resize', handleIsMobile);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   const firstLineMobile = brands.slice(0, 4);
   const secondLineMobile = brands.slice(4, 8);

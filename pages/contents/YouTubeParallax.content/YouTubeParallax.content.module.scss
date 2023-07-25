@@ -8,9 +8,9 @@
     transform-style: preserve-3d;
 
     @media(min-width: 820px) {
-        transform-style: preserve-3d;
+        /* transform-style: preserve-3d;
         transform: rotateX(var(--rotateX)) rotateY(var(--rotateY));
-        perspective: 3000px;
+        perspective: 3000px; */
     }
 
     @media(min-width: 900px) {

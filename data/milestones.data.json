@@ -52,7 +52,8 @@
             }
         ],
         "firstColor": "var(--color-2)",
-        "secondColor": "var(--color-3)"
+        "secondColor": "var(--color-3)",
+        "bottomText": "For years, I have been dedicated to the study and design of graphic brands from a pragmatic approach, improving my work methodology through the so-called brand performance parameters."
     },
     {
         "id": "start-coding",
@@ -72,7 +73,9 @@
             }
         ],
         "firstColor": "var(--color-3)",
-        "secondColor": "var(--color-6)"
+        "secondColor": "var(--color-6)",
+        "topText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
+        "topTextMarginRight": 20
     },
     {
         "id": "front-end",

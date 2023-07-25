@@ -6,11 +6,13 @@ import milestones from '@/data/milestones.data.json';
 import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
 import YouTubeParallax from './contents/YouTubeParallax.content/YouTubeParallax.content';
 import { useEffect, useState } from 'react';
+import PrototypesCarousel from './contents/PrototypesCarousel.content/PrototypesCarousel.content';
+import StartCoding from './contents/StartCoding.content/StartCoding.content';
 
 
 export default function Home() {
 
-  const contents = [<BrandsCarousel/>, <YouTubeParallax />];
+  const contents = [<BrandsCarousel/>, <YouTubeParallax />, <PrototypesCarousel />, <StartCoding />];
 
   return (
     <div id='smoother-container'>

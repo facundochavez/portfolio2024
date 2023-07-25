@@ -1,0 +1,20 @@
+.prototypes_carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-left: -250px;
+    margin-right: -250px;
+    overflow: hidden;
+    padding: 40px 0;
+    gap: 25px;
+
+    @media(min-width: 900px) {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        gap: 18px;
+        mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+        -moz-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+        -o-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+    }
+}
