@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 
-export const useIsMobile = () => {
+const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(true);
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
 
   useEffect(() => {
     const handleIsMobile = () => {
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
       if (window.innerWidth < 900) {
         setIsMobile(true);
       } else {
@@ -21,5 +25,11 @@ export const useIsMobile = () => {
     };
   }, []);
 
-  return isMobile;
+  return {
+    isMobile: isMobile,
+    viewportWidth: viewportWidth,
+    viewportHeight: viewportHeight
+  };
 };
+
+export default useIsMobile;

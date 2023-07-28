@@ -8,7 +8,10 @@
         top: 0;
         width: 200vw;
         display: flex;
-        
+
+        section {
+            min-height: 100vh;
+        }
 
         &__left {
             width: 100%;
@@ -19,8 +22,6 @@
             align-items: flex-end;
             max-width: 800px;
             text-align: right;
-            padding: 0 3vw;
-            padding: 5% 0;
 
             h3 {
                 font-size: 30px;
@@ -89,15 +90,13 @@
             display: flex;
             align-items: flex-end;
             max-width: 1000px;
-            padding: 5% 0;
 
             &__phrase_box {
                 min-width: max-content;
                 position: relative;
-                margin-bottom: 116px;
                 padding: 19px 22px;
 
-               /*  .auxiliar {
+                /*  .auxiliar {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -117,7 +116,7 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    overflow: visible ;
+                    overflow: visible;
                 }
 
                 &__vertical_line {
@@ -169,7 +168,6 @@
 
             &__right {
                 &__phrase_box {
-                    margin-bottom: 144px !important;
                     padding: 30px 35px;
 
                     p {

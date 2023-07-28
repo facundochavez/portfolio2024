@@ -2,10 +2,10 @@ import TechnologiesBox from '@/components/TechnologiesBox/TechnologiesBox';
 import styles from './Milestone.section.module.scss';
 import TextBox from '@/components/TextBox/TextBox';
 
-const MilestoneSection = ({ milestone, content }) => {
+const MilestoneSection = ({ milestone, content, milestoneRef }) => {
   //// COMPONENT
   return (
-    <section>
+    <section ref={milestoneRef}>
       <div className={styles.milestone}>
         <PathLine milestone={milestone} />
         <header className={styles.milestone__header}>
@@ -42,7 +42,9 @@ const PathLine = ({ milestone }) => {
       <div
         className={styles.pathline__bottom_line}
         style={{
-          backgroundImage: `linear-gradient(to bottom, ${milestone.firstColor}, ${milestone.secondColor})`
+          backgroundImage: `linear-gradient(to bottom, ${milestone.firstColor}, ${milestone.secondColor})`,
+          height:
+            milestone.id !== 'back-end' ? 'calc(100% - 38px + 10vh)' : 'calc(100% - 38px + 5vh)'
         }}
       />
     </div>

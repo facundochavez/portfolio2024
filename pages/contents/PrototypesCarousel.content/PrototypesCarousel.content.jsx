@@ -1,16 +1,16 @@
 import PrototypesLine from '@/components/PrototypesLine/PrototypesLine';
 import styles from './PrototypesCarousel.content.module.scss';
 import prototypes from '@/data/prototypes.data.json';
-import { useIsMobile } from '@/pages/hooks/useIsMobile';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const PrototypesCarousel = () => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobile();
 
-  const firstLineMobile = prototypes.firstLineMobile ;
-  const secondLineMobile = prototypes.secondLineMobile ;
-  
-  const lineDesktop = prototypes.lineDesktop ;
-  
+  const firstLineMobile = prototypes.firstLineMobile;
+  const secondLineMobile = prototypes.secondLineMobile;
+
+  const lineDesktop = prototypes.lineDesktop;
+
   //// COMPONENT
   return (
     <div className={styles.prototypes_carousel}>
@@ -20,7 +20,12 @@ const PrototypesCarousel = () => {
           <PrototypesLine prototypes={secondLineMobile} baseVelocity={1.5} height={300} />
         </>
       ) : (
-        <PrototypesLine prototypes={lineDesktop} baseVelocity={-1} height={450} changeDirection={false}/>
+        <PrototypesLine
+          prototypes={lineDesktop}
+          baseVelocity={-1}
+          height={450}
+          changeDirection={false}
+        />
       )}
     </div>
   );

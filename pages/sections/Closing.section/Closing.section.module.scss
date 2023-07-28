@@ -1,0 +1,102 @@
+.closing {
+    height: 350vh;
+    width: 100vw;
+    contain: paint;
+
+    &__subcontainer {
+        position: sticky;
+        width: 200vw;
+        display: flex;
+        align-items: flex-end;
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            &__bottom {
+                width: 100%;
+                height: 100%;
+                max-width: 1000px;
+            }
+        }
+
+        &__right {
+            width: max-content;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            max-width: 1000px;
+
+            &__contact_box_container {
+                width: 100%;
+                height: 100%;
+                border: solid 4px blue;
+                margin-bottom: 25px;
+            }
+
+            &__phrase_box {
+                position: relative;
+                min-width: max-content;
+                position: relative;
+                padding: 19px 22px;
+
+                p {
+                    font-size: 22px;
+                    line-height: 22px;
+                    color: var(--color--light-grey);
+                }
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    overflow: visible;
+                }
+            }
+        }
+    }
+}
+
+/* 
+@media(min-width: 500px) {
+    .closing {
+
+        &__subcontainer {
+
+            &__right {
+                &__phrase_box {
+                    padding: 30px 35px;
+
+                    p {
+                        font-size: 28px !important;
+                        line-height: 28px !important;
+                    }
+                }
+
+            }
+        }
+    }
+} */
+
+@media(min-width: 900px) {
+    .closing {
+
+        &__subcontainer {
+
+            &__right {
+                &__phrase_box {
+                    padding: 35px 45px;
+
+                    p {
+                        font-size: 30px !important;
+                        line-height: 30px !important;
+                    }
+                }
+
+            }
+        }
+    }
+}

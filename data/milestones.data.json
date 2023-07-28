@@ -143,6 +143,9 @@
             }
         ],
         "firstColor": "var(--color-5)",
-        "secondColor": "var(--color-1)"
+        "secondColor": "var(--color-1)",
+        "topText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
+        "bottomText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
+        "topTextMarginRight": 20
     }
 ]

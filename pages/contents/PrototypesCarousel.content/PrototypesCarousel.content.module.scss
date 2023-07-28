@@ -9,8 +9,6 @@
     gap: 25px;
 
     @media(min-width: 900px) {
-        margin-top: 20px;
-        margin-bottom: 30px;
         gap: 18px;
         mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);

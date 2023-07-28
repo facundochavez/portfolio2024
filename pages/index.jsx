@@ -7,12 +7,19 @@ import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.con
 import YouTubeParallax from './contents/YouTubeParallax.content/YouTubeParallax.content';
 import { useEffect, useState } from 'react';
 import PrototypesCarousel from './contents/PrototypesCarousel.content/PrototypesCarousel.content';
-import StartCoding from './contents/StartCoding.content/StartCoding.content';
-
+import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVideo.content';
+import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
+import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
+import ClosingSection from './sections/Closing.section/Closing.section';
 
 export default function Home() {
-
-  const contents = [<BrandsCarousel/>, <YouTubeParallax />, <PrototypesCarousel />, <StartCoding />];
+  const contents = [
+    <BrandsCarousel />,
+    <YouTubeParallax />,
+    <PrototypesCarousel />,
+    <StartCodingVideo />,
+    <FrontendVideo />
+  ];
 
   return (
     <div id='smoother-container'>
@@ -22,8 +29,11 @@ export default function Home() {
       </Head>
       <HeroSection />
       {milestones.map((milestone, index) => {
-        return <MilestoneSection key={index} milestone={milestone} content={contents[index]} />;
+        if (milestone.id !== 'back-end') {
+          return <MilestoneSection key={index} milestone={milestone} content={contents[index]} />;
+        }
       })}
+      <ClosingSection />
     </div>
   );
 }

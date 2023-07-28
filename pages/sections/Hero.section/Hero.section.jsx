@@ -15,18 +15,23 @@ const HeroSection = () => {
     offset: ['end end', 'end start']
   });
 
-  const subcontainerTranslationX = useTransform(scrollYProgressStart, [0.1, 0.4, 0.6], ['0%', '-35%', '-50%']);
-/*   const subcontainerTranslationY = useTransform(scrollYProgressStart, [0, 1], ['0%', '100%']);
+  const subcontainerTranslationX = useTransform(
+    scrollYProgressStart,
+    [0.1, 0.4, 0.6],
+    ['0%', '-35%', '-50%']
+  );
+  /*   const subcontainerTranslationY = useTransform(scrollYProgressStart, [0, 1], ['0%', '100%']);
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
   const subcontainerTranslationX = useSpring(transform, physics); */
 
   // PATH INITIAL VALUES
-  const [nameBoxWidth, setNameBoxWidth] = useState(280);
-  const [nameBoxHeight, setNameBoxHeight] = useState(146);
-  const [phraseBoxWidth, setPhraseBoxWidth] = useState(291);
-  const [phraseBoxHeight, setPhraseBoxHeight] = useState(80);
+  const [nameBoxWidth, setNameBoxWidth] = useState(0);
+  const [nameBoxHeight, setNameBoxHeight] = useState(0);
+  const [phraseBoxWidth, setPhraseBoxWidth] = useState(0);
+  const [phraseBoxHeight, setPhraseBoxHeight] = useState(0);
+  const [phraseBoxMarginBottom, setPhraseBoxMarginBottom] = useState(0);
   const [horizontalLineLength, setHorizontalLineLength] = useState(0);
-  const [verticalLineLength, setVerticalLineLength] = useState(150);
+  const [verticalLineLength, setVerticalLineLength] = useState(0);
 
   // PATH DRAW
   const A = nameBoxWidth;
@@ -68,39 +73,33 @@ const HeroSection = () => {
 
   //  RESPONSIVE CHANGES
   useEffect(() => {
-    const handlePath = () => {
-      const subcontainer = document.querySelector(`.${styles.hero__subcontainer}`);
+    const handlePathSizes = () => {
       const nameBox = document.querySelector(`.${styles.hero__subcontainer__left__name_box}`);
       const phraseBox = document.querySelector(`.${styles.hero__subcontainer__right__phrase_box}`);
-      const subcontainerRect = subcontainer.getBoundingClientRect();
       const nameBoxRect = nameBox.getBoundingClientRect();
       const phraseBoxRect = phraseBox.getBoundingClientRect();
 
+      setNameBoxWidth(nameBox.clientWidth);
+      setNameBoxHeight(nameBox.clientHeight);
+      setPhraseBoxWidth(phraseBox.clientWidth);
+      setPhraseBoxHeight(phraseBox.clientHeight);
+
+      const titlesContainer = document.querySelector(
+        `.${styles.hero__subcontainer__left__titles_container}`
+      );
+      const titlesContainerRect = titlesContainer.getBoundingClientRect();
+      const newMarginBottom = titlesContainerRect.bottom - nameBoxRect.bottom;
+      setPhraseBoxMarginBottom(newMarginBottom);
+
       const newHorizontalLength = phraseBoxRect.left - nameBoxRect.right + 25;
-      const newVerticalLineLength = subcontainerRect.bottom - phraseBoxRect.bottom + 13;
+      const newVerticalLineLength = newMarginBottom + window.innerHeight * 0.05 + 13;
       setHorizontalLineLength(newHorizontalLength);
       setVerticalLineLength(newVerticalLineLength);
 
-      if (window.innerWidth < 635) {
-        setNameBoxWidth(280);
-        setNameBoxHeight(146);
-        setPhraseBoxWidth(291);
-        setPhraseBoxHeight(80);
-      } else if (window.innerWidth < 900) {
-        setNameBoxWidth(506);
-        setNameBoxHeight(91);
-        setPhraseBoxWidth(291);
-        setPhraseBoxHeight(80);
-      } else {
-        setNameBoxWidth(716);
-        setNameBoxHeight(131);
-        setPhraseBoxWidth(387);
-        setPhraseBoxHeight(116);
-      }
-      handlePhraseRectangle();
+      handlePhraseRectangleKind();
     };
 
-    const handlePhraseRectangle = () => {
+    const handlePhraseRectangleKind = () => {
       if (scrollYProgressStart.current <= 0.65) {
         setIsInitialStretch(true);
       } else {
@@ -114,23 +113,24 @@ const HeroSection = () => {
       }
     };
 
-    handlePath();
-    handlePhraseRectangle();
-    window.addEventListener('resize', handlePath);
-    window.addEventListener('scroll', handlePhraseRectangle);
+    setTimeout(() => {
+      handlePathSizes();
+      handlePhraseRectangleKind();
+    }, 100);
+
+    window.addEventListener('resize', handlePathSizes);
+    window.addEventListener('scroll', handlePhraseRectangleKind);
 
     return () => {
-      window.removeEventListener('resize', handlePath);
-      window.removeEventListener('scroll', handlePhraseRectangle);
+      window.removeEventListener('resize', handlePathSizes);
+      window.removeEventListener('scroll', handlePhraseRectangleKind);
     };
   }, []);
 
   // COMPONENT
   return (
     <div ref={heroSectionRef} className={styles.hero} data-scroll-section>
-      <motion.div
-        className={styles.hero__subcontainer}
-        style={{ x: subcontainerTranslationX}}>
+      <motion.div className={styles.hero__subcontainer} style={{ x: subcontainerTranslationX }}>
         <section>
           <div className={styles.hero__subcontainer__left}>
             <h3>Hi there! I am</h3>
@@ -171,7 +171,8 @@ const HeroSection = () => {
                 <h1>
                   Front-end developer
                   <br />
-                  UX/UI designer<br />
+                  UX/UI designer
+                  <br />
                   Brand consultant
                 </h1>
               </div>
@@ -183,7 +184,9 @@ const HeroSection = () => {
         </section>
         <section>
           <div className={styles.hero__subcontainer__right}>
-            <div className={styles.hero__subcontainer__right__phrase_box}>
+            <div
+              className={styles.hero__subcontainer__right__phrase_box}
+              style={{ marginBottom: phraseBoxMarginBottom }}>
               <p>
                 Actually, I’m a civil engineer
                 <br />
@@ -193,7 +196,7 @@ const HeroSection = () => {
                 <defs>
                   <linearGradient id='phraseGradient'>
                     <stop offset='0%' stopColor='var(--color-3)' />
-                    <stop offset='100%' stopColor='var(--color-4)' />
+                    <stop offset='100%' stopColor='var(--color-6)' />
                   </linearGradient>
                   <linearGradient id='verticalLineGradient' x1='0%' y1='0%' x2='0%' y2='100%'>
                     <stop offset='0%' stopColor='var(--color-3)' />

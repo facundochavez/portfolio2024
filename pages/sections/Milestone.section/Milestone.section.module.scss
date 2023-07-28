@@ -1,6 +1,5 @@
 .milestone {
     width: 100%;
-    min-height: 90vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -102,7 +101,6 @@
         position: absolute;
         top: calc(38px);
         left: 0;
-        height: calc(100% - 38px + 10vh);
         width: 4px;
         background-color: white;
     }
