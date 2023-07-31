@@ -2,12 +2,14 @@ import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.con
 import MilestoneSection from '../Milestone.section/Milestone.section';
 import styles from './Closing.section.module.scss';
 import milestones from '@/data/milestones.data.json';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
+import ContactForm from '@/components/ContactForm/ContactForm';
 
 const ClosingSection = () => {
   const { viewportWidth, viewportHeight, isMobile } = useIsMobile();
+  const [isContactFormShow, setIsContactFormShow] = useState(false);
 
   const milestoneRef = useRef();
   const [subcontainerHeight, setSetsubcontainerHeight] = useState(0);
@@ -19,8 +21,12 @@ const ClosingSection = () => {
     offset: ['start start', 'end end']
   });
 
-  const animationStart = -0.00078125 * viewportHeight + 0.8025;
-  const subcontainerTranslationX = useTransform(scrollYProgress, [Math.max(0, animationStart), 0.85], ['0%', '-50%']);
+  const animationStart = -0.000875 * viewportHeight + 0.9875;
+  const subcontainerTranslationX = useTransform(
+    scrollYProgress,
+    [Math.max(0, animationStart), 0.85],
+    ['0%', '-50%']
+  );
 
   // PATH INITIAL VALUES
   const [horizontalLineWidth, setHorizontalLineWidth] = useState(0);
@@ -59,8 +65,8 @@ const ClosingSection = () => {
       const phraseBox = document.querySelector(
         `.${styles.closing__subcontainer__right__phrase_box}`
       );
-      setPhraseBoxWidth(phraseBox.clientWidth);
-      setPhraseBoxHeight(phraseBox.clientHeight);
+      setPhraseBoxWidth(phraseBox.clientWidth - 2);
+      setPhraseBoxHeight(phraseBox.clientHeight - 2);
 
       const bottomContainer = document.querySelector(
         `.${styles.closing__subcontainer__left__bottom}`
@@ -73,7 +79,22 @@ const ClosingSection = () => {
     setTimeout(() => {
       handlePathSizes();
     }, 1000);
-  }, [viewportWidth]);
+  }, [viewportWidth, viewportHeight]);
+
+  useEffect(() => {
+    const handleContactFormShow = () => {
+      if (scrollYProgress.current >= 0.9) {
+        setIsContactFormShow(true);
+      } else {
+        setIsContactFormShow(false);
+      }
+    };
+    handleContactFormShow();
+    window.addEventListener('scroll', handleContactFormShow);
+    return () => {
+      window.removeEventListener('scroll', handleContactFormShow);
+    };
+  }, [scrollYProgress]);
 
   //// COMPONENT
   return (
@@ -93,7 +114,21 @@ const ClosingSection = () => {
         </div>
         <section style={{ paddingBottom: '7.5vh', paddingTop: '7.5vh', height: '100vh' }}>
           <div className={styles.closing__subcontainer__right}>
-            <div className={styles.closing__subcontainer__right__contact_box_container} />
+            <AnimatePresence>
+              {isContactFormShow && (
+                <div
+                  className={styles.closing__subcontainer__right__top}
+                  style={{ width: phraseBoxWidth }}>
+                  <ContactForm
+                    icons={true}
+                    colorOne='--color-1'
+                    colorTwo='--color-2'
+                    colorThree='--color-7'
+                  />
+                </div>
+              )}
+            </AnimatePresence>
+
             <div className={styles.closing__subcontainer__right__phrase_box}>
               {viewportWidth < 370 ? (
                 <p>

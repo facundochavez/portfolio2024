@@ -1,5 +1,5 @@
 .closing {
-    height: 350vh;
+    height: 300vh;
     width: 100vw;
     contain: paint;
 
@@ -22,7 +22,6 @@
         }
 
         &__right {
-            width: max-content;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -30,11 +29,13 @@
             align-items: center;
             max-width: 1000px;
 
-            &__contact_box_container {
+            &__top {
                 width: 100%;
                 height: 100%;
-                border: solid 4px blue;
                 margin-bottom: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
             }
 
             &__phrase_box {

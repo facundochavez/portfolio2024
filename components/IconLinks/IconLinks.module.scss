@@ -1,0 +1,19 @@
+.icon_links {
+    display: flex;
+    gap: 10px;
+    
+    &__icon {
+        position: relative;
+        height: 30px;
+        filter: brightness(100);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:active {
+            opacity: 0.5;
+        }
+    }
+}

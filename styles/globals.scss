@@ -9,9 +9,11 @@
   --color-4: #8916f7;
   --color-5: #e9ed4f;
   --color-6: #fa8b4d;
+  --color-7: #1bef94;
   --color-traslucid-white: rgba(250, 250, 250, 0.03);
-  --color-grey-hover: rgba(255, 255, 255, 0.1);
-  --color-grey-active: rgba(255, 255, 255, 0.2);
+  --color-gray: rgba(255, 255, 255, 0.04);
+  --color-gray-hover: rgba(255, 255, 255, 0.1);
+  --color-gray-active: rgba(255, 255, 255, 0.2);
 
   --primary-color-green: #15b54a;
   --secondary-color-blue: #69bff6;
@@ -43,11 +45,11 @@ html {
 
     &-thumb {
       width: 10px;
-      background-color: var(--color-grey-hover);
+      background-color: var(--color-gray-hover);
       border-radius: 6px;
 
       &:hover {
-        background-color: var(--color-grey-active);
+        background-color: var(--color-gray-active);
       }
     }
 
@@ -67,4 +69,75 @@ section {
   justify-content: flex-start;
   overflow: visible;
   z-index: 10
+}
+
+.ant-input {
+  background-color: var(--color-gray) !important;
+  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  width: 100%; 
+  margin-bottom: -3px;
+
+  &::placeholder {
+    color: gray;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px !important;
+    height: 0 !important;
+
+    &-thumb {
+      width: 10px;
+      background-color: var(--color-gray-hover);
+      border-radius: 5px;
+
+      &:hover {
+        background-color: var(--color-gray-active);
+      }
+    }
+
+    &-button {
+      height: 0px;
+    }
+
+  }
+}
+
+.ant-form-item-explain-error {
+  font-size: 14px;
+  line-height: 14px;
+  padding: 8px 0 5px 0;
+}
+
+@media(min-width: 900px) {
+  .ant-input {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin-bottom: -5px;
+  }
+
+  .ant-form-item-explain-error {
+    padding: 10px 0 5px 0;
+
+  }
+}
+
+.ant-btn {
+  background-color: var(--color-gray) !important;
+}
+
+.ant-btn:hover {
+  background-color: var(--color-gray-hover) !important;
+}
+
+.ant-btn:active {
+  background-color: var(--color-gray-active)!important;
+}
+
+.ant-switch {
+  background-color: white !important;
+}
+
+.ant-switch-handle::before {
+  background-color: var(--color-dark-background) !important;
 }

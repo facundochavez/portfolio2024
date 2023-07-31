@@ -1,9 +1,14 @@
+import { useGlobalContext } from '@/context/global.context';
 import styles from './HeroSection.module.scss';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const HeroSection = () => {
+  const { setContactFormHeight } = useGlobalContext();
+  const {isMobile} = useIsMobile();
+
   // HORIZONTAL SCROLLING
   const heroSectionRef = useRef();
   const { scrollYProgress: scrollYProgressStart } = useScroll({
@@ -79,10 +84,10 @@ const HeroSection = () => {
       const nameBoxRect = nameBox.getBoundingClientRect();
       const phraseBoxRect = phraseBox.getBoundingClientRect();
 
-      setNameBoxWidth(nameBox.clientWidth);
-      setNameBoxHeight(nameBox.clientHeight);
-      setPhraseBoxWidth(phraseBox.clientWidth);
-      setPhraseBoxHeight(phraseBox.clientHeight);
+      setNameBoxWidth(nameBox.clientWidth - 2);
+      setNameBoxHeight(nameBox.clientHeight - 2);
+      setPhraseBoxWidth(phraseBox.clientWidth - 2);
+      setPhraseBoxHeight(phraseBox.clientHeight - 2);
 
       const titlesContainer = document.querySelector(
         `.${styles.hero__subcontainer__left__titles_container}`
@@ -97,6 +102,9 @@ const HeroSection = () => {
       setVerticalLineLength(newVerticalLineLength);
 
       handlePhraseRectangleKind();
+
+      const leftTop = document.querySelector(`.${styles.hero__subcontainer__left__top}`);
+      setContactFormHeight(Math.max(leftTop.clientHeight - (window.innerWidth < 900 ? 40 : 60), 330));
     };
 
     const handlePhraseRectangleKind = () => {
@@ -118,10 +126,16 @@ const HeroSection = () => {
       handlePhraseRectangleKind();
     }, 100);
 
+    window.addEventListener('load', () =>
+      setTimeout(() => {
+        handlePathSizes();
+      }, 100)
+    );
     window.addEventListener('resize', handlePathSizes);
     window.addEventListener('scroll', handlePhraseRectangleKind);
 
     return () => {
+      window.removeEventListener('load', handlePathSizes);
       window.removeEventListener('resize', handlePathSizes);
       window.removeEventListener('scroll', handlePhraseRectangleKind);
     };
@@ -133,6 +147,7 @@ const HeroSection = () => {
       <motion.div className={styles.hero__subcontainer} style={{ x: subcontainerTranslationX }}>
         <section>
           <div className={styles.hero__subcontainer__left}>
+            <div className={styles.hero__subcontainer__left__top}/>
             <h3>Hi there! I am</h3>
 
             <div className={styles.hero__subcontainer__left__name_box}>

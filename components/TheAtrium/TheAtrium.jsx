@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './TheAtrium.module.scss';
-import { useEffect, useRef, useState } from 'react';
 
 const TheAtriumSectionsOneAndTwo = ({ fatherWidth, scale }) => {
   const firstLimit = 400 * scale;
