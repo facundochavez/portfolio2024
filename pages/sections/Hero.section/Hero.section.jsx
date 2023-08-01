@@ -1,13 +1,12 @@
 import { useGlobalContext } from '@/context/global.context';
 import styles from './HeroSection.module.scss';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
 
 const HeroSection = () => {
-  const { setContactFormHeight } = useGlobalContext();
-  const {isMobile} = useIsMobile();
+  const { setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
 
   // HORIZONTAL SCROLLING
   const heroSectionRef = useRef();
@@ -44,16 +43,13 @@ const HeroSection = () => {
   const C = phraseBoxWidth;
   const D = phraseBoxHeight;
 
-  const nameRectangle = `M${A - 10} ${B} h${-A + 22} a10 10 0 0 1 -10 -10 v${
-    -B + 22
-  } a10 10 0 0 1 10 -10 h${A - 22} a10 10 0 0 1 10 10 v${B - 22} a10 10 0 0 1 -10 10`;
-  const phraseRectangleOne = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${
-    -D + 22
-  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
+  const nameRectangle = `M${A - 10} ${B} h${-A + 22} a10 10 0 0 1 -10 -10 v${-B + 22
+    } a10 10 0 0 1 10 -10 h${A - 22} a10 10 0 0 1 10 10 v${B - 22} a10 10 0 0 1 -10 10`;
+  const phraseRectangleOne = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${-D + 22
+    } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
 
-  const phraseRectangleTwo = `M2 ${D - 10} a10 10 0 0 0 10 10 h${C - 22} a10 10 0 0 0 10 -10 v${
-    -D + 22
-  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} `;
+  const phraseRectangleTwo = `M2 ${D - 10} a10 10 0 0 0 10 10 h${C - 22} a10 10 0 0 0 10 -10 v${-D + 22
+    } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} `;
 
   const [isInitialStretch, setIsInitialStretch] = useState(true);
   const phraseRectangle = isInitialStretch ? phraseRectangleOne : phraseRectangleTwo;
@@ -103,8 +99,12 @@ const HeroSection = () => {
 
       handlePhraseRectangleKind();
 
+      // CONTEXT MODIFICATIONS
       const leftTop = document.querySelector(`.${styles.hero__subcontainer__left__top}`);
-      setContactFormHeight(Math.max(leftTop.clientHeight - (window.innerWidth < 900 ? 40 : 60), 330));
+      setContactFormHeight(
+        Math.max(leftTop.clientHeight - (window.innerWidth < 900 ? 40 : 60), 330)
+      );
+
     };
 
     const handlePhraseRectangleKind = () => {
@@ -119,6 +119,9 @@ const HeroSection = () => {
       } else {
         setIsFinalStretch(true);
       }
+
+      // CONTEXT MODIFICATIONS
+      setHeroBtnDirection(scrollYProgressStart.current < 1 ? 'left' : 'up');
     };
 
     setTimeout(() => {
@@ -147,7 +150,7 @@ const HeroSection = () => {
       <motion.div className={styles.hero__subcontainer} style={{ x: subcontainerTranslationX }}>
         <section>
           <div className={styles.hero__subcontainer__left}>
-            <div className={styles.hero__subcontainer__left__top}/>
+            <div className={styles.hero__subcontainer__left__top} />
             <h3>Hi there! I am</h3>
 
             <div className={styles.hero__subcontainer__left__name_box}>

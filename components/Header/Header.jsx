@@ -9,16 +9,15 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const Header = () => {
   const [isHeaderShow, setIsHeaderShow] = useState(true);
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  const { contactFormHeight } = useGlobalContext();
+  const { contactFormHeight, isContactFormOpen, setIsContactFormOpen } = useGlobalContext();
 
   useEffect(() => {
     const handleHeaderShow = () => {
-      
       if (window.scrollY < 250) {
         setIsHeaderShow(true);
       } else {
         setIsHeaderShow(false);
+        setIsContactFormOpen(false);
       }
     };
     handleHeaderShow();

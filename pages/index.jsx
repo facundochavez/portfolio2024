@@ -11,8 +11,12 @@ import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.conten
 import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
 import ClosingSection from './sections/Closing.section/Closing.section';
 import Header from '@/components/Header/Header';
+import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
+import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
+import { useEffect } from 'react';
+import { useGlobalContext } from '@/context/global.context';
 
-export default function Home() {
+const Home = () => {
   const contents = [
     <BrandsCarousel />,
     <YouTubeParallax />,
@@ -35,6 +39,9 @@ export default function Home() {
         }
       })}
       <ClosingSection />
+      <ScrollToTopButton />
     </div>
   );
 }
+
+export default Home;

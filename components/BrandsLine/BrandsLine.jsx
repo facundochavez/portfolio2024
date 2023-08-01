@@ -33,7 +33,7 @@ const BrandBox = ({ brand }) => {
       <div className={styles.brand_box__image_wrapper}>
         <div className={styles.brand_box__image_wrapper__image}>
           <Image
-            src={`/images/image-${brand.id}.jpg`}
+            src={`/images/brands-backgrounds/image-${brand.id}.jpg`}
             alt={`${brand.name}'s background image.`}
             fill
           />
@@ -41,7 +41,7 @@ const BrandBox = ({ brand }) => {
       </div>
       <div className={styles.brand_box__logo}>
         <Image
-          src={`/icons/logo-${brand.id}.svg`}
+          src={`/icons/logos/logo-${brand.id}.svg`}
           alt={`${brand.name}'s logo.`}
           width={0}
           height={0}

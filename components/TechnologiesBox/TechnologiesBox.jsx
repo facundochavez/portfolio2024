@@ -25,7 +25,7 @@ const TechnologiesBox = ({ milestone }) => {
                     : null
               }}>
               <Image
-                src={`/icons/icon-${technology.id}.svg`}
+                src={`/icons/technologies/icon-${technology.id}.svg`}
                 alt={`${technology.name}'s icon.`}
                 width={0}
                 height={0}

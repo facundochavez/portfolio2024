@@ -2,14 +2,15 @@ import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.con
 import MilestoneSection from '../Milestone.section/Milestone.section';
 import styles from './Closing.section.module.scss';
 import milestones from '@/data/milestones.data.json';
-import { AnimatePresence, motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
 import ContactForm from '@/components/ContactForm/ContactForm';
+import { useGlobalContext } from '@/context/global.context';
 
 const ClosingSection = () => {
   const { viewportWidth, viewportHeight, isMobile } = useIsMobile();
-  const [isContactFormShow, setIsContactFormShow] = useState(false);
+  const { isContactFormShow, setIsContactFormShow, setClosingBtnDirection } = useGlobalContext();
 
   const milestoneRef = useRef();
   const [subcontainerHeight, setSetsubcontainerHeight] = useState(0);
@@ -21,10 +22,10 @@ const ClosingSection = () => {
     offset: ['start start', 'end end']
   });
 
-  const animationStart = -0.000875 * viewportHeight + 0.9875;
+  const animationStart = Math.max(0, -0.000875 * viewportHeight + 0.9875);
   const subcontainerTranslationX = useTransform(
     scrollYProgress,
-    [Math.max(0, animationStart), 0.85],
+    [animationStart, 0.85],
     ['0%', '-50%']
   );
 
@@ -41,9 +42,8 @@ const ClosingSection = () => {
   const D = phraseBoxHeight;
 
   const horizontalLine = `M${-A + 2} ${D - B} v${B - 10} a10 10 0 0 0 10 10  h${A + 1}`;
-  const phraseRectangle = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${
-    -D + 22
-  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
+  const phraseRectangle = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${-D + 22
+    } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
 
   // PATH ANIMATION
   const horizontalPathLength = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
@@ -76,11 +76,17 @@ const ClosingSection = () => {
       setHorizontalLineWidth(newHorizontalLineWidth - (isMobile ? 0 : 0.5));
       setHorizontalLineHeight(bottomContainer.clientHeight + 2);
     };
-    setTimeout(() => {
-      handlePathSizes();
-    }, 1000);
-  }, [viewportWidth, viewportHeight]);
+    /*     setTimeout(() => {
+          handlePathSizes();
+        }, 1000); */
+    handlePathSizes();
+    window.addEventListener('scroll', handlePathSizes);
+    return () => {
+      window.removeEventListener('scroll', handlePathSizes);
+    }
+  }, []);
 
+  // HANDLE CONTACT FORM
   useEffect(() => {
     const handleContactFormShow = () => {
       if (scrollYProgress.current >= 0.9) {
@@ -88,13 +94,17 @@ const ClosingSection = () => {
       } else {
         setIsContactFormShow(false);
       }
+      // CONTEXT MODIFICATIONS
+      setClosingBtnDirection(scrollYProgress.current > .25 ? 'left' : 'up');
     };
+
     handleContactFormShow();
     window.addEventListener('scroll', handleContactFormShow);
     return () => {
       window.removeEventListener('scroll', handleContactFormShow);
     };
-  }, [scrollYProgress]);
+  }, []);
+
 
   //// COMPONENT
   return (

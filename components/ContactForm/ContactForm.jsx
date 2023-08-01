@@ -2,7 +2,7 @@ import styles from './ContactForm.module.scss';
 import { Button, ConfigProvider, theme, message, Form, Input } from 'antd';
 import Image from 'next/image';
 import useIsMobile from '@/hooks/useIsMobile';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import IconLinks from '../IconLinks/IconLinks';
 import { useGlobalContext } from '@/context/global.context';
 import { AnimatePresence, delay, motion } from 'framer-motion';
@@ -10,13 +10,7 @@ import { AnimatePresence, delay, motion } from 'framer-motion';
 const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid = false }) => {
   const { viewportWidth, viewportHeight } = useIsMobile();
   const [form] = Form.useForm();
-  const messageRef = useRef();
   const [messageRows, setMessageRows] = useState(5);
-  const [validateEmailTrigger, setValidateEmailTrigger] = useState('onBlur');
-
-  const onFinishFailed = () => {
-    setValidateEmailTrigger('onChange');
-  };
 
   const childrenAnimation = {
     hidden: { opacity: 0 },
@@ -25,14 +19,15 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
 
   useEffect(() => {
     const handleMessageRows = () => {
-      const message = messageRef.current;
-      const messageHeight = message.clientHeight;
-      const newRows = Math.floor(
-        (messageHeight - (window.innerWidth < 900 ? 14 : 16) - 20) /
+      const message = document.querySelector(`.${styles.contact_form__header__message}`);
+      if (message) {
+        const messageHeight = message.clientHeight;
+        const newRows = Math.floor(
+          (messageHeight - (window.innerWidth < 900 ? 14 : 16) - 20) /
           (window.innerWidth < 900 ? 25.14 : 28.28)
-      );
-      console.log(messageHeight, newRows);
-      setMessageRows(newRows);
+        );
+        setMessageRows(newRows);
+      }
     };
     setTimeout(() => {
       handleMessageRows();
@@ -72,10 +67,8 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 ? 'linear-gradient(to top, var(--color-dark-background) 0, var(--color-dark-background) 30%, transparent 50%)'
                 : null
             }}
-            layout='vertical'
-            requiredMark='invible'
             /*   onFinish={onFinish} */
-            onFinishFailed={onFinishFailed}
+            /* onFinishFailed={onFinishFailed} */
             autoComplete='off'>
             <motion.header className={styles.contact_form__header}>
               <motion.div
@@ -115,10 +108,6 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
               <motion.div className={styles.contact_form__email} variants={childrenAnimation}>
                 <Form.Item
                   name='email'
-                  validateTrigger={validateEmailTrigger}
-                  onBlur={() => {
-                    setValidateEmailTrigger('onChange');
-                  }}
                   rules={[
                     {
                       required: true,
@@ -134,7 +123,6 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
               </motion.div>
               <motion.div
                 className={styles.contact_form__header__message}
-                ref={messageRef}
                 variants={childrenAnimation}>
                 <div className={styles.contact_form__header__message__wrapper}>
                   <Form.Item
