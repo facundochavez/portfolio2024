@@ -1,11 +1,10 @@
 import styles from './PrototypesLine.module.scss';
 import Image from 'next/image';
-import { useState } from 'react';
 import { motion, useTransform, useMotionValue } from 'framer-motion';
 import { wrap } from '@motionone/utils';
 import { handleTranslationX } from '@/utils/handleTranslationX.js';
 
-const PrototypesLine = ({ prototypes, baseVelocity=100, height=400, changeDirection = true }) => {
+const PrototypesLine = ({ prototypes, baseVelocity = 100, height = 400, changeDirection = true }) => {
   const baseX = useMotionValue(0);
   const x = useTransform(baseX, (v) => `${wrap(0, -50, v)}%`);
   handleTranslationX(baseX, baseVelocity, changeDirection);

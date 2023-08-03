@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import styles from '@/styles/Home.module.scss';
 import HeroSection from './sections/Hero.section/Hero.section';
 import MilestoneSection from './sections/Milestone.section/Milestone.section';
 import milestones from '@/data/milestones.data.json';
@@ -12,9 +11,6 @@ import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
 import ClosingSection from './sections/Closing.section/Closing.section';
 import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
-import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
-import { useEffect } from 'react';
-import { useGlobalContext } from '@/context/global.context';
 
 const Home = () => {
   const contents = [

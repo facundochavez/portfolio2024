@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import styles from './TechnologiesBox.module.scss';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
 
 const TechnologiesBox = ({ milestone }) => {
   //// COMPONENT

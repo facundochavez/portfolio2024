@@ -1,11 +1,9 @@
 import styles from './ContactForm.module.scss';
-import { Button, ConfigProvider, theme, message, Form, Input } from 'antd';
-import Image from 'next/image';
+import { Button, ConfigProvider, theme, Form, Input } from 'antd';
 import useIsMobile from '@/hooks/useIsMobile';
 import { useEffect, useState } from 'react';
 import IconLinks from '../IconLinks/IconLinks';
-import { useGlobalContext } from '@/context/global.context';
-import { AnimatePresence, delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid = false }) => {
   const { viewportWidth, viewportHeight } = useIsMobile();

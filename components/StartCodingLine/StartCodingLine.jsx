@@ -24,17 +24,6 @@ const StartCodingLineDesktop = ({ index }) => {
       setLeftContainerWidth(left.offsetWidth);
       setRightContainerWidth(right.offsetWidth);
 
-/*       const line = lineRef.current;
-      const lineTop = line.getBoundingClientRect().top;
-      if (lineTop > window.innerHeight) {
-        setAlignment('right');
-      } else if (lineTop > window.innerHeight / 2) {
-        setAlignment('left');
-      } else if (lineTop > 0) {
-        setAlignment('right');
-      } else {
-        setAlignment('left');
-      } */
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -66,13 +55,13 @@ const StartCodingLineDesktop = ({ index }) => {
         className={styles.start_coding_line_desktop__left_container}
         ref={leftRef}
         >
-        {theAtriumLeftContent[index]}
+        {/* {theAtriumLeftContent[index]} */}
       </div>
       <div
         className={styles.start_coding_line_desktop__right_container}
         ref={rightRef}
 >
-        {theAtriumRightContent[index]}
+     {/*    {theAtriumRightContent[index]} */}
       </div>
     </div>
   );
@@ -111,7 +100,7 @@ const StartCodingLineMobile = ({ index }) => {
         className={styles.start_coding_line_mobile__container}
         ref={containerRef}
         style={index === 1 ? { justifyContent: 'flex-end' } : null}>
-        {theAtriumContent[index]}
+   {/*      {theAtriumContent[index]} */}
       </div>
     </div>
   );

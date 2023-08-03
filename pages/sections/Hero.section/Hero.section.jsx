@@ -1,9 +1,8 @@
 import { useGlobalContext } from '@/context/global.context';
 import styles from './HeroSection.module.scss';
-import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import useIsMobile from '@/hooks/useIsMobile';
 
 const HeroSection = () => {
   const { setContactFormHeight, setHeroBtnDirection } = useGlobalContext();

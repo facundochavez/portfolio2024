@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import styles from './LenguageSwitcher.module.scss';
 import { ConfigProvider, Switch, theme } from 'antd';
-import useIsMobile from '@/hooks/useIsMobile';
 import { useGlobalContext } from '@/context/global.context';
 
 const LenguageSwitcher = () => {

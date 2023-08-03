@@ -1,7 +1,6 @@
 import styles from './BrandsCarousel.content.module.scss';
 import BrandsLine from '@/components/BrandsLine/BrandsLine';
 import brands from '@/data/brands.data.json';
-import { useEffect, useState } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
 
 const BrandsCarousel = () => {

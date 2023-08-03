@@ -1,8 +1,6 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import styles from './TheAtrium.module.scss';
 
-const TheAtriumSectionsOneAndTwo = ({ fatherWidth, scale }) => {
+const TheAtriumSectionsOneAndTwo = ({ fatherWidth=500, scale = 1 }) => {
   const firstLimit = 400 * scale;
   const secondLimit = 600 * scale;
   const thirdLimit = 800 * scale;
@@ -304,7 +302,7 @@ const TheAtriumSectionsOneAndTwo = ({ fatherWidth, scale }) => {
   );
 };
 
-const TheAtriumSectionsTwoAndThree = ({ fatherWidth, scale }) => {
+const TheAtriumSectionsTwoAndThree = ({ fatherWidth=500, scale= 1 }) => {
   const firstLimit = 400 * scale;
   const secondLimit = 600 * scale;
   const thirdLimit = 800 * scale;
@@ -381,7 +379,7 @@ const TheAtriumSectionsTwoAndThree = ({ fatherWidth, scale }) => {
           </div>
         </div>
 
-        <div className={styles.background__light_green} style={{width: `${fatherWidth/scale + 2}px`}}>
+        <div className={styles.background__light_green} style={{width: `100vw`}}>
           <div
             className={styles.section3}
             style={fatherWidth >= fifthLimit ? { width: '1000px' } : null}>
@@ -444,7 +442,7 @@ const TheAtriumSectionsTwoAndThree = ({ fatherWidth, scale }) => {
   );
 };
 
-const TheAtriumSectionsFourAndFive = ({ fatherWidth, scale }) => {
+const TheAtriumSectionsFourAndFive = ({ fatherWidth=500, scale=1 }) => {
   const firstLimit = 400 * scale;
   const secondLimit = 600 * scale;
   const thirdLimit = 800 * scale;
@@ -454,7 +452,7 @@ const TheAtriumSectionsFourAndFive = ({ fatherWidth, scale }) => {
   return (
     <div
       className={styles.father_container}
-      style={{ transform: `scale(${scale})`, width: `${fatherWidth/scale}px`, transformOrigin: 'bottom' }}>
+      style={{ transform: `scale(${scale})`, width: `100vw`, transformOrigin: 'bottom' }}>
       <main>
         <div
           className={styles.section2}
@@ -520,7 +518,7 @@ const TheAtriumSectionsFourAndFive = ({ fatherWidth, scale }) => {
           </div>
         </div>
 
-        <div className={styles.background__light_green} style={{width: `${fatherWidth/scale + 2}px`}}>
+        <div className={styles.background__light_green} style={{width: `100vw`}}>
           <div
             className={styles.section5}
             style={fatherWidth >= fifthLimit ? { width: '1000px' } : null}>
@@ -609,7 +607,7 @@ const TheAtriumSectionsFourAndFive = ({ fatherWidth, scale }) => {
   );
 };
 
-const TheAtriumSectionsSixAndSeven = ({ fatherWidth, scale }) => {
+const TheAtriumSectionsSixAndSeven = ({ fatherWidth=500, scale=1 }) => {
   const firstLimit = 400 * scale;
   const secondLimit = 600 * scale;
   const thirdLimit = 800 * scale;
@@ -619,7 +617,7 @@ const TheAtriumSectionsSixAndSeven = ({ fatherWidth, scale }) => {
   return (
     <div
       className={styles.father_container}
-      style={{ transform: `scale(${scale})`, width: `${fatherWidth/scale}px`, transformOrigin: 'top' }}>
+      style={{ transform: `scale(${scale})`, width: `100vw`, transformOrigin: 'top' }}>
       <main >
         <div className={styles.map_background}>
           <div
@@ -685,8 +683,8 @@ const TheAtriumSectionsSixAndSeven = ({ fatherWidth, scale }) => {
           className={styles.section7}
           style={
             fatherWidth >= secondLimit
-              ? { overflow: 'hidden', width: `${fatherWidth/scale + 2}px`, flexDirection: 'row', alignItems: 'center' }
-              : {width: `${fatherWidth/scale + 2}px`}
+              ? { overflow: 'hidden', width: `100vw`, flexDirection: 'row', alignItems: 'center' }
+              : {width: `100vw`}
           }>
           <div
             className={styles.section7__one}
