@@ -1,15 +1,34 @@
 .frontend_video {
     width: 100%;
-    padding-left: 25px;
+    padding: 40px 0px 30px 25px;
 
     @media(min-width: 900px) {
-        padding-left: 35px;
+        padding: 40px 0px 30px 35px;
     }
 
-    &__container {
-        background-color: orange;
+    &__wrapper {
         width: 100%;
-        height: 550px;
         border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        aspect-ratio: 422/840;
+        
+        @media(min-width: 430px) {
+            aspect-ratio: 1/1;
+        }
+
+        @media(min-width: 690px) {
+            height: 600px;
+            aspect-ratio: unset;
+        }
+
+        video {
+            height: 100%;
+        }
+
     }
+
 }

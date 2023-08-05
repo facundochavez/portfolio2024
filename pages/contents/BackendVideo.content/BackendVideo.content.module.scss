@@ -1,16 +1,32 @@
 .backend_video {
     width: 100%;
-    padding: 20px 0 30px 25px;
+    padding: 40px 0px 30px 25px;
 
     @media(min-width: 900px) {
-        padding-left: 35px;
+        padding: 40px 0px 30px 35px;
     }
 
-    &__container {
-        background-color: orange;
+    &__wrapper {
         width: 100%;
-        height: 550px;
+        height: 600px;
         border-radius: 10px;
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        @media(max-width: 380px) {
+            height: unset;
+            aspect-ratio: 317/600;
+        }
+
+        video {
+            margin-left: -15px;
+            height: 100%;
+
+        }
+
     }
+
 }

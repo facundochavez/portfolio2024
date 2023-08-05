@@ -75,7 +75,7 @@
         "firstColor": "var(--color-3)",
         "secondColor": "var(--color-6)",
         "topText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
-        "topTextMarginRight": 20,
+        "topTextMarginRight": 50,
         "bottomText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam."
     },
     {

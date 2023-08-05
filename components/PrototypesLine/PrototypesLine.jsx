@@ -9,26 +9,25 @@ const PrototypesLine = ({ prototypes, baseVelocity = 100, height = 400, changeDi
   const x = useTransform(baseX, (v) => `${wrap(0, -50, v)}%`);
   handleTranslationX(baseX, baseVelocity, changeDirection);
 
-  const duplicatedPrototypes = prototypes.concat(prototypes);
-
   //// COMPONENT
   return (
     <motion.div
       className={styles.prototypes_line}
       style={{ x }}>
-      {duplicatedPrototypes.map((prototype, index) => {
+      {prototypes.map((prototype, index) => {
         return (
           <div
             className={styles.prototypes_line__box}
             key={index}
             style={{ height: `${prototype.heightFactor * height}px` }}>
-            <Image
-              src={`/videos/video-${prototype.id}.jpg`}
+              <video muted autoPlay loop src={`/videos/video-${prototype.id}.mp4`} />
+{/*             <Image
+              src={`/videos/video-${prototype.id}.mp4`}
               alt={`${prototype.name}'s image.`}
               width={500}
               height={prototype.heightFactor * height}
-              style={{ width: '100%', height: '100%' }}
-            />
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            /> */}
           </div>
         );
       })}

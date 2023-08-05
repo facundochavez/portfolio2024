@@ -192,9 +192,10 @@ const HeroSection = () => {
                   <br />
                   Brand consultant
                 </h1>
+                <h3>located in Argentina</h3>
               </div>
-              <div className={styles.hero__subcontainer__left__titles_container__photo}>
-                <Image src={'/images/portrait.png'} alt='facundo_chavez_portrait' fill />
+              <div className={styles.hero__subcontainer__left__titles_container__portrait}>
+                <Image src={'/images/portrait.png'} alt='Facundo Chavez portrait' fill />
               </div>
             </div>
           </div>

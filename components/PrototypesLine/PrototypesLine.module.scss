@@ -6,19 +6,25 @@
     padding-left: 25px;
     width: max-content;
 
-    @media (min-width: 900px) {
-        gap: 50px;
-        padding-left: 50px;
-    }
-
     &__box {
         position: relative;
         border-radius: 10px;
         overflow: hidden;
-        transition: all 0.5s;
 
-        &:hover {
-            filter: grayscale( 0% );
+        video {
+            height: 100%;
+        }
+    }
+
+}
+
+@media (min-width: 900px) {
+    .prototypes_line {
+        gap: 50px;
+        padding-left: 50px;
+
+        &__box {
+            border-radius: 15px;
         }
     }
 

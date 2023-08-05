@@ -1,6 +1,16 @@
 {
     "lineDesktop": [
         {
+            "id": "mapafit-mobile-one",
+            "name": "Mapafit",
+            "heightFactor": 0.95
+        },
+        {
+            "id": "mapafit-desktop-one",
+            "name": "Mapafit",
+            "heightFactor": 0.8
+        },
+        {
             "id": "turisian-mobile-one",
             "name": "Turisian",
             "heightFactor": 1
@@ -29,6 +39,25 @@
             "id": "mapafit-desktop-one",
             "name": "Mapafit",
             "heightFactor": 0.8
+        },{
+            "id": "turisian-mobile-one",
+            "name": "Turisian",
+            "heightFactor": 1
+        },
+        {
+            "id": "mapafit-mobile-two",
+            "name": "Mapafit",
+            "heightFactor": 0.95
+        },
+        {
+            "id": "superdescuentos-desktop",
+            "name": "Superdescuentos",
+            "heightFactor": 0.8
+        },
+        {
+            "id": "turisian-mobile-two",
+            "name": "Turisian",
+            "heightFactor": 0.85
         }
     ],
     "firstLineMobile": [
@@ -51,9 +80,49 @@
             "id": "streamfit-mobile",
             "name": "Streamfit",
             "heightFactor": 1
+        },
+        {
+            "id": "turisian-mobile-one",
+            "name": "Turisian",
+            "heightFactor": 1
+        },
+        {
+            "id": "mapafit-desktop-one",
+            "name": "Mapafit",
+            "heightFactor": 1
+        },
+        {
+            "id": "mapafit-mobile-one",
+            "name": "Mapafit",
+            "heightFactor": 1
+        },
+        {
+            "id": "streamfit-mobile",
+            "name": "Streamfit",
+            "heightFactor": 1
         }
     ],
     "secondLineMobile": [
+        {
+            "id": "turisian-mobile-two",
+            "name": "Turisian",
+            "heightFactor": 1
+        },
+        {
+            "id": "superdescuentos-desktop",
+            "name": "Superdescuentos",
+            "heightFactor": 1
+        },
+        {
+            "id": "mapafit-mobile-two",
+            "name": "Mapafit",
+            "heightFactor": 1
+        },
+        {
+            "id": "mapafit-desktop-two",
+            "name": "Mapafit",
+            "heightFactor": 1
+        },
         {
             "id": "turisian-mobile-two",
             "name": "Turisian",

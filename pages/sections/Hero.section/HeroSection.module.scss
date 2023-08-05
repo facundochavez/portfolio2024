@@ -65,21 +65,32 @@
 
                 &__titles {
                     h1 {
-                        font-size: 18px;
-                        line-height: 18px;
+                        font-size: 19px;
+                        line-height: 19px;
                         font-weight: 200;
                         color: var(--color--light-grey);
+                        min-width: max-content;
+                    }
+                    h3 {
+                        margin-top: 8px;
+                        padding-top: 4px;
+                        margin-left: auto;
+                        font-size: 14px !important;
+                        text-align:right;
+                        border-top: solid 1px gray;
+                        width: 124px;
+                        min-width: max-content;
                     }
                 }
 
-                &__photo {
+                &__portrait {
                     position: relative;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     overflow: hidden;
-                    min-height: 100px;
-                    min-width: 100px;
+                    min-height: 110px;
+                    min-width: 110px;
                     border-radius: 10px;
                     margin: 4px 0 0 12px;
                 }
@@ -98,16 +109,6 @@
                 min-width: max-content;
                 position: relative;
                 padding: 19px 22px;
-
-                /*  .auxiliar {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    border: 4px solid blue;
-                    border-radius: 10px;
-                } */
 
                 p {
                     font-size: 22px;
@@ -159,11 +160,19 @@
                             font-size: 28px !important;
                             line-height: 28px !important;
                         }
+                        h3 {
+                            margin-top: 9px;
+                            padding-top: 5px;
+                            font-size: 17px !important;
+                            text-align:right;
+                            border-top: solid 2px gray;
+                            width: 160px;
+                        }
                     }
 
-                    &__photo {
-                        height: 120px !important;
-                        width: 120px !important;
+                    &__portrait {
+                        height: 130px !important;
+                        width: 130px !important;
                         margin-left: 25px;
                     }
                 }

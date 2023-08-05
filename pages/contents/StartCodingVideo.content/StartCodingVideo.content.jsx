@@ -8,7 +8,7 @@ const StartCodingVideo = () => {
   //// COMPONENT
   return (
     <div className={styles.start_coding_video}>
-      {viewportWidth < 600 ?
+      {viewportWidth < 500 ?
         <video muted autoPlay loop src='/videos/video-the-atrium-mobile.webm' />
         :
         <video muted autoPlay loop src='/videos/video-the-atrium-desktop.webm' />

@@ -3,8 +3,10 @@ import styles from './YouTubeParallax.content.module.scss';
 import milestones from '@/data/milestones.data.json';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const YoutubeParallax = () => {
+  const { viewportWidth } = useIsMobile();
   const parallaxRef = useRef();
   const [tailLength, setTailLength] = useState(0);
   const topTextRef = useRef();
@@ -56,13 +58,18 @@ const YoutubeParallax = () => {
         </div>
         <div className={styles.youtube_parallax__top_container__mo_channel}>
           <div className={styles.youtube_parallax__top_container__mo_channel__video}>
-            <Image src={`/videos/image-mo-channel.jpg`} alt={`Marca Optimizada's video.`} fill />
+            <video muted autoPlay loop src='/videos/video-mo-channel.mp4' />
           </div>
         </div>
       </div>
       <div className={styles.youtube_parallax__mo_website} ref={bottomContainerRef}>
-        <div className={styles.youtube_parallax__mo_website__image}>
-          <Image src={`/videos/image-mo-website.jpg`} alt={`Marca Optimizada's website.`} fill />
+        <div className={styles.youtube_parallax__mo_website__video}>
+          {viewportWidth < 400 ?
+            <video muted loop src='/videos/video-mo-website-mobile.mp4' /> :
+            viewportWidth < 650 ?
+              <video muted loop src='/videos/video-mo-website-tablet.mp4' /> :
+              <video muted loop src='/videos/video-mo-website-desktop.mp4' />
+          }
         </div>
       </div>
     </div>

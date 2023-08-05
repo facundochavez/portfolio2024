@@ -5,7 +5,9 @@ const BackendVideo = () => {
   //// COMPONENT
   return (
     <div className={styles.backend_video}>
-      <div className={styles.backend_video__container} />
+      <div className={styles.backend_video__wrapper}>
+      <video muted autoPlay loop src='/videos/video-petpath.mp4' />
+      </div>
     </div>
   );
 };
