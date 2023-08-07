@@ -3,6 +3,7 @@ import styles from './HeroSection.module.scss';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
+import Reveal from '@/components/Reveal/Reveal';
 
 const HeroSection = () => {
   const { setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
@@ -23,6 +24,8 @@ const HeroSection = () => {
     [0.1, 0.4, 0.6],
     ['0%', '-35%', '-50%']
   );
+  const phraseOpacity = useTransform(scrollYProgressStart, [0.35, 0.6], [0, 1]);
+
   /*   const subcontainerTranslationY = useTransform(scrollYProgressStart, [0, 1], ['0%', '100%']);
   const physics = { damping: 15, mass: 0.27, stiffness: 55 };
   const subcontainerTranslationX = useSpring(transform, physics); */
@@ -42,13 +45,16 @@ const HeroSection = () => {
   const C = phraseBoxWidth;
   const D = phraseBoxHeight;
 
-  const nameRectangle = `M${A - 10} ${B} h${-A + 22} a10 10 0 0 1 -10 -10 v${-B + 22
-    } a10 10 0 0 1 10 -10 h${A - 22} a10 10 0 0 1 10 10 v${B - 22} a10 10 0 0 1 -10 10`;
-  const phraseRectangleOne = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${-D + 22
-    } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
+  const nameRectangle = `M${A - 10} ${B} h${-A + 22} a10 10 0 0 1 -10 -10 v${
+    -B + 22
+  } a10 10 0 0 1 10 -10 h${A - 22} a10 10 0 0 1 10 10 v${B - 22} a10 10 0 0 1 -10 10`;
+  const phraseRectangleOne = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${
+    -D + 22
+  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
 
-  const phraseRectangleTwo = `M2 ${D - 10} a10 10 0 0 0 10 10 h${C - 22} a10 10 0 0 0 10 -10 v${-D + 22
-    } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} `;
+  const phraseRectangleTwo = `M2 ${D - 10} a10 10 0 0 0 10 10 h${C - 22} a10 10 0 0 0 10 -10 v${
+    -D + 22
+  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} `;
 
   const [isInitialStretch, setIsInitialStretch] = useState(true);
   const phraseRectangle = isInitialStretch ? phraseRectangleOne : phraseRectangleTwo;
@@ -103,7 +109,6 @@ const HeroSection = () => {
       setContactFormHeight(
         Math.max(leftTop.clientHeight - (window.innerWidth < 900 ? 40 : 60), 330)
       );
-
     };
 
     const handlePhraseRectangleKind = () => {
@@ -128,10 +133,15 @@ const HeroSection = () => {
       handlePhraseRectangleKind();
     }, 100);
 
+    setTimeout(() => {
+      handlePathSizes();
+      handlePhraseRectangleKind();
+    }, 2000);
+
     window.addEventListener('load', () =>
       setTimeout(() => {
         handlePathSizes();
-      }, 100)
+      }, 1000)
     );
     window.addEventListener('resize', handlePathSizes);
     window.addEventListener('scroll', handlePhraseRectangleKind);
@@ -150,10 +160,14 @@ const HeroSection = () => {
         <section>
           <div className={styles.hero__subcontainer__left}>
             <div className={styles.hero__subcontainer__left__top} />
-            <h3>Hi there! I am</h3>
+            <Reveal delay={0.5} once={false}>
+              <h3>Hi there! I am</h3>
+            </Reveal>
 
             <div className={styles.hero__subcontainer__left__name_box}>
-              <h2>Facundo Chavez</h2>
+              <Reveal delay={0.2} once={false}>
+                <h2>Facundo Chavez</h2>
+              </Reveal>
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
                   <linearGradient id='nameGradient'>
@@ -166,6 +180,9 @@ const HeroSection = () => {
                   </linearGradient>
                 </defs>
                 <motion.path
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.8, delay: 0.15 }}
                   pathLength={namePathLength}
                   d={nameRectangle}
                   stroke='url(#nameGradient)'
@@ -184,19 +201,23 @@ const HeroSection = () => {
             </div>
 
             <div className={styles.hero__subcontainer__left__titles_container}>
-              <div className={styles.hero__subcontainer__left__titles_container__titles}>
-                <h1>
-                  Front-end developer
-                  <br />
-                  UX/UI designer
-                  <br />
-                  Brand consultant
-                </h1>
-                <h3>located in Argentina</h3>
-              </div>
-              <div className={styles.hero__subcontainer__left__titles_container__portrait}>
-                <Image src={'/images/portrait.png'} alt='Facundo Chavez portrait' fill />
-              </div>
+              <Reveal delay={0.3} fromTop once={false}>
+                <div className={styles.hero__subcontainer__left__titles_container__titles}>
+                  <h1>
+                    Front-end developer
+                    <br />
+                    UX/UI designer
+                    <br />
+                    Brand consultant
+                  </h1>
+                  <h3>located in Argentina</h3>
+                </div>
+              </Reveal>
+              <Reveal delay={0.2} fromTop once={false}>
+                <div className={styles.hero__subcontainer__left__titles_container__portrait}>
+                  <Image src={'/images/portrait.png'} alt='Facundo Chavez portrait' fill />
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -205,11 +226,8 @@ const HeroSection = () => {
             <div
               className={styles.hero__subcontainer__right__phrase_box}
               style={{ marginBottom: phraseBoxMarginBottom }}>
-              <p>
-                Actually, I’m a civil engineer
-                <br />
-                who one day wanted to...
-              </p>
+              <motion.p style={{ opacity: phraseOpacity }}>Actually, I’m a civil engineer</motion.p>
+              <motion.p style={{ opacity: phraseOpacity }}>who one day wanted to...</motion.p>
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
                   <linearGradient id='phraseGradient'>

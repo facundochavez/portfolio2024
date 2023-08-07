@@ -18,16 +18,6 @@
             gap: 23px;
         }
 
-        &__title {
-            display: flex;
-            font-size: 28px !important;
-
-            @media(min-width: 900px) {
-                font-size: 34px !important;
-                margin-top: -5px;
-            }
-        }
-
         &__subcontainer {
             width: 100%;
             gap: 50px;

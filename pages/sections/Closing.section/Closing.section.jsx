@@ -25,9 +25,10 @@ const ClosingSection = () => {
   const animationStart = Math.max(0, -0.000875 * viewportHeight + 0.9875);
   const subcontainerTranslationX = useTransform(
     scrollYProgress,
-    [animationStart, 0.85],
-    ['0%', '-50%']
+    [animationStart, (animationStart + 0.85) / 2, 0.85],
+    ['0%', '-35%', '-50%']
   );
+  const phraseOpacity = useTransform(scrollYProgress, [0.6, 0.85], [0, 1]);
 
   // PATH INITIAL VALUES
   const [horizontalLineWidth, setHorizontalLineWidth] = useState(0);
@@ -42,8 +43,9 @@ const ClosingSection = () => {
   const D = phraseBoxHeight;
 
   const horizontalLine = `M${-A + 2} ${D - B} v${B - 10} a10 10 0 0 0 10 10  h${A + 1}`;
-  const phraseRectangle = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${-D + 22
-    } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
+  const phraseRectangle = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${
+    -D + 22
+  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
 
   // PATH ANIMATION
   const horizontalPathLength = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
@@ -83,7 +85,7 @@ const ClosingSection = () => {
     window.addEventListener('scroll', handlePathSizes);
     return () => {
       window.removeEventListener('scroll', handlePathSizes);
-    }
+    };
   }, []);
 
   // HANDLE CONTACT FORM
@@ -95,7 +97,7 @@ const ClosingSection = () => {
         setIsContactFormShow(false);
       }
       // CONTEXT MODIFICATIONS
-      setClosingBtnDirection(scrollYProgress.current > .25 ? 'left' : 'up');
+      setClosingBtnDirection(scrollYProgress.current > 0.25 ? 'left' : 'up');
     };
 
     handleContactFormShow();
@@ -104,7 +106,6 @@ const ClosingSection = () => {
       window.removeEventListener('scroll', handleContactFormShow);
     };
   }, []);
-
 
   //// COMPONENT
   return (
@@ -141,7 +142,7 @@ const ClosingSection = () => {
 
             <div className={styles.closing__subcontainer__right__phrase_box}>
               {viewportWidth < 370 ? (
-                <p>
+                <motion.p style={{ opacity: phraseOpacity }}>
                   After all,
                   <br />
                   I love solving problems
@@ -149,15 +150,15 @@ const ClosingSection = () => {
                   with design and code.
                   <br />
                   So, why don't we talk?
-                </p>
+                </motion.p>
               ) : (
-                <p>
+                <motion.p style={{ opacity: phraseOpacity }}>
                   After all, I love solving problems
                   <br />
                   with design and code. So, why
                   <br />
                   don't we talk?
-                </p>
+                </motion.p>
               )}
 
               <svg xmlns='http://www.w3.org/2000/svg'>

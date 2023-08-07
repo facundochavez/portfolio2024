@@ -4,6 +4,7 @@ import milestones from '@/data/milestones.data.json';
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import useIsMobile from '@/hooks/useIsMobile';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const YoutubeParallax = () => {
   const { viewportWidth } = useIsMobile();
@@ -11,6 +12,22 @@ const YoutubeParallax = () => {
   const [tailLength, setTailLength] = useState(0);
   const topTextRef = useRef();
   const bottomContainerRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: parallaxRef,
+    offset: ['start end', 'end start']
+  });
+
+  const videoTranslationY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    viewportWidth < 500 ? [0, 0] : viewportWidth < 820 ? [-40, 40] : [-80, 80]
+  );
+  const topTextTranslationY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    viewportWidth < 820 ? [0, 0] : [20, -20]
+  );
 
   useEffect(() => {
     const handleTailLength = () => {
@@ -50,26 +67,34 @@ const YoutubeParallax = () => {
   return (
     <div className={styles.youtube_parallax} ref={parallaxRef}>
       <div className={styles.youtube_parallax__top_container}>
-        <div className={styles.youtube_parallax__top_container__top_text} ref={topTextRef}>
+        <motion.div
+          className={styles.youtube_parallax__top_container__top_text}
+          ref={topTextRef}
+          style={{ y: topTextTranslationY }}>
           <TextBox
             milestone={milestones.find((milestone) => milestone.id === 'youtube')}
             tailLength={tailLength}
           />
-        </div>
+        </motion.div>
         <div className={styles.youtube_parallax__top_container__mo_channel}>
-          <div className={styles.youtube_parallax__top_container__mo_channel__video}>
+          <motion.div
+            className={styles.youtube_parallax__top_container__mo_channel__video}
+            style={{
+              y: videoTranslationY
+            }}>
             <video muted autoPlay loop src='/videos/video-mo-channel.mp4' />
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className={styles.youtube_parallax__mo_website} ref={bottomContainerRef}>
         <div className={styles.youtube_parallax__mo_website__video}>
-          {viewportWidth < 400 ?
-            <video muted loop src='/videos/video-mo-website-mobile.mp4' /> :
-            viewportWidth < 650 ?
-              <video muted loop src='/videos/video-mo-website-tablet.mp4' /> :
-              <video muted loop src='/videos/video-mo-website-desktop.mp4' />
-          }
+          {viewportWidth < 400 ? (
+            <video muted loop src='/videos/video-mo-website-mobile.mp4' />
+          ) : viewportWidth < 650 ? (
+            <video muted loop src='/videos/video-mo-website-tablet.mp4' />
+          ) : (
+            <video muted loop src='/videos/video-mo-website-desktop.mp4' />
+          )}
         </div>
       </div>
     </div>

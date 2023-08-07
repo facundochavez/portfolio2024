@@ -1,0 +1,12 @@
+.reveal_title {
+    h3{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 28px !important;
+
+        @media(min-width: 900px) {
+            font-size: 34px !important;
+            margin-top: -5px;
+        }
+    }
+}

@@ -15,6 +15,7 @@
         align-items: center;
         overflow: hidden;
         aspect-ratio: 422/840;
+        box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.03);
         
         @media(min-width: 430px) {
             aspect-ratio: 1/1;

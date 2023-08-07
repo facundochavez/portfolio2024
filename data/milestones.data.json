@@ -36,7 +36,7 @@
         ],
         "firstColor": "var(--color-1)",
         "secondColor": "var(--color-2)",
-        "topText": "For years, I have been dedicated to the study and design of graphic brands from a pragmatic approach, improving my work methodology through the so-called brand performance parameters.  improving my work methodology through the so-called brand performance parameters."
+        "topText": "My first approach to web development was... from a pragmatic approach, improving my work methodology through the so-called brand performance parameters.  improving my work methodology through the so-called brand performance parameters."
     },
     {
         "id": "prototype",
@@ -74,7 +74,7 @@
         ],
         "firstColor": "var(--color-3)",
         "secondColor": "var(--color-6)",
-        "topText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
+        "topText": "Too simple design? Meaby, but Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
         "topTextMarginRight": 50,
         "bottomText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam."
     },

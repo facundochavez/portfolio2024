@@ -12,25 +12,32 @@
 
     &__path {
         position: absolute;
+        min-width: fit-content;
         top: 5px;
         right: 0;
-        width: min-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        overflow: hidden;
 
-        &__line {
+        
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             height: 100%;
-            width: 1px;
-            background-color: gray;
+
+            &__line {
+                height: 100%;
+                width: 1px;
+                background-color: gray;
+            }
+
+            &__circle {
+                background-color: gray;
+                min-width: 7px;
+                min-height: 7px;
+                border-radius: 3.5px;
+            }
         }
 
-        &__circle {
-            background-color: gray;
-            min-width: 7px;
-            min-height: 7px;
-            border-radius: 3.5px;
-        }
     }
 }
 

@@ -21,7 +21,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
       if (message) {
         const messageHeight = message.clientHeight;
         const newRows = Math.floor(
-          (messageHeight - (window.innerWidth < 900 ? 14 : 16) - 20) /
+          (messageHeight - (window.innerWidth < 900 ? 14 : 16) - 15) /
           (window.innerWidth < 900 ? 25.14 : 28.28)
         );
         setMessageRows(newRows);

@@ -1,0 +1,10 @@
+.reveal {
+    display: flex;
+    position: relative;
+    min-height: max-content;
+    contain: paint;
+
+    &__wrapper {
+        min-height: max-content;
+    }
+}

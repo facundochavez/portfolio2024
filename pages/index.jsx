@@ -11,6 +11,7 @@ import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
 import ClosingSection from './sections/Closing.section/Closing.section';
 import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
+import DottedBackground from '@/components/DottedBackground/DottedBackground';
 
 const Home = () => {
   const contents = [
@@ -27,6 +28,7 @@ const Home = () => {
         <title>Facundo Chavez | PORTFOLIO 2023</title>
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
       </Head>
+      <DottedBackground />
       <Header />
       <HeroSection />
       {milestones.map((milestone, index) => {
@@ -38,6 +40,6 @@ const Home = () => {
       <ScrollToTopButton />
     </div>
   );
-}
+};
 
 export default Home;

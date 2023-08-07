@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 const Header = () => {
   const [isHeaderShow, setIsHeaderShow] = useState(true);
   const { contactFormHeight, isContactFormOpen, setIsContactFormOpen } = useGlobalContext();
+  const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
     const handleHeaderShow = () => {
@@ -18,6 +19,7 @@ const Header = () => {
         setIsHeaderShow(false);
         setIsContactFormOpen(false);
       }
+      setIsFirstRender(false);
     };
     handleHeaderShow();
     window.addEventListener('scroll', handleHeaderShow);
@@ -37,7 +39,8 @@ const Header = () => {
           exit={{ opacity: 0, y: '-100px' }}
           transition={{
             type: 'spring',
-            mass: 0.2
+            mass: 0.2,
+            delay: isFirstRender ? 0.7 : 0
           }}>
           <div className={styles.header__wrapper}>
             <nav className={styles.header__wrapper__nav}>
