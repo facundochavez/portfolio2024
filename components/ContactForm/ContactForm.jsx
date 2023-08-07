@@ -4,8 +4,10 @@ import useIsMobile from '@/hooks/useIsMobile';
 import { useEffect, useState } from 'react';
 import IconLinks from '../IconLinks/IconLinks';
 import { motion } from 'framer-motion';
+import { useGlobalContext } from '@/context/global.context';
 
 const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid = false }) => {
+  const { lenguage } = useGlobalContext();
   const { viewportWidth, viewportHeight } = useIsMobile();
   const [form] = Form.useForm();
   const [messageRows, setMessageRows] = useState(5);
@@ -22,7 +24,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
         const messageHeight = message.clientHeight;
         const newRows = Math.floor(
           (messageHeight - (window.innerWidth < 900 ? 14 : 16) - 15) /
-          (window.innerWidth < 900 ? 25.14 : 28.28)
+            (window.innerWidth < 900 ? 25.14 : 28.28)
         );
         setMessageRows(newRows);
       }
@@ -78,14 +80,17 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   rules={[
                     {
                       required: true,
-                      message: 'Please input your name.'
-                    },
-                    {
-                      type: 'text',
-                      message: 'Please input a valid name.'
+                      message:
+                        lenguage === 'en'
+                          ? 'Please input your name.'
+                          : 'Por favor, ingresa tu nombre.'
                     }
                   ]}>
-                  <Input placeholder='Name' size='large' bordered={false} />
+                  <Input
+                    placeholder={lenguage === 'en' ? 'Name' : 'Nombre'}
+                    size='large'
+                    bordered={false}
+                  />
                 </Form.Item>
                 <Form.Item
                   name='company'
@@ -93,14 +98,17 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   rules={[
                     {
                       required: true,
-                      message: 'Please input your company.'
-                    },
-                    {
-                      type: 'text',
-                      message: 'Please input a valid company.'
+                      message:
+                        lenguage === 'en'
+                          ? 'Please input your company.'
+                          : 'Por favor, ingresa tu empresa.'
                     }
                   ]}>
-                  <Input placeholder='Company' size='large' bordered={false} />
+                  <Input
+                    placeholder={lenguage === 'en' ? 'Company' : 'Empresa'}
+                    size='large'
+                    bordered={false}
+                  />
                 </Form.Item>
               </motion.div>
               <motion.div className={styles.contact_form__email} variants={childrenAnimation}>
@@ -109,11 +117,11 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   rules={[
                     {
                       required: true,
-                      message: 'Please input your E-mail.'
+                      message: lenguage === 'en' ? 'Please input your E-mail.' : 'Por favor, ingresa tu E-mail.'
                     },
                     {
                       type: 'email',
-                      message: 'Please input a valid E-mail.'
+                      message: lenguage === 'en' ? 'Please input a valid E-mail.' : 'Por favor, ingresa un E-mail válido.'
                     }
                   ]}>
                   <Input placeholder='E-mail' size='large' bordered={false} />
@@ -128,11 +136,11 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     rules={[
                       {
                         required: true,
-                        message: 'Please input your message.'
+                        message: lenguage === 'en' ? 'Please write your message.' : 'Por favor, escribe tu mensaje.'
                       }
                     ]}>
                     <Input.TextArea
-                      placeholder='Message'
+                      placeholder={lenguage === 'en' ? 'Message' : 'Mensaje'}
                       size='large'
                       bordered={false}
                       rows={messageRows}
@@ -144,14 +152,17 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 </div>
               </motion.div>
             </motion.header>
-            <motion.footer className={styles.contact_form__footer} variants={childrenAnimation} style={{ '--align-items': !icons ? 'center' : 'flex-end' }} >
+            <motion.footer
+              className={styles.contact_form__footer}
+              variants={childrenAnimation}
+              style={{ '--align-items': !icons ? 'center' : 'flex-end' }}>
               <div className={styles.contact_form__footer__left}>
                 {icons && <IconLinks />}
                 <a
                   href='#'
                   className={styles.contact_form__footer__left__link}
                   style={{ color: `var(${colorThree})` }}>
-                  Or send an E-mail
+                  {lenguage === 'en' ? 'Or send an E-mail' : 'O envía un E-mail'}
                 </a>
               </div>
               <Button
@@ -160,7 +171,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 size='large'
                 className={styles.contact_form__footer__button} /* loading={loading} */
               >
-                Send
+                {lenguage === 'en' ? 'Send' : 'Enviar'}
               </Button>
             </motion.footer>
           </Form>

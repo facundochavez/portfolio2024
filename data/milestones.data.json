@@ -1,7 +1,8 @@
 [
     {
         "id": "brands",
-        "title": "design brands,",
+        "titleEn": "design brands,",
+        "titleEsp": "diseñar marcas,",
         "technologies": [
             {
                 "id": "adobe-illustrator",
@@ -19,7 +20,8 @@
     },
     {
         "id": "youtube",
-        "title": "create a YouTube channel and its website,",
+        "titleEn": "create a YouTube channel and its website,",
+        "titleEsp": "crear un canal de YouTube y su sitio web,",
         "technologies": [
             {
                 "id": "adobe-premiere-pro",
@@ -40,7 +42,8 @@
     },
     {
         "id": "prototype",
-        "title": "prototype stuff,",
+        "titleEn": "prototype stuff,",
+        "titleEsp": "prototipar cosas,",
         "technologies": [
             {
                 "id": "adobe-xd",
@@ -57,7 +60,8 @@
     },
     {
         "id": "start-coding",
-        "title": "start coding,",
+        "titleEn": "start coding,",
+        "titleEsp": "comenzar a escribir código,",
         "technologies": [
             {
                 "id": "html",
@@ -80,7 +84,8 @@
     },
     {
         "id": "front-end",
-        "title": "learn better front-end technologies,",
+        "titleEn": "learn better front-end technologies,",
+        "titleEsp": "aprender mejores tecnologías front-end,",
         "technologies": [
             {
                 "id": "react-js",
@@ -108,7 +113,8 @@
     },
     {
         "id": "back-end",
-        "title": "and learn some back-end.",
+        "titleEn": "and learn some back-end.",
+        "titleEsp": "y aprender algo de back-end.",
         "technologies": [
             {
                 "id": "next-js",

@@ -10,7 +10,8 @@ import { useGlobalContext } from '@/context/global.context';
 
 const ClosingSection = () => {
   const { viewportWidth, viewportHeight, isMobile } = useIsMobile();
-  const { isContactFormShow, setIsContactFormShow, setClosingBtnDirection } = useGlobalContext();
+  const { lenguage, isContactFormShow, setIsContactFormShow, setClosingBtnDirection } =
+    useGlobalContext();
 
   const milestoneRef = useRef();
   const [subcontainerHeight, setSetsubcontainerHeight] = useState(0);
@@ -141,23 +142,43 @@ const ClosingSection = () => {
             </AnimatePresence>
 
             <div className={styles.closing__subcontainer__right__phrase_box}>
-              {viewportWidth < 370 ? (
+              {lenguage === 'en' ? (
+                viewportWidth < 370 ? (
+                  <motion.p style={{ opacity: phraseOpacity }}>
+                    After all,
+                    <br />
+                    I love solving problems
+                    <br />
+                    with design and code.
+                    <br />
+                    So, why don't we talk?
+                  </motion.p>
+                ) : (
+                  <motion.p style={{ opacity: phraseOpacity }}>
+                    After all, I love solving problems
+                    <br />
+                    with design and code. So, why
+                    <br />
+                    don't we talk?
+                  </motion.p>
+                )
+              ) : viewportWidth < 370 ? (
                 <motion.p style={{ opacity: phraseOpacity }}>
-                  After all,
+                  Despues de todo, amo
                   <br />
-                  I love solving problems
+                  resolver problemas con
                   <br />
-                  with design and code.
+                  diseño y código. Así que
                   <br />
-                  So, why don't we talk?
+                  ¿por qué no hablamos?
                 </motion.p>
               ) : (
                 <motion.p style={{ opacity: phraseOpacity }}>
-                  After all, I love solving problems
+                  Después de todo, amo resolver
                   <br />
-                  with design and code. So, why
+                  problemas con diseño y código.
                   <br />
-                  don't we talk?
+                  Así que, ¿por qué no hablamos?
                 </motion.p>
               )}
 

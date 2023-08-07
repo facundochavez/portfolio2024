@@ -1,12 +1,12 @@
 import { useGlobalContext } from '@/context/global.context';
 import styles from './HeroSection.module.scss';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from '@/components/Reveal/Reveal';
 
 const HeroSection = () => {
-  const { setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
+  const { lenguage, setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
 
   // HORIZONTAL SCROLLING
   const heroSectionRef = useRef();
@@ -160,10 +160,15 @@ const HeroSection = () => {
         <section>
           <div className={styles.hero__subcontainer__left}>
             <div className={styles.hero__subcontainer__left__top} />
-            <Reveal delay={0.5} once={false}>
-              <h3>Hi there! I am</h3>
-            </Reveal>
-
+            {lenguage === 'en' ? (
+              <Reveal delay={0.5} once={false}>
+                <h3>Hi there! I am</h3>
+              </Reveal>
+            ) : (
+              <Reveal delay={0.5} once={false}>
+                <h3>¡Hola! Soy</h3>
+              </Reveal>
+            )}
             <div className={styles.hero__subcontainer__left__name_box}>
               <Reveal delay={0.2} once={false}>
                 <h2>Facundo Chavez</h2>
@@ -203,14 +208,29 @@ const HeroSection = () => {
             <div className={styles.hero__subcontainer__left__titles_container}>
               <Reveal delay={0.3} fromTop once={false}>
                 <div className={styles.hero__subcontainer__left__titles_container__titles}>
-                  <h1>
-                    Front-end developer
-                    <br />
-                    UX/UI designer
-                    <br />
-                    Brand consultant
-                  </h1>
-                  <h3>located in Argentina</h3>
+                  {lenguage === 'en' ? (
+                    <>
+                      <h1>
+                        Front-end developer
+                        <br />
+                        Ux/Ui designer
+                        <br />
+                        Brand consultant
+                      </h1>
+                      <h3>located in Argentina</h3>
+                    </>
+                  ) : (
+                    <>
+                      <h1 style={{ fontSize: '16.5px', lineHeight: '18px' }}>
+                        Desarrollador front-end
+                        <br />
+                        Diseñador Ux/Ui
+                        <br />
+                        Consultor de marca
+                      </h1>
+                      <h3>desde Argentina</h3>
+                    </>
+                  )}
                 </div>
               </Reveal>
               <Reveal delay={0.2} fromTop once={false}>
@@ -226,8 +246,14 @@ const HeroSection = () => {
             <div
               className={styles.hero__subcontainer__right__phrase_box}
               style={{ marginBottom: phraseBoxMarginBottom }}>
-              <motion.p style={{ opacity: phraseOpacity }}>Actually, I’m a civil engineer</motion.p>
-              <motion.p style={{ opacity: phraseOpacity }}>who one day wanted to...</motion.p>
+              <motion.p style={{ opacity: phraseOpacity }}>
+                {lenguage === 'en'
+                  ? 'Actually, I’m a civil engineer'
+                  : 'De hecho, soy un ingeniero'}
+              </motion.p>
+              <motion.p style={{ opacity: phraseOpacity }}>
+                {lenguage === 'en' ? 'who one day wanted to...' : 'civil que un día quizo...'}
+              </motion.p>
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
                   <linearGradient id='phraseGradient'>

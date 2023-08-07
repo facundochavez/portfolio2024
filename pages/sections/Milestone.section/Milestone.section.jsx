@@ -4,8 +4,10 @@ import TextBox from '@/components/TextBox/TextBox';
 import RevealTitle from '@/components/RevealTitle/RevealTitle';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { useGlobalContext } from '@/context/global.context';
 
 const MilestoneSection = ({ milestone, content, milestoneRef }) => {
+  const { lenguage } = useGlobalContext();
   const [isOnce, setIsOnce] = useState(false);
   const mainRef = useRef();
   const mainControls = useAnimation();
@@ -42,7 +44,11 @@ const MilestoneSection = ({ milestone, content, milestoneRef }) => {
       <div className={styles.milestone}>
         <PathLine milestone={milestone} />
         <header className={styles.milestone__header}>
-          <RevealTitle title={milestone.title} isOnce={isOnce} />
+          {lenguage === 'en' ? (
+            <RevealTitle title={milestone.titleEn} isOnce={isOnce} />
+          ) : (
+            <RevealTitle title={milestone.titleEsp} isOnce={isOnce} />
+          )}
           <div className={styles.milestone__header__subcontainer}>
             <TechnologiesBox milestone={milestone} />
             {milestone.topText && milestone.id !== 'youtube' && (

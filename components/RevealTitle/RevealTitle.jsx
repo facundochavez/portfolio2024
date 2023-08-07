@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './RevealTitle.module.scss';
 import Reveal from '../Reveal/Reveal';
+import { useGlobalContext } from '@/context/global.context';
 
 const RevealTitle = ({ title, isOnce = false }) => {
+  const { lenguage } = useGlobalContext();
   const words = title.split(' ');
   const [delays, setDelays] = useState([]);
   const fatherRef = useRef(null);
@@ -29,7 +31,7 @@ const RevealTitle = ({ title, isOnce = false }) => {
     <div className={styles.reveal_title} ref={fatherRef}>
       <h3>
         {words.map((word, index) => (
-          <Reveal key={index} delay={delays[index]}>
+          <Reveal key={index} delay={lenguage === 'en' ? delays[index] : 0.2}>
             <span ref={(el) => (spanRefs.current[index] = el)}>{word}&nbsp;</span>
           </Reveal>
         ))}

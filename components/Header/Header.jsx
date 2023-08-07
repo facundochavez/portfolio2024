@@ -8,7 +8,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const Header = () => {
   const [isHeaderShow, setIsHeaderShow] = useState(true);
-  const { contactFormHeight, isContactFormOpen, setIsContactFormOpen } = useGlobalContext();
+  const { lenguage, contactFormHeight, isContactFormOpen, setIsContactFormOpen } =
+    useGlobalContext();
   const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
@@ -50,7 +51,7 @@ const Header = () => {
                 className={styles.header__wrapper__nav__contact}
                 style={isContactFormOpen ? { color: 'var(--color-3)' } : null}
                 onClick={() => setIsContactFormOpen(!isContactFormOpen)}>
-                Contact
+                {lenguage === 'en' ? 'Contact' : 'Contacto'}
               </span>
             </nav>
 

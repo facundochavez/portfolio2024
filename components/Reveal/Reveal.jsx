@@ -23,6 +23,7 @@ const Reveal = ({ children, delay = 0, once = true, fromTop = false }) => {
         variants={{ hidden: { y: fromTop? '-100%' : '100%' }, visible: { y: 0 } }}
         initial='hidden'
         animate={mainControls}
+        exit='hidden'
         transition={{ delay: delay, type: 'spring', mass: 0.2, duration: 0.5 }}>
         {children}
       </motion.div>
