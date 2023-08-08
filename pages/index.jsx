@@ -52,7 +52,7 @@ const Home = () => {
         if (milestone.id !== 'back-end') {
           return (
             <div key={index}>
-              <MilestoneLayout index={index} milestone={milestone} />
+              <MilestoneLayout  key={index} index={index} milestone={milestone} />
             </div>
           );
         }

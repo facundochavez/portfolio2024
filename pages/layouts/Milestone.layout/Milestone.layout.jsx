@@ -25,7 +25,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
 
   const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
-  const [isOnce, setIsOnce] = useState(false);
+/*   const [isOnce, setIsOnce] = useState(false); */
   const mainRef = useRef();
   const mainControls = useAnimation();
   const variants = {
@@ -42,7 +42,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
     }
   }, [isInView]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     const handleIsOnce = () => {
       const milestoneRect = document.querySelector(`.${styles.milestone}`).getBoundingClientRect();
       const newIsOnce = window.scrollY > milestoneRect.top;
@@ -53,7 +53,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
     return () => {
       window.removeEventListener('scroll', handleIsOnce);
     };
-  }, []);
+  }, []); */
 
   //// COMPONENT
   return (
@@ -62,9 +62,9 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
         <PathLine milestone={milestone} />
         <header className={styles.milestone__header}>
           {lenguage === 'en' ? (
-            <RevealTitle title={milestone.titleEn} isOnce={isOnce} />
+            <RevealTitle title={milestone.titleEn} isOnce={true} />
           ) : (
-            <RevealTitle title={milestone.titleEs} isOnce={isOnce} />
+            <RevealTitle title={milestone.titleEs} isOnce={true} />
           )}
           <div className={styles.milestone__header__subcontainer}>
             <div className={styles.milestone__header__subcontainer__technologies_box}>
