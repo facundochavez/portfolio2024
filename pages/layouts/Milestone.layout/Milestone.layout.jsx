@@ -1,5 +1,5 @@
 import TechnologiesBox from '@/components/TechnologiesBox/TechnologiesBox';
-import styles from './Milestone.section.module.scss';
+import styles from './Milestone.layout.module.scss';
 import TextBox from '@/components/TextBox/TextBox';
 import RevealTitle from '@/components/RevealTitle/RevealTitle';
 import { motion, useAnimation, useInView } from 'framer-motion';

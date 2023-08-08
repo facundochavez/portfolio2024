@@ -22,7 +22,7 @@ const Home = () => {
     <FrontendVideo />
   ];
 
-/*   const texts = [
+  /*   const texts = [
     {
       topText: <BrandsTopText />
     },
@@ -54,9 +54,9 @@ const Home = () => {
       <DottedBackground />
       <Header />
       <HeroLayout />
-      {milestones.map((milestone, index) => {
-        if (milestone.id !== 'back-end') {
-          return <MilestoneLayout key={index} milestone={milestone} content={contents[index]} />;
+      {contents.map((content, index) => {
+        if (milestones[index].id !== 'back-end') {
+          return <MilestoneLayout key={index} milestone={milestones[index]} content={content} />;
         }
       })}
       <ClosingLayout />
