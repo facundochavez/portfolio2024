@@ -19,8 +19,8 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
     youtube: <YoutubeParallax />,
     prototypes: <PrototypesCarousel />,
     'start-coding': <StartCodingVideo />,
-    frontend: <FrontendVideo />,
-    backend: <BackendVideo />
+    'front-end': <FrontendVideo />,
+    'back-end': <BackendVideo />
   };
 
   const { viewportWidth } = useIsMobile();
@@ -83,7 +83,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
+          transition={{ delay: 0.35, duration: 0.5, mass: 0.2 }}>
           {contents[milestone.id]}
         </motion.main>
         <motion.footer
@@ -91,7 +91,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.4, duration: 0.5, mass: 0.2 }}>
+          transition={{ delay: 0.45, duration: 0.5, mass: 0.2 }}>
           {milestone.bottomTextEn && (
             <p
               style={{
@@ -150,7 +150,7 @@ const PathLine = ({ milestone }) => {
           style={{ backgroundColor: milestone.firstColor }}
         />
       )}
-      <motion.div
+      <div
         className={styles.pathline__circle}
         style={{ backgroundColor: milestone.firstColor }}
         variants={{ circleHidden: { scale: 0 }, circleVisible: { scale: 1 } }}
@@ -158,7 +158,7 @@ const PathLine = ({ milestone }) => {
         animate={circleControls}
         transition={{ delay: 0.2 }}
       />
-      <motion.div
+      <div
         className={styles.pathline__bottom_line}
         style={{
           backgroundImage: `linear-gradient(to bottom, ${milestone.firstColor}, ${milestone.secondColor})`,

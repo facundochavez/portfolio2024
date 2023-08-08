@@ -29,7 +29,7 @@ const TextBox = ({ milestone, tailLength = 78 }) => {
     <div
       className={styles.text_box}
       style={{
-        marginRight:
+        right:
           milestone.id === 'start-coding'
             ? viewportWidth < 900
               ? '18px'
@@ -42,7 +42,7 @@ const TextBox = ({ milestone, tailLength = 78 }) => {
         variants={{ textHidden: { opacity: 0 }, textVisible: { opacity: 1 } }}
         initial='textHidden'
         animate={mainControls}
-        transition={{ delay: 0.7, duration: 0.5 }}>
+        transition={{ delay: 0.65, duration: 0.5 }}>
         {lenguage === 'en' ? milestone.topTextEn : milestone.topTextEs}
       </motion.p>
       <div
@@ -56,7 +56,7 @@ const TextBox = ({ milestone, tailLength = 78 }) => {
           }}
           initial='pathHidden'
           animate={pathControls}
-          transition={{ delay: 0.5, duration: 0.5 }}>
+          transition={{ delay: 0.55, duration: 0.5 }}>
           <div className={styles.text_box__path__wrapper__line}></div>
           <div className={styles.text_box__path__wrapper__circle}></div>
         </motion.div>
