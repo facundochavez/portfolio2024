@@ -15,9 +15,9 @@ import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.con
 
 const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
   const contents = [
-    <BrandsCarousel />,
     <YoutubeParallax />,
-    <PrototypesCarousel />,
+    <YoutubeParallax />,
+    <YoutubeParallax />,
     <StartCodingVideo />,
     <FrontendVideo />,
     <BackendVideo />

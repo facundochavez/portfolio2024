@@ -23,7 +23,7 @@ const BrandsLine = ({ brands, baseVelocity = 100 }) => {
       {duplicatedBrands.map((brand, index) => {
         return (
           <div key={index}>
-            <BrandBox brand={brand} />
+            <BrandBox key={index} brand={brand} />
           </div>
         );
       })}
