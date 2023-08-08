@@ -8,7 +8,7 @@ import useIsMobile from '@/hooks/useIsMobile';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import { useGlobalContext } from '@/context/global.context';
 
-const ClosingLayout = () => {
+const ClosingSection = () => {
   const { viewportWidth, viewportHeight, isMobile } = useIsMobile();
   const { lenguage, isContactFormShow, setIsContactFormShow, setClosingBtnDirection } =
     useGlobalContext();
@@ -116,6 +116,7 @@ const ClosingLayout = () => {
         style={{ x: subcontainerTranslationX, height: subcontainerHeight, top: subcontainerTop }}>
         <div className={styles.closing__subcontainer__left}>
           <MilestoneLayout
+            index={5}
             milestoneRef={milestoneRef}
             milestone={milestones.find((milestone) => milestone.id === 'back-end')}
             content={<BackendVideo />}
@@ -218,4 +219,4 @@ const ClosingLayout = () => {
   );
 };
 
-export default ClosingLayout;
+export default ClosingSection;

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from '@/components/Reveal/Reveal';
 
-const HeroLayout = () => {
+const HeroSection = () => {
   const { lenguage, setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
 
   // HORIZONTAL SCROLLING
@@ -289,4 +289,4 @@ const HeroLayout = () => {
   );
 };
 
-export default HeroLayout;
+export default HeroSection;

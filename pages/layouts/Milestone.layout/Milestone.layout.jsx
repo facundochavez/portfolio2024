@@ -6,9 +6,23 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
+import BrandsCarousel from '@/pages/contents/BrandsCarousel.content/BrandsCarousel.content';
+import YoutubeParallax from '@/pages/contents/YouTubeParallax.content/YouTubeParallax.content';
+import PrototypesCarousel from '@/pages/contents/PrototypesCarousel.content/PrototypesCarousel.content';
+import StartCodingVideo from '@/pages/contents/StartCodingVideo.content/StartCodingVideo.content';
+import FrontendVideo from '@/pages/contents/FrontendVideo.content/FrontendVideo.content';
+import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.content';
 
+const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
+  const contents = [
+    <BrandsCarousel />,
+    <YoutubeParallax />,
+    <PrototypesCarousel />,
+    <StartCodingVideo />,
+    <FrontendVideo />,
+    <BackendVideo />
+  ];
 
-const MilestoneLayout = ({ milestone, content, milestoneRef }) => {
   const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
   const [isOnce, setIsOnce] = useState(false);
@@ -70,7 +84,7 @@ const MilestoneLayout = ({ milestone, content, milestoneRef }) => {
           initial='mainHidden'
           animate={mainControls}
           transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
-          {content}
+          {contents[index]}
         </motion.main>
         <motion.footer
           className={styles.milestone__footer}
@@ -82,7 +96,11 @@ const MilestoneLayout = ({ milestone, content, milestoneRef }) => {
             <p
               style={{
                 paddingRight:
-                  milestone.id === 'start-coding' || milestone.id === 'prototype'? (viewportWidth < 900 ? '5px' : '30px') : null
+                  milestone.id === 'start-coding' || milestone.id === 'prototype'
+                    ? viewportWidth < 900
+                      ? '5px'
+                      : '30px'
+                    : null
               }}>
               {lenguage === 'en' ? milestone.bottomTextEn : milestone.bottomTextEs}
             </p>

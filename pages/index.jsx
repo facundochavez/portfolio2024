@@ -1,28 +1,22 @@
 import Head from 'next/head';
-import HeroLayout from './layouts/Hero.layout/Hero.layout';
-import MilestoneLayout from './layouts/Milestone.layout/Milestone.layout';
+import HeroLayout from '@/pages/layouts/Hero.layout/Hero.layout';
+import MilestoneLayout from '@/pages/layouts/Milestone.layout/Milestone.layout';
+import ClosingLayout from '@/pages/layouts/Closing.layout/Closing.layout';
 import milestones from '@/data/milestones.data.json';
-import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
-import YouTubeParallax from './contents/YouTubeParallax.content/YouTubeParallax.content';
-import PrototypesCarousel from './contents/PrototypesCarousel.content/PrototypesCarousel.content';
-import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVideo.content';
-import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
-import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
-import ClosingLayout from './layouts/Closing.layout/Closing.layout';
 import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
 import DottedBackground from '@/components/DottedBackground/DottedBackground';
 
 const Home = () => {
-  const contents = [
+/*   const contents = [
     <BrandsCarousel />,
     <YouTubeParallax />,
     <PrototypesCarousel />,
     <StartCodingVideo />,
     <FrontendVideo />
-  ];
+  ]; */
 
-  /*   const texts = [
+/*   const texts = [
     {
       topText: <BrandsTopText />
     },
@@ -54,9 +48,9 @@ const Home = () => {
       <DottedBackground />
       <Header />
       <HeroLayout />
-      {contents.map((content, index) => {
-        if (milestones[index].id !== 'back-end') {
-          return <MilestoneLayout key={index} milestone={milestones[index]} content={content} />;
+      {milestones.map((milestone, index) => {
+        if (milestone.id !== 'back-end') {
+          return <MilestoneLayout key={index} index={index} milestone={milestone} />;
         }
       })}
       <ClosingLayout />
