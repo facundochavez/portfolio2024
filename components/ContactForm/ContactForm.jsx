@@ -17,6 +17,11 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
     show: { opacity: 1 }
   };
 
+  const onFinish = (values) => {
+    
+    console.log('Received values of form: ', values);
+  }
+
   useEffect(() => {
     const handleMessageRows = () => {
       const message = document.querySelector(`.${styles.contact_form__header__message}`);
@@ -67,7 +72,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 ? 'linear-gradient(to top, var(--color-dark-background) 0, var(--color-dark-background) 30%, transparent 50%)'
                 : null
             }}
-            /*   onFinish={onFinish} */
+            onFinish={onFinish}
             /* onFinishFailed={onFinishFailed} */
             autoComplete='off'>
             <motion.header className={styles.contact_form__header}>
@@ -117,11 +122,17 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   rules={[
                     {
                       required: true,
-                      message: lenguage === 'en' ? 'Please input your E-mail.' : 'Por favor, ingresa tu E-mail.'
+                      message:
+                        lenguage === 'en'
+                          ? 'Please input your E-mail.'
+                          : 'Por favor, ingresa tu E-mail.'
                     },
                     {
                       type: 'email',
-                      message: lenguage === 'en' ? 'Please input a valid E-mail.' : 'Por favor, ingresa un E-mail válido.'
+                      message:
+                        lenguage === 'en'
+                          ? 'Please input a valid E-mail.'
+                          : 'Por favor, ingresa un E-mail válido.'
                     }
                   ]}>
                   <Input placeholder='E-mail' size='large' bordered={false} />
@@ -136,7 +147,10 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     rules={[
                       {
                         required: true,
-                        message: lenguage === 'en' ? 'Please write your message.' : 'Por favor, escribe tu mensaje.'
+                        message:
+                          lenguage === 'en'
+                            ? 'Please write your message.'
+                            : 'Por favor, escribe tu mensaje.'
                       }
                     ]}>
                     <Input.TextArea
@@ -159,7 +173,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
               <div className={styles.contact_form__footer__left}>
                 {icons && <IconLinks />}
                 <a
-                  href='#'
+                  href='mailto:facundochavez.dev@gmail.com'
                   className={styles.contact_form__footer__left__link}
                   style={{ color: `var(${colorThree})` }}>
                   {lenguage === 'en' ? 'Or send an E-mail' : 'O envía un E-mail'}

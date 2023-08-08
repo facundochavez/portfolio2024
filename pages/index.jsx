@@ -8,37 +8,6 @@ import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton'
 import DottedBackground from '@/components/DottedBackground/DottedBackground';
 
 const Home = () => {
-  /*   const contents = [
-    <BrandsCarousel />,
-    <YouTubeParallax />,
-    <PrototypesCarousel />,
-    <StartCodingVideo />,
-    <FrontendVideo />
-  ]; */
-
-  const texts = [];
-  /*   const texts = [
-    {
-      topText: <BrandsTopText />
-    },
-    {
-      topText: <YoutubeTopText />
-    },
-    {
-      bottomText: <PrototypesBottomText />
-    },
-    {
-      topText: <StartCodingTopText />,
-      bottomText: <StartCodingBottomText />
-    },
-    {
-      topText: <FrontendTopText />
-    },
-    {
-      topText: <BackendTopText />,
-      bottomText: <BackendBottomText />
-    }
-  ]; */
 
   return (
     <div id='smoother-container'>

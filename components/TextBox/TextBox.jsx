@@ -3,8 +3,9 @@ import styles from './TextBox.module.scss';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
+import texts from '@/pages/layouts/Milestone.layout/texts/Texts/Texts';
 
-const TextBox = ({ milestone, tailLength = 78 }) => {
+const TextBox = ({ milestone, text, tailLength = 78 }) => {
   const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
   const marginRight = milestone.topTextMarginRight || 0;
@@ -12,7 +13,6 @@ const TextBox = ({ milestone, tailLength = 78 }) => {
   const isInView = useInView(boxRef, { once: true });
   const mainControls = useAnimation();
   const pathControls = useAnimation();
-  
 
   useEffect(() => {
     if (isInView) {
@@ -34,20 +34,24 @@ const TextBox = ({ milestone, tailLength = 78 }) => {
             ? viewportWidth < 900
               ? '18px'
               : '43px'
-            : `${marginRight}px`,
-        paddingLeft: milestone.id === 'start-coding' ? '0px' : null
+            : `${marginRight}px`
       }}
       ref={boxRef}>
-      <motion.p
+      <motion.div
         variants={{ textHidden: { opacity: 0 }, textVisible: { opacity: 1 } }}
         initial='textHidden'
         animate={mainControls}
-        transition={{ delay: 0.65, duration: 0.5 }}>
-        {lenguage === 'en' ? milestone.topTextEn : milestone.topTextEs}
-      </motion.p>
+        transition={{ delay: viewportWidth < 900 ? 0.6 : 0.9, duration: 0.5 }}
+        style={{
+          marginLeft: milestone.id === 'youtube' ? (viewportWidth < 820 ? '-9%' : '5%') : '8%'
+        }}>
+        {texts[milestone.id]?.topText}
+      </motion.div>
       <div
         className={styles.text_box__path}
-        style={{ height: milestone.id === 'brands' ? 'calc(100% + 100px)' : `calc(100% + ${tailLength}px)` }}>
+        style={{
+          height: milestone.id === 'brands' ? 'calc(100% + 100px)' : `calc(100% + ${tailLength}px)`
+        }}>
         <motion.div
           className={styles.text_box__path__wrapper}
           variants={{
@@ -56,7 +60,7 @@ const TextBox = ({ milestone, tailLength = 78 }) => {
           }}
           initial='pathHidden'
           animate={pathControls}
-          transition={{ delay: 0.55, duration: 0.5 }}>
+          transition={{ delay: viewportWidth < 900 ? 0.6 : 0.9, duration: 0.5 }}>
           <div className={styles.text_box__path__wrapper__line}></div>
           <div className={styles.text_box__path__wrapper__circle}></div>
         </motion.div>

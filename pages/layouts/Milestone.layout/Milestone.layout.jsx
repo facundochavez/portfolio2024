@@ -6,14 +6,15 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
-import BrandsCarousel from '@/pages/contents/BrandsCarousel.content/BrandsCarousel.content';
-import YoutubeParallax from '@/pages/contents/YouTubeParallax.content/YouTubeParallax.content';
-import PrototypesCarousel from '@/pages/contents/PrototypesCarousel.content/PrototypesCarousel.content';
-import StartCodingVideo from '@/pages/contents/StartCodingVideo.content/StartCodingVideo.content';
-import FrontendVideo from '@/pages/contents/FrontendVideo.content/FrontendVideo.content';
-import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.content';
+import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
+import YoutubeParallax from './contents/YouTubeParallax.content/YouTubeParallax.content';
+import PrototypesCarousel from './contents/PrototypesCarousel.content/PrototypesCarousel.content';
+import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVideo.content';
+import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
+import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
+import texts from './texts/Texts/Texts';
 
-const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
+const MilestoneLayout = ({ milestone, milestoneRef }) => {
   const contents = {
     brands: <BrandsCarousel />,
     youtube: <YoutubeParallax />,
@@ -70,9 +71,9 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
             <div className={styles.milestone__header__subcontainer__technologies_box}>
               <TechnologiesBox milestone={milestone} />
             </div>
-            {milestone.topTextEn && milestone.id !== 'youtube' && (
+            {texts[milestone.id]?.topText && milestone.id !== 'youtube' && (
               <div className={styles.milestone__header__subcontainer__top_text}>
-                <TextBox milestone={milestone} />
+                <TextBox milestone={milestone} text={texts[milestone.id]?.topText} />
               </div>
             )}
           </div>
@@ -91,20 +92,11 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.45, duration: 0.5, mass: 0.2 }}>
-          {milestone.bottomTextEn && (
-            <p
-              style={{
-                paddingRight:
-                  milestone.id === 'start-coding' || milestone.id === 'prototype'
-                    ? viewportWidth < 900
-                      ? '5px'
-                      : '30px'
-                    : null
-              }}>
-              {lenguage === 'en' ? milestone.bottomTextEn : milestone.bottomTextEs}
-            </p>
-          )}
+          transition={{ delay: 0.45, duration: 0.5, mass: 0.2 }}
+          style={{
+            paddingRight: milestone.id === 'prototypes' || milestone.id === 'start-coding' ? viewportWidth < 900 ? '5px' : '30px' : null
+          }}>
+          {texts[milestone.id]?.bottomText ?? null}
         </motion.footer>
       </div>
     </section>

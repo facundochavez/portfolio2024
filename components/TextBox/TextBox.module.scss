@@ -1,6 +1,6 @@
 .text_box {
     position: relative;
-    padding: 0 20px 0 10px;
+    padding: 0 20px 0 10%;
     right: 0;
     z-index: 50;
 
@@ -12,8 +12,19 @@
         font-size: 15px;
         text-align: right;
         color: gray;
+
         @media(min-width: 900px) {
             font-size: 17px;
+        }
+
+        a {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        span {
+            color: gray;
+            font-style: italic;
         }
     }
 

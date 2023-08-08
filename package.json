@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.5",
     "@motionone/utils": "^10.15.1",
     "antd": "^5.7.3",
     "eslint": "8.44.0",

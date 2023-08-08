@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { motion, useScroll, useSpring, useTransform, useVelocity } from 'framer-motion';
 
 export const GlobalContext = createContext();
 

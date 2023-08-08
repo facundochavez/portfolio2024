@@ -28,6 +28,7 @@
 
             &__technologies_box {
                 margin-bottom: -50px;
+                z-index: 50;
             }
 
             &__top_text {
@@ -56,13 +57,23 @@
         width: 100%;
 
         p {
-            width: 90%;
+            width: 80%;
             min-width: 112px;
             max-width: 550px;
             font-size: 15px;
             text-align: right;
             color: gray;
             padding-bottom: 40px;
+
+            a {
+                opacity: 0.8;
+                text-decoration: none;
+            }
+
+            span {
+                color: gray;
+                font-style: italic;
+            }
 
             @media(min-width: 900px) {
                 font-size: 17px;

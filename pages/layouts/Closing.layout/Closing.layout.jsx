@@ -1,5 +1,4 @@
 import styles from './Closing.layout.module.scss';
-import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.content';
 import MilestoneLayout from '../Milestone.layout/Milestone.layout';
 import milestones from '@/data/milestones.data.json';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
@@ -116,10 +115,8 @@ const ClosingSection = () => {
         style={{ x: subcontainerTranslationX, height: subcontainerHeight, top: subcontainerTop }}>
         <div className={styles.closing__subcontainer__left}>
           <MilestoneLayout
-            index={5}
             milestoneRef={milestoneRef}
             milestone={milestones.find((milestone) => milestone.id === 'back-end')}
-            content={<BackendVideo />}
           />
           <section style={{ height: '100%', paddingTop: '0', paddingBottom: '7.5vh' }}>
             <div className={styles.closing__subcontainer__left__bottom} />
