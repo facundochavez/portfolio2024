@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import HeroSection from './sections/Hero.section/Hero.section';
-import MilestoneSection from './sections/Milestone.section/Milestone.section';
+import HeroLayout from './layouts/Hero.layout/Hero.layout';
+import MilestoneLayout from './layouts/Milestone.layout/Milestone.layout';
 import milestones from '@/data/milestones.data.json';
 import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
 import YouTubeParallax from './contents/YouTubeParallax.content/YouTubeParallax.content';
@@ -8,7 +8,7 @@ import PrototypesCarousel from './contents/PrototypesCarousel.content/Prototypes
 import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVideo.content';
 import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
 import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
-import ClosingSection from './sections/Closing.section/Closing.section';
+import ClosingLayout from './layouts/Closing.layout/Closing.layout';
 import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
 import DottedBackground from '@/components/DottedBackground/DottedBackground';
@@ -22,6 +22,29 @@ const Home = () => {
     <FrontendVideo />
   ];
 
+/*   const texts = [
+    {
+      topText: <BrandsTopText />
+    },
+    {
+      topText: <YoutubeTopText />
+    },
+    {
+      bottomText: <PrototypesBottomText />
+    },
+    {
+      topText: <StartCodingTopText />,
+      bottomText: <StartCodingBottomText />
+    },
+    {
+      topText: <FrontendTopText />
+    },
+    {
+      topText: <BackendTopText />,
+      bottomText: <BackendBottomText />
+    }
+  ]; */
+
   return (
     <div id='smoother-container'>
       <Head>
@@ -30,13 +53,13 @@ const Home = () => {
       </Head>
       <DottedBackground />
       <Header />
-      <HeroSection />
+      <HeroLayout />
       {milestones.map((milestone, index) => {
         if (milestone.id !== 'back-end') {
-          return <MilestoneSection key={index} milestone={milestone} content={contents[index]} />;
+          return <MilestoneLayout key={index} milestone={milestone} content={contents[index]} />;
         }
       })}
-      <ClosingSection />
+      <ClosingLayout />
       <ScrollToTopButton />
     </div>
   );

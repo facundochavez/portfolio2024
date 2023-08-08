@@ -1,11 +1,11 @@
+import styles from './HeroSection.layout.module.scss';
 import { useGlobalContext } from '@/context/global.context';
-import styles from './HeroSection.module.scss';
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from '@/components/Reveal/Reveal';
 
-const HeroSection = () => {
+const HeroLayout = () => {
   const { lenguage, setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
 
   // HORIZONTAL SCROLLING
@@ -289,4 +289,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeroLayout;

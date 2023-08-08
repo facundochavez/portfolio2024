@@ -7,7 +7,7 @@ const LenguageSwitcher = () => {
 
   const toggleLenguage = () => {
     if (lenguage === 'en') {
-      setLenguage('esp');
+      setLenguage('es');
     } else {
       setLenguage('en');
     }
@@ -20,7 +20,7 @@ const LenguageSwitcher = () => {
         theme={{
           algorithm: theme.darkAlgorithm
         }}>
-        <span>{lenguage === 'en' ? 'En' : 'Esp'}</span>
+        <span>{lenguage === 'en' ? 'En' : 'Es'}</span>
         <Switch defaultChecked checked={lenguage === 'en'} onChange={toggleLenguage} />
       </ConfigProvider>
     </div>

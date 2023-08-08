@@ -4,10 +4,11 @@
     width: 100vw;
     margin: 0 -180px;
     overflow: hidden;
-    padding: 40px 0;
+    padding: 50px 0 40px 0;
     gap: 15px;
 
     @media(min-width: 900px) {
+        padding-bottom: 70px;
         gap: 18px;
         mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);

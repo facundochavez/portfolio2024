@@ -1,6 +1,6 @@
+import styles from './Closing.layout.module.scss';
 import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.content';
-import MilestoneSection from '../Milestone.section/Milestone.section';
-import styles from './Closing.section.module.scss';
+import MilestoneLayout from '../Milestone.layout/Milestone.layout';
 import milestones from '@/data/milestones.data.json';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -8,7 +8,7 @@ import useIsMobile from '@/hooks/useIsMobile';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import { useGlobalContext } from '@/context/global.context';
 
-const ClosingSection = () => {
+const ClosingLayout = () => {
   const { viewportWidth, viewportHeight, isMobile } = useIsMobile();
   const { lenguage, isContactFormShow, setIsContactFormShow, setClosingBtnDirection } =
     useGlobalContext();
@@ -115,7 +115,7 @@ const ClosingSection = () => {
         className={styles.closing__subcontainer}
         style={{ x: subcontainerTranslationX, height: subcontainerHeight, top: subcontainerTop }}>
         <div className={styles.closing__subcontainer__left}>
-          <MilestoneSection
+          <MilestoneLayout
             milestoneRef={milestoneRef}
             milestone={milestones.find((milestone) => milestone.id === 'back-end')}
             content={<BackendVideo />}
@@ -218,4 +218,4 @@ const ClosingSection = () => {
   );
 };
 
-export default ClosingSection;
+export default ClosingLayout;

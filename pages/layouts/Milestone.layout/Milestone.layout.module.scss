@@ -26,9 +26,14 @@
             flex-wrap: wrap;
             padding-bottom: 20px;
 
+            &__technologies_box {
+                margin-bottom: -50px;
+            }
+
             &__top_text {
-                width: 330px;
+                width: 340px;
                 margin-left: auto;
+                margin-top: 50px;
 
                 @media(min-width: 900px) {
                     width: 350px;
@@ -49,12 +54,15 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        padding-left: 40px;
+
         p {
-            width: 600px;
+            width: 90%;
+            min-width: 112px;
+            max-width: 550px;
             font-size: 15px;
             text-align: right;
             color: gray;
+            padding-bottom: 40px;
 
             @media(min-width: 900px) {
                 font-size: 17px;

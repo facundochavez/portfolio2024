@@ -2,7 +2,7 @@
     {
         "id": "brands",
         "titleEn": "design brands,",
-        "titleEsp": "diseñar marcas,",
+        "titleEs": "diseñar marcas,",
         "technologies": [
             {
                 "id": "adobe-illustrator",
@@ -16,12 +16,13 @@
         "firstColor": "var(--color-5)",
         "secondColor": "var(--color-1)",
         "stepContent": "<Step1 />",
-        "topText": "For years, I have been dedicated to the study and design of graphic brands from a pragmatic approach, improving my work methodology through the so-called brand performance parameters."
+        "topTextEn": "For years, I focused on studying and crafting graphic brands with a pragmatic approach. I came to realize that analyzing the market and building a robust strategy form the cornerstone for achieving a high-performance brand.",
+        "topTextEs": "Durante años, me dediqué al estudio y diseño de marcas gráficas con un enfoque pragmático. Comprendí que analizar el mercado y desarrollar una sólida estrategia son la base para lograr una marca de alto rendimiento."
     },
     {
         "id": "youtube",
         "titleEn": "create a YouTube channel and its website,",
-        "titleEsp": "crear un canal de YouTube y su sitio web,",
+        "titleEs": "crear un canal de YouTube y su sitio web,",
         "technologies": [
             {
                 "id": "adobe-premiere-pro",
@@ -38,12 +39,13 @@
         ],
         "firstColor": "var(--color-1)",
         "secondColor": "var(--color-2)",
-        "topText": "My first approach to web development was... from a pragmatic approach, improving my work methodology through the so-called brand performance parameters.  improving my work methodology through the so-called brand performance parameters."
+        "topTextEn": "When I founded my design studio, I set up a YouTube channel to discuss branding and design approaches. That was also my initial foray into web development.\u000a Margin, padding... okay, got it.",
+        "topTextEs": "Al fundar mi estudio de diseño creé un canal de YouTube para hablar sobre la marca gráfica y los enfoques de diseño. Ese también fue mi primer acercamiento al desarrollo web.\u000a Margin, padding… okay, lo tengo."
     },
     {
         "id": "prototype",
         "titleEn": "prototype stuff,",
-        "titleEsp": "prototipar cosas,",
+        "titleEs": "prototipar cosas,",
         "technologies": [
             {
                 "id": "adobe-xd",
@@ -56,12 +58,13 @@
         ],
         "firstColor": "var(--color-2)",
         "secondColor": "var(--color-3)",
-        "bottomText": "For years, I have been dedicated to the study and design of graphic brands from a pragmatic approach, improving my work methodology through the so-called brand performance parameters."
+        "bottomTextEn": "Sometimes for work, sometimes for fun. I learned that less is less and more is more, you just need to understand how much is necessary.",
+        "bottomTextEs": "A veces por trabajo, a veces por diversión. Aprendí que menos es menos y más es más, sólo necesitas entender cuánto se necesita."
     },
     {
         "id": "start-coding",
         "titleEn": "start coding,",
-        "titleEsp": "comenzar a escribir código,",
+        "titleEs": "comenzar a escribir código,",
         "technologies": [
             {
                 "id": "html",
@@ -78,14 +81,15 @@
         ],
         "firstColor": "var(--color-3)",
         "secondColor": "var(--color-6)",
-        "topText": "Too simple design? Meaby, but Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
-        "topTextMarginRight": 50,
-        "bottomText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam."
+        "topTextEn": "Design may be quite simple, but being responsive was my challenge and layout became my second nature.",
+        "topTextEs": "Tal vez el diseño sea simple, pero ser responsive era mi desafío y layout se convirtió en mi segundo nombre.",
+        "bottomTextEn": "I created this, building upon the work of Anna Misiuda, Paweł Bartosz, Iwona Tryka, Patryk Liberda and Tomasz Krol: The Atrium",
+        "bottomTextEs": "Para crear esto me basé en el trabajo de Anna Misiuda, Paweł Bartosz, Iwona Tryka, Patryk Liberda y Tomasz Krol: The Atrium"
     },
     {
         "id": "front-end",
         "titleEn": "learn better front-end technologies,",
-        "titleEsp": "aprender mejores tecnologías front-end,",
+        "titleEs": "aprender mejores tecnologías front-end,",
         "technologies": [
             {
                 "id": "react-js",
@@ -109,12 +113,15 @@
             }
         ],
         "firstColor": "var(--color-6)",
-        "secondColor": "var(--color-5)"
+        "secondColor": "var(--color-5)",
+        "topTextEn": "Alright, things just got serious. This is a personal project and a work in progress. I'll be able to share more soon.",
+        "topTextEs": "Okay, esto se puso serio. Este es un proyecto propio y un trabajo en proceso. Pronto podré compartir más.",
+        "topTextMarginRight": 15
     },
     {
         "id": "back-end",
         "titleEn": "and learn some back-end.",
-        "titleEsp": "y aprender algo de back-end.",
+        "titleEs": "y aprender algo de back-end.",
         "technologies": [
             {
                 "id": "next-js",
@@ -151,8 +158,10 @@
         ],
         "firstColor": "var(--color-5)",
         "secondColor": "var(--color-1)",
-        "topText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
-        "bottomText": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.",
-        "topTextMarginRight": 20
+        "topTextEn": "An app I'm proud of, and I'd love for you to give it a try! Just one thing: if you're more of a dog person, you'll need to sign up and I'll let you know when the pups are ready.",
+        "topTextEs": "Una aplicación de la que estoy orgulloso, ¡me encantaría que la pruebes! Eso sí: si te gustan más los perros, deberás registrarte y te avisaré cuando los canes estén listos.",
+        "bottomTextEn": "This work was made possible by the team at That API Company. API used: The Cat API.",
+        "bottomTextEs": "Este trabajo fue posible gracias al equipo de That API Company. API utilizada: The Cat API.",
+        "topTextMarginRight": 15
     }
 ]

@@ -5,8 +5,11 @@ import RevealTitle from '@/components/RevealTitle/RevealTitle';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useGlobalContext } from '@/context/global.context';
+import useIsMobile from '@/hooks/useIsMobile';
 
-const MilestoneSection = ({ milestone, content, milestoneRef }) => {
+
+const MilestoneLayout = ({ milestone, content, milestoneRef }) => {
+  const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
   const [isOnce, setIsOnce] = useState(false);
   const mainRef = useRef();
@@ -47,11 +50,13 @@ const MilestoneSection = ({ milestone, content, milestoneRef }) => {
           {lenguage === 'en' ? (
             <RevealTitle title={milestone.titleEn} isOnce={isOnce} />
           ) : (
-            <RevealTitle title={milestone.titleEsp} isOnce={isOnce} />
+            <RevealTitle title={milestone.titleEs} isOnce={isOnce} />
           )}
           <div className={styles.milestone__header__subcontainer}>
-            <TechnologiesBox milestone={milestone} />
-            {milestone.topText && milestone.id !== 'youtube' && (
+            <div className={styles.milestone__header__subcontainer__technologies_box}>
+              <TechnologiesBox milestone={milestone} />
+            </div>
+            {milestone.topTextEn && milestone.id !== 'youtube' && (
               <div className={styles.milestone__header__subcontainer__top_text}>
                 <TextBox milestone={milestone} />
               </div>
@@ -64,7 +69,7 @@ const MilestoneSection = ({ milestone, content, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.25, duration: 0.5, mass: 0.2 }}>
+          transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
           {content ?? null}
         </motion.main>
         <motion.footer
@@ -72,8 +77,16 @@ const MilestoneSection = ({ milestone, content, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.5, duration: 0.5, mass: 0.2 }}>
-          {milestone.bottomText && <p>{milestone.bottomText}</p>}
+          transition={{ delay: 0.4, duration: 0.5, mass: 0.2 }}>
+          {milestone.bottomTextEn && (
+            <p
+              style={{
+                paddingRight:
+                  milestone.id === 'start-coding' || milestone.id === 'prototype'? (viewportWidth < 900 ? '5px' : '30px') : null
+              }}>
+              {lenguage === 'en' ? milestone.bottomTextEn : milestone.bottomTextEs}
+            </p>
+          )}
         </motion.footer>
       </div>
     </section>
@@ -125,7 +138,7 @@ const PathLine = ({ milestone }) => {
         variants={{ circleHidden: { scale: 0 }, circleVisible: { scale: 1 } }}
         initial='circleHidden'
         animate={circleControls}
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.2 }}
       />
       <motion.div
         className={styles.pathline__bottom_line}
@@ -140,10 +153,10 @@ const PathLine = ({ milestone }) => {
         }}
         initial='lineHidden'
         animate={lineControls}
-        transition={{ delay: 0.35, duration: 1 }}
+        transition={{ delay: 0.25, duration: 1 }}
       />
     </div>
   );
 };
 
-export default MilestoneSection;
+export default MilestoneLayout;

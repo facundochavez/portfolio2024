@@ -1,13 +1,20 @@
 .youtube_parallax {
     width: 100%;
     padding-left: 25px;
-    padding-top: 50px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: 30px;
+
+    @media(min-width: 820px) {
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
 
     @media(min-width: 900px) {
         padding-left: 35px;
+
     }
 
     &__top_container {
@@ -25,6 +32,7 @@
         @media(min-width: 820px) {
             flex-direction: row;
             padding-right: 0;
+            padding-left: 50px;
             gap: 8%;
         }
 
@@ -37,7 +45,7 @@
 
 
             @media(min-width: 820px) {
-                max-width: 380px;
+                max-width: 370px;
                 padding-top: 1vw;
             }
         }
@@ -73,8 +81,7 @@
 
     &__mo_website {
         width: 100%;
-
-        margin-top: 30px;
+        margin-top: 40px;
 
         @media(min-width: 500px) {
             padding-left: 75px;

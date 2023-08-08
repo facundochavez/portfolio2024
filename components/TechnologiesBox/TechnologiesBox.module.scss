@@ -23,6 +23,7 @@
         align-items: center;
         overflow: visible;
         transition: all 0.3s;
+        filter: brightness(1.5);
 
         &__icon {
             position: relative;

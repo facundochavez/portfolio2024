@@ -26,7 +26,7 @@ const YoutubeParallax = () => {
   const topTextTranslationY = useTransform(
     scrollYProgress,
     [0, 1],
-    viewportWidth < 820 ? [0, 0] : [20, -20]
+    viewportWidth < 820 ? [0, 0] : [30, -30]
   );
 
   useEffect(() => {
