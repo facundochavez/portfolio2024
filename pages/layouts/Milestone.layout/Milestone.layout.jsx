@@ -70,7 +70,7 @@ const MilestoneLayout = ({ milestone, content, milestoneRef }) => {
           initial='mainHidden'
           animate={mainControls}
           transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
-          {content ?? null}
+          {content}
         </motion.main>
         <motion.footer
           className={styles.milestone__footer}
