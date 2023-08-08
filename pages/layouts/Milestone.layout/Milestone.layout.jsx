@@ -14,18 +14,18 @@ import FrontendVideo from '@/pages/contents/FrontendVideo.content/FrontendVideo.
 import BackendVideo from '@/pages/contents/BackendVideo.content/BackendVideo.content';
 
 const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
-  const contents = [
-    <YoutubeParallax />,
-    <YoutubeParallax />,
-    <YoutubeParallax />,
-    <StartCodingVideo />,
-    <FrontendVideo />,
-    <BackendVideo />
-  ];
+  const contents = {
+    brands: <BrandsCarousel />,
+    youtube: <YoutubeParallax />,
+    prototypes: <PrototypesCarousel />,
+    'start-coding': <StartCodingVideo />,
+    frontend: <FrontendVideo />,
+    backend: <BackendVideo />
+  };
 
   const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
-/*   const [isOnce, setIsOnce] = useState(false); */
+  /*   const [isOnce, setIsOnce] = useState(false); */
   const mainRef = useRef();
   const mainControls = useAnimation();
   const variants = {
@@ -42,7 +42,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
     }
   }, [isInView]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     const handleIsOnce = () => {
       const milestoneRect = document.querySelector(`.${styles.milestone}`).getBoundingClientRect();
       const newIsOnce = window.scrollY > milestoneRect.top;
@@ -84,7 +84,7 @@ const MilestoneLayout = ({ milestone, index, milestoneRef }) => {
           initial='mainHidden'
           animate={mainControls}
           transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
-          {contents[index]}
+          {contents[milestone.id]}
         </motion.main>
         <motion.footer
           className={styles.milestone__footer}
