@@ -8,7 +8,7 @@ import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton'
 import DottedBackground from '@/components/DottedBackground/DottedBackground';
 
 const Home = () => {
-/*   const contents = [
+  /*   const contents = [
     <BrandsCarousel />,
     <YouTubeParallax />,
     <PrototypesCarousel />,
@@ -16,7 +16,7 @@ const Home = () => {
     <FrontendVideo />
   ]; */
 
-/*   const texts = [
+  /*   const texts = [
     {
       topText: <BrandsTopText />
     },
@@ -50,7 +50,11 @@ const Home = () => {
       <HeroLayout />
       {milestones.map((milestone, index) => {
         if (milestone.id !== 'back-end') {
-          return <MilestoneLayout key={index} index={index} milestone={milestone} />;
+          return (
+            <div key={index}>
+              <MilestoneLayout index={index} milestone={milestone} />
+            </div>
+          );
         }
       })}
       <ClosingLayout />
