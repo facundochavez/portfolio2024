@@ -16,6 +16,7 @@ const Home = () => {
     <FrontendVideo />
   ]; */
 
+  const texts = [];
   /*   const texts = [
     {
       topText: <BrandsTopText />
