@@ -21,7 +21,11 @@ const BrandsLine = ({ brands, baseVelocity = 100 }) => {
       onHoverStart={() => setVelocity(baseVelocity * 0.5)}
       onHoverEnd={() => setVelocity(baseVelocity)}>
       {duplicatedBrands.map((brand, index) => {
-        return <BrandBox key={index} brand={brand} />;
+        return (
+          <div key={index}>
+            <BrandBox brand={brand} />
+          </div>
+        );
       })}
     </motion.div>
   );
