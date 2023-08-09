@@ -8,13 +8,12 @@
     padding-bottom: 30px;
 
     @media(min-width: 820px) {
-        padding-top: 120px;
-        padding-bottom: 50px;
+        padding-top: 150px;
+        padding-bottom: 100px;
     }
 
     @media(min-width: 900px) {
         padding-left: 35px;
-
     }
 
     &__top_container {
@@ -95,6 +94,8 @@
         }
 
         &__video {
+            padding-top: 5px;
+            background-color: black;
             width: 100%;
             height: fit-content;
             border-radius: 15px;
@@ -114,6 +115,7 @@
                 width: 100%;
                 height: 100%;
                 aspect-ratio: unset;
+                padding-top: 10px;
             }
 
             video {

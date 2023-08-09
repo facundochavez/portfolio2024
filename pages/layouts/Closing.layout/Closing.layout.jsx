@@ -22,7 +22,7 @@ const ClosingSection = () => {
     offset: ['start start', 'end end']
   });
 
-  const animationStart = Math.max(0, -0.000875 * viewportHeight + 0.9875);
+  const animationStart = Math.max(0, -0.000875 * viewportHeight + 1.05);
   const subcontainerTranslationX = useTransform(
     scrollYProgress,
     [animationStart, (animationStart + 0.85) / 2, 0.85],
@@ -48,7 +48,7 @@ const ClosingSection = () => {
   } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
 
   // PATH ANIMATION
-  const horizontalPathLength = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
+  const horizontalPathLength = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
   const horizontalPathOffset = useTransform(scrollYProgress, [0.5, 0.9], [0, 1]);
 
   const phrasePathLength = useTransform(scrollYProgress, [0.5, 0.9], [0, 1]);

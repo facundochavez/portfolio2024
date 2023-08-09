@@ -76,7 +76,16 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
               <TechnologiesBox milestone={milestone} />
             </div>
             {texts[milestone.id]?.topText && milestone.id !== 'youtube' && (
-              <div className={styles.milestone__header__subcontainer__top_text}>
+              <div
+                className={styles.milestone__header__subcontainer__top_text}
+                style={{
+                  marginTop:
+                    viewportWidth >= 900 && milestone.id === 'front-end'
+                      ? '100px'
+                      : milestone.id === 'back-end'
+                      ? '90px'
+                      : null
+                }}>
                 <TextBox
                   milestone={milestone}
                   text={texts[milestone.id]?.topText}
