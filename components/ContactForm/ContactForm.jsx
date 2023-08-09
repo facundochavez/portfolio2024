@@ -9,7 +9,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 
 const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid = false }) => {
-  const { lenguage } = useGlobalContext();
+  const { lenguage, setIsHeaderContactFormOpen } = useGlobalContext();
   const { viewportWidth, viewportHeight } = useIsMobile();
   const [form] = Form.useForm();
   const [messageRows, setMessageRows] = useState(5);
@@ -70,6 +70,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
     form.resetFields();
     setLoading(false);
     successAntMessage();
+    setIsHeaderContactFormOpen(false);
   };
 
   useEffect(() => {
