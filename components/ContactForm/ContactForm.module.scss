@@ -3,6 +3,12 @@
         width: 100%;
         position: relative;
 
+        &__emailjs_form {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0;
+        }
+
         &__subcontainer {
             display: flex;
             width: 100%;
@@ -48,6 +54,7 @@
                 }
 
                 &__footer {
+                    position: relative;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
@@ -88,6 +95,24 @@
                         @media(min-width: 900px) {
                             width: 130px;
                             font-size: 18px !important;
+                        }
+                    }
+
+                    &__recaptcha {
+                        position: absolute;
+                        right: 0;
+                        bottom: 60px;
+                        scale: 0.85;
+                        transform-origin: right bottom;
+
+                        @media (min-width: 370px) {
+                            scale: 0.94;
+                            bottom: 63px;
+                        }
+                        
+                        @media (min-width: 900px) {
+                            scale: 1;
+                            bottom: 63px;
                         }
                     }
                 }

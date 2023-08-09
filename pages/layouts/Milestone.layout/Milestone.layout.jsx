@@ -38,8 +38,12 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
   useEffect(() => {
     if (isInView) {
       mainControls.start('mainVisible');
+      mainControls.start('textVisible');
+      mainControls.start('pathVisible');
     } else {
       mainControls.start('mainHidden');
+      mainControls.start('textHidden');
+      mainControls.start('pathHidden');
     }
   }, [isInView]);
 
@@ -73,7 +77,11 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
             </div>
             {texts[milestone.id]?.topText && milestone.id !== 'youtube' && (
               <div className={styles.milestone__header__subcontainer__top_text}>
-                <TextBox milestone={milestone} text={texts[milestone.id]?.topText} />
+                <TextBox
+                  milestone={milestone}
+                  text={texts[milestone.id]?.topText}
+                  controls={mainControls}
+                />
               </div>
             )}
           </div>
@@ -92,9 +100,14 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.45, duration: 0.5, mass: 0.2 }}
+          transition={{ delay: 0.4, duration: 0.5, mass: 0.2 }}
           style={{
-            paddingRight: milestone.id === 'prototypes' || milestone.id === 'start-coding' ? viewportWidth < 900 ? '5px' : '30px' : null
+            paddingRight:
+              milestone.id === 'prototypes' || milestone.id === 'start-coding'
+                ? viewportWidth < 900
+                  ? '5px'
+                  : '30px'
+                : null
           }}>
           {texts[milestone.id]?.bottomText ?? null}
         </motion.footer>

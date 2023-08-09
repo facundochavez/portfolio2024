@@ -60,7 +60,6 @@ const GlobalProvider = ({ children }) => {
 
   // HANDLE BUTTON DIRECTION
   useEffect(() => {
-    console.log(heroBtnDirection, closingBtnDirection);
     if (heroBtnDirection === 'left') {
       setScrollToTopBtnDirection('left')
     } else if (closingBtnDirection === 'up') {

@@ -1,26 +1,73 @@
 import styles from './ContactForm.module.scss';
-import { Button, ConfigProvider, theme, Form, Input } from 'antd';
+import { Button, ConfigProvider, theme, Form, Input, message } from 'antd';
 import useIsMobile from '@/hooks/useIsMobile';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import IconLinks from '../IconLinks/IconLinks';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useGlobalContext } from '@/context/global.context';
+import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid = false }) => {
   const { lenguage } = useGlobalContext();
   const { viewportWidth, viewportHeight } = useIsMobile();
   const [form] = Form.useForm();
   const [messageRows, setMessageRows] = useState(5);
+  const recaptchaControls = useAnimation();
+  const recaptchaRef = useRef();
+  const emailjsFormRef = useRef();
+  const [loading, setLoading] = useState(false);
+
+  //VALORES PARA EMAILJS
+  const [userName, setUserName] = useState('');
+  const [userCompany, setUserCompany] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userMessage, setUserMessage] = useState('');
 
   const childrenAnimation = {
     hidden: { opacity: 0 },
     show: { opacity: 1 }
   };
 
-  const onFinish = (values) => {
-    
-    console.log('Received values of form: ', values);
+  //// ANT MESSAGES
+  const [messageApi, contextHolder] = message.useMessage();
+  function successAntMessage() {
+    messageApi.open({
+      type: 'success',
+      size: 'large',
+      content: lenguage === 'en' ? 'Message sended!' : '¡Mensaje enviado!'
+      /* style: {
+        marginTop: 85
+      } */
+    });
   }
+
+  const onFinish = (values) => {
+    recaptchaControls.start('visible');
+  };
+
+  const onFinishFailed = () => {
+    successAntMessage();
+  };
+
+  const sendEmail = () => {
+    setLoading(true);
+    emailjs
+      .sendForm('service_ypcahma', 'template_du3ymvo', emailjsFormRef.current, '-CnEHK3O5IogwMNGA')
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    recaptchaControls.start('hidden');
+    recaptchaRef.current.reset();
+    form.resetFields();
+    setLoading(false);
+    successAntMessage();
+  };
 
   useEffect(() => {
     const handleMessageRows = () => {
@@ -45,6 +92,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
       theme={{
         algorithm: theme.darkAlgorithm
       }}>
+      {contextHolder}
       <motion.div
         className={styles.wrapper}
         initial={{ width: '30px', height: '30px', opacity: 0 }}
@@ -54,6 +102,12 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
           type: 'spring',
           mass: 0.2
         }}>
+        <form ref={emailjsFormRef} className={styles.wrapper__emailjs_form}>
+          <input name='user_name' value={userName} />
+          <input name='user_company' value={userCompany} />
+          <input name='user_email' value={userEmail} />
+          <textarea name='user_message' value={userMessage} />
+        </form>
         <motion.div
           transition={{
             staggerChildren: 0.1,
@@ -73,14 +127,14 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 : null
             }}
             onFinish={onFinish}
-            /* onFinishFailed={onFinishFailed} */
+            onFinishFailed={onFinishFailed}
             autoComplete='off'>
             <motion.header className={styles.contact_form__header}>
               <motion.div
                 className={styles.contact_form__header__name_and_company}
                 variants={childrenAnimation}>
                 <Form.Item
-                  name='name'
+                  name='user_name'
                   style={{ width: '100%' }}
                   rules={[
                     {
@@ -95,10 +149,11 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     placeholder={lenguage === 'en' ? 'Name' : 'Nombre'}
                     size='large'
                     bordered={false}
+                    onChange={(e) => setUserName(e.target.value)}
                   />
                 </Form.Item>
                 <Form.Item
-                  name='company'
+                  name='user_company'
                   style={{ width: '100%' }}
                   rules={[
                     {
@@ -113,12 +168,13 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     placeholder={lenguage === 'en' ? 'Company' : 'Empresa'}
                     size='large'
                     bordered={false}
+                    onChange={(e) => setUserCompany(e.target.value)}
                   />
                 </Form.Item>
               </motion.div>
               <motion.div className={styles.contact_form__email} variants={childrenAnimation}>
                 <Form.Item
-                  name='email'
+                  name='user_email'
                   rules={[
                     {
                       required: true,
@@ -135,7 +191,12 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                           : 'Por favor, ingresa un E-mail válido.'
                     }
                   ]}>
-                  <Input placeholder='E-mail' size='large' bordered={false} />
+                  <Input
+                    placeholder='E-mail'
+                    size='large'
+                    bordered={false}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                  />
                 </Form.Item>
               </motion.div>
               <motion.div
@@ -143,7 +204,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 variants={childrenAnimation}>
                 <div className={styles.contact_form__header__message__wrapper}>
                   <Form.Item
-                    name='message'
+                    name='user_message'
                     rules={[
                       {
                         required: true,
@@ -161,6 +222,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                       style={{
                         resize: 'none'
                       }}
+                      onChange={(e) => setUserMessage(e.target.value)}
                     />
                   </Form.Item>
                 </div>
@@ -183,10 +245,29 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 type='text'
                 htmlType='submit'
                 size='large'
-                className={styles.contact_form__footer__button} /* loading={loading} */
-              >
+                className={styles.contact_form__footer__button}
+                loading={loading}>
                 {lenguage === 'en' ? 'Send' : 'Enviar'}
               </Button>
+              <motion.div
+                className={styles.contact_form__footer__recaptcha}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.5 },
+                  visible: {
+                    opacity: 1,
+                    scale: viewportWidth < 370 ? 0.85 : viewportWidth < 900 ? 0.94 : 1
+                  }
+                }}
+                initial='hidden'
+                animate={recaptchaControls}
+                exit={recaptchaControls}>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                  theme='dark'
+                  onChange={sendEmail}
+                />
+              </motion.div>
             </motion.footer>
           </Form>
         </motion.div>

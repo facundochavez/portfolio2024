@@ -5,7 +5,7 @@ import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
 import texts from '@/pages/layouts/Milestone.layout/texts/Texts/Texts';
 
-const TextBox = ({ milestone, text, tailLength = 78 }) => {
+const TextBox = ({ milestone, text, tailLength = 78, controls }) => {
   const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
   const marginRight = milestone.topTextMarginRight || 0;
@@ -40,8 +40,8 @@ const TextBox = ({ milestone, text, tailLength = 78 }) => {
       <motion.div
         variants={{ textHidden: { opacity: 0 }, textVisible: { opacity: 1 } }}
         initial='textHidden'
-        animate={mainControls}
-        transition={{ delay: viewportWidth < 900 ? 0.6 : 0.9, duration: 0.5 }}
+        animate={milestone.id === 'youtube' ? mainControls : controls}
+        transition={{ delay: viewportWidth < 900 ? 0.4 : 0.5, duration: 1 }}
         style={{
           marginLeft: milestone.id === 'youtube' ? (viewportWidth < 820 ? '-9%' : '5%') : '8%'
         }}>
@@ -59,8 +59,8 @@ const TextBox = ({ milestone, text, tailLength = 78 }) => {
             pathVisible: { height: '100%', marginTop: '0px' }
           }}
           initial='pathHidden'
-          animate={pathControls}
-          transition={{ delay: viewportWidth < 900 ? 0.6 : 0.9, duration: 0.5 }}>
+          animate={milestone.id === 'youtube' ? pathControls : controls}
+          transition={{ delay: viewportWidth < 900 ? 0.5 : 0.6, duration: 0.5 }}>
           <div className={styles.text_box__path__wrapper__line}></div>
           <div className={styles.text_box__path__wrapper__circle}></div>
         </motion.div>
