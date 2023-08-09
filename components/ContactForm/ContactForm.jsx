@@ -34,11 +34,14 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
   function successAntMessage() {
     messageApi.open({
       type: 'success',
-      size: 'large',
-      content: lenguage === 'en' ? 'Message sended!' : '¡Mensaje enviado!'
-      /* style: {
-        marginTop: 85
-      } */
+      content: lenguage === 'en' ? 'Message sended!' : '¡Mensaje enviado!',
+    });
+  }
+
+  function errorAntMessage() {
+    messageApi.open({
+      type: 'error',
+      content: lenguage === 'en' ? 'Message not sended!' : '¡Mensaje no enviado!',
     });
   }
 
@@ -47,7 +50,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
   };
 
   const onFinishFailed = () => {
-    successAntMessage();
+    errorAntMessage();
   };
 
   const sendEmail = () => {
@@ -150,6 +153,9 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     size='large'
                     bordered={false}
                     onChange={(e) => setUserName(e.target.value)}
+                    onFocus={() => {
+                      recaptchaControls.start('hidden');
+                    }}
                   />
                 </Form.Item>
                 <Form.Item
@@ -169,6 +175,9 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     size='large'
                     bordered={false}
                     onChange={(e) => setUserCompany(e.target.value)}
+                    onFocus={() => {
+                      recaptchaControls.start('hidden');
+                    }}
                   />
                 </Form.Item>
               </motion.div>
@@ -196,6 +205,9 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                     size='large'
                     bordered={false}
                     onChange={(e) => setUserEmail(e.target.value)}
+                    onFocus={() => {
+                      recaptchaControls.start('hidden');
+                    }}
                   />
                 </Form.Item>
               </motion.div>
@@ -223,6 +235,9 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                         resize: 'none'
                       }}
                       onChange={(e) => setUserMessage(e.target.value)}
+                      onFocus={() => {
+                        recaptchaControls.start('hidden');
+                      }}
                     />
                   </Form.Item>
                 </div>
