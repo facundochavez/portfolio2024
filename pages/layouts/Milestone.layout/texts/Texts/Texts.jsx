@@ -107,7 +107,7 @@ const StartCodingTopText = () => {
         </p>
       ) : (
         <p>
-          El diseño puede resultar simple, pero ser <span>responsive</span> fue mi desafío. De a
+          El diseño puede resultar simple, pero ser <span>responsive</span> era mi desafío. De a
           poco, los <span>layouts</span> y <span>media queries</span> se convirtieron en mi nuevo
           hobbie.
         </p>
