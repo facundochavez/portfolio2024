@@ -37,16 +37,16 @@ const BrandBox = ({ brand }) => {
       <div className={styles.brand_box__image_wrapper}>
         <div className={styles.brand_box__image_wrapper__image}>
           <Image
-            src={`/images/brands-backgrounds/image-${brand.id}.jpg`}
-            alt={`${brand.name}'s background image.`}
+            src={`/images/brands-backgrounds/image-${brand?.id}.jpg`}
+            alt={`${brand?.name}'s background image.`}
             fill
           />
         </div>
       </div>
       <div className={styles.brand_box__logo}>
         <Image
-          src={`/icons/logos/logo-${brand.id}.svg`}
-          alt={`${brand.name}'s logo.`}
+          src={`/icons/logos/logo-${brand?.id}.svg`}
+          alt={`${brand?.name}'s logo.`}
           width={0}
           height={0}
           style={{ width: '100%', height: '100%' }}

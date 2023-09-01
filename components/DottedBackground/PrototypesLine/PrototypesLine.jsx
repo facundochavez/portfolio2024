@@ -22,8 +22,8 @@ const PrototypesLine = ({
           <div
             key={index}
             className={styles.prototypes_line__box}
-            style={{ height: `${prototype.heightFactor * height}px` }}>
-            <video muted autoPlay loop src={`/videos/video-${prototype.id}.mp4`} />
+            style={{ height: `${prototype?.heightFactor * height}px` }}>
+            <video muted autoPlay loop src={`/videos/video-${prototype?.id}.mp4`} />
             {/*             <Image
               src={`/videos/video-${prototype.id}.mp4`}
               alt={`${prototype.name}'s image.`}

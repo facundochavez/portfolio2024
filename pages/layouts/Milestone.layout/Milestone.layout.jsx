@@ -77,20 +77,20 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
             <div className={styles.milestone__header__subcontainer__technologies_box}>
               <TechnologiesBox milestone={milestone} />
             </div>
-            {texts[milestone.id]?.topText && milestone.id !== 'youtube' && (
+            {texts[milestone?.id]?.topText && milestone?.id !== 'youtube' && (
               <div
                 className={styles.milestone__header__subcontainer__top_text}
                 style={{
                   marginTop:
-                    viewportWidth >= 900 && milestone.id === 'front-end'
+                    viewportWidth >= 900 && milestone?.id === 'front-end'
                       ? '100px'
-                      : milestone.id === 'back-end'
+                      : milestone?.id === 'back-end'
                       ? '70px'
                       : null
                 }}>
                 <TextBox
                   milestone={milestone}
-                  text={texts[milestone.id]?.topText}
+                  text={texts[milestone?.id]?.topText}
                   controls={mainControls}
                 />
               </div>
@@ -104,7 +104,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           initial='mainHidden'
           animate={mainControls}
           transition={{ delay: 0.2, duration: 0.5, mass: 0.2 }}>
-          {contents[milestone.id]}
+          {contents[milestone?.id]}
         </motion.main>
         <motion.footer
           className={styles.milestone__footer}
@@ -114,13 +114,13 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           transition={{ delay: 0.3, duration: 0.5, mass: 0.2 }}
           style={{
             paddingRight:
-              milestone.id === 'prototypes' || milestone.id === 'start-coding'
+              milestone?.id === 'prototypes' || milestone?.id === 'start-coding'
                 ? viewportWidth < 900
                   ? '5px'
                   : '30px'
                 : null
           }}>
-          {texts[milestone.id]?.bottomText ?? null}
+          {texts[milestone?.id]?.bottomText ?? null}
         </motion.footer>
       </div>
     </section>
@@ -161,15 +161,15 @@ const PathLine = ({ milestone }) => {
   //// COMPONENT
   return (
     <div className={styles.pathline} ref={pathRef}>
-      {milestone.id === 'brands' && (
+      {milestone?.id === 'brands' && (
         <div
           className={styles.pathline__top_line}
-          style={{ backgroundColor: milestone.firstColor }}
+          style={{ backgroundColor: milestone?.firstColor }}
         />
       )}
       <div
         className={styles.pathline__circle}
-        style={{ backgroundColor: milestone.firstColor }}
+        style={{ backgroundColor: milestone?.firstColor }}
         variants={{ circleHidden: { scale: 0 }, circleVisible: { scale: 1 } }}
         initial='circleHidden'
         animate={circleControls}
@@ -178,9 +178,9 @@ const PathLine = ({ milestone }) => {
       <div
         className={styles.pathline__bottom_line}
         style={{
-          backgroundImage: `linear-gradient(to bottom, ${milestone.firstColor}, ${milestone.secondColor})`,
+          backgroundImage: `linear-gradient(to bottom, ${milestone?.firstColor}, ${milestone?.secondColor})`,
           height:
-            milestone.id !== 'back-end' ? 'calc(100% - 38px + 10vh)' : 'calc(100% - 38px + 5vh)'
+            milestone?.id !== 'back-end' ? 'calc(100% - 38px + 10vh)' : 'calc(100% - 38px + 5vh)'
         }}
         variants={{
           lineHidden: { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
