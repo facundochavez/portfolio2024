@@ -5,7 +5,7 @@ import { useGlobalContext } from '@/context/global.context';
 
 const RevealTitle = ({ title, isOnce = false }) => {
   const { lenguage } = useGlobalContext();
-  const words = title.split(' ');
+  const words = title?.split(' ');
   const [delays, setDelays] = useState([]);
   const fatherRef = useRef(null);
   const spanRefs = useRef([]);
