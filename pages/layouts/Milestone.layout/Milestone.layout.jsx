@@ -59,6 +59,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
     return () => {
       window.removeEventListener('scroll', handleIsOnce);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); */
 
   //// COMPONENT
@@ -140,6 +141,7 @@ const PathLine = ({ milestone }) => {
       circleControls.start('circleHidden');
       lineControls.start('lineHidden');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   /*   useEffect(() => {

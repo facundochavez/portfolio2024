@@ -153,7 +153,7 @@ const ClosingSection = () => {
                     <br />
                     with design and code.
                     <br />
-                    So, why don't we talk?
+                    So, why don&apos;t we talk?
                   </motion.p>
                 ) : (
                   <motion.p style={{ opacity: phraseOpacity }}>
@@ -161,7 +161,7 @@ const ClosingSection = () => {
                     <br />
                     with design and code. So, why
                     <br />
-                    don't we talk?
+                    don&apos;t we talk?
                   </motion.p>
                 )
               ) : viewportWidth < 376 ? (
