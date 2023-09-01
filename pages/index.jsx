@@ -31,7 +31,6 @@ const Home = () => {
       <ClosingLayout />
       <ScrollToTopButton />
       <ScrollMessage />
-
     </div>
   );
 };

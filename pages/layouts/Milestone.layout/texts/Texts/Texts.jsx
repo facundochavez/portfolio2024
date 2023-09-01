@@ -310,4 +310,5 @@ const texts = {
   }
 };
 
-export default texts;
+export default BrandsTopText;
+export { texts };

@@ -12,7 +12,7 @@ import PrototypesCarousel from './contents/PrototypesCarousel.content/Prototypes
 import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVideo.content';
 import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
 import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
-import texts from './texts/Texts/Texts';
+import { texts } from './texts/Texts/Texts';
 
 const MilestoneLayout = ({ milestone, milestoneRef }) => {
   const contents = {
