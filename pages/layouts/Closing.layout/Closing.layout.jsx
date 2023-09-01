@@ -88,6 +88,7 @@ const ClosingSection = () => {
       window.removeEventListener('scroll', handlePathSizes);
       window.removeEventListener('scroll', handleSubcontainerHeight);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // HANDLE CONTACT FORM
@@ -107,6 +108,7 @@ const ClosingSection = () => {
     return () => {
       window.removeEventListener('scroll', handleContactFormShow);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //// COMPONENT

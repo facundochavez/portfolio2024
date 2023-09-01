@@ -151,6 +151,7 @@ const HeroSection = () => {
       window.removeEventListener('resize', handlePathSizes);
       window.removeEventListener('scroll', handlePhraseRectangleKind);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // COMPONENT

@@ -45,6 +45,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
       mainControls.start('textHidden');
       mainControls.start('pathHidden');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   /*   useEffect(() => {
