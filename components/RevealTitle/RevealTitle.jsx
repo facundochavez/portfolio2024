@@ -34,7 +34,7 @@ const RevealTitle = ({ title, isOnce = false }) => {
   return (
     <div className={styles.reveal_title} ref={fatherRef}>
       <h3>
-        {words.map((word, index) => (
+        {words?.map((word, index) => (
           <div key={index}>
             <Reveal delay={lenguage === 'en' ? delays[index] : 0.2}>
               <span ref={(el) => (spanRefs.current[index] = el)}>{word}&nbsp;</span>
