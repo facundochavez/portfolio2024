@@ -70,32 +70,38 @@ const YoutubeParallax = () => {
         <motion.div
           className={styles.youtube_parallax__top_container__top_text}
           ref={topTextRef}
-          /* style={{ y: topTextTranslationY }} */>
+          /* style={{ y: topTextTranslationY }} */
+        >
           <TextBox
             milestone={milestones.find((milestone) => milestone.id === 'youtube')}
             tailLength={tailLength}
           />
         </motion.div>
         <div className={styles.youtube_parallax__top_container__mo_channel}>
-          <motion.div
-            className={styles.youtube_parallax__top_container__mo_channel__video}
-           /*  style={{
+          <a href='https://www.youtube.com/marcaoptimizada' target='_blank'>
+            <motion.div
+              className={styles.youtube_parallax__top_container__mo_channel__video}
+              /*  style={{
               y: videoTranslationY
-            }} */>
-            <video muted autoPlay loop src='/videos/video-mo-channel.mp4' />
-          </motion.div>
+            }} */
+            >
+              <video muted autoPlay loop src='/videos/video-mo-channel.mp4' />
+            </motion.div>
+          </a>
         </div>
       </div>
       <div className={styles.youtube_parallax__mo_website} ref={bottomContainerRef}>
-        <div className={styles.youtube_parallax__mo_website__video}>
-          {viewportWidth < 400 ? (
-            <video muted loop src='/videos/video-mo-website-mobile.mp4' />
-          ) : viewportWidth < 650 ? (
-            <video muted loop src='/videos/video-mo-website-tablet.mp4' />
-          ) : (
-            <video muted loop src='/videos/video-mo-website-desktop.mp4' />
-          )}
-        </div>
+        <a href='http://www.marcaoptimizada.com' target='_blank'>
+          <div className={styles.youtube_parallax__mo_website__video}>
+            {viewportWidth < 400 ? (
+              <video muted loop src='/videos/video-mo-website-mobile.mp4' />
+            ) : viewportWidth < 650 ? (
+              <video muted loop src='/videos/video-mo-website-tablet.mp4' />
+            ) : (
+              <video muted loop src='/videos/video-mo-website-desktop.mp4' />
+            )}
+          </div>
+        </a>
       </div>
     </div>
   );

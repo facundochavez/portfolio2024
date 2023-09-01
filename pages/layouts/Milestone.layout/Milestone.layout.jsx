@@ -83,7 +83,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
                     viewportWidth >= 900 && milestone.id === 'front-end'
                       ? '100px'
                       : milestone.id === 'back-end'
-                      ? '90px'
+                      ? '70px'
                       : null
                 }}>
                 <TextBox

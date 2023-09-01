@@ -22,6 +22,7 @@ const TextBox = ({ milestone, text, tailLength = 78, controls }) => {
       mainControls.start('textHidden');
       pathControls.start('pathHidden');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   //// COMPONENT

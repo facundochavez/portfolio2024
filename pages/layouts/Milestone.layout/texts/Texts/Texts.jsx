@@ -36,7 +36,6 @@ const YoutubeTopText = () => {
           <a
             href='https://www.youtube.com/marcaoptimizada'
             target='_blank'
-            onclick='return false'
             style={{ color: 'var(--color-7)' }}>
             YouTube&nbsp;channel&nbsp;
             <ExportOutlined
@@ -47,7 +46,6 @@ const YoutubeTopText = () => {
           <a
             href='http://www.marcaoptimizada.com'
             target='_blank'
-            onclick='return false'
             style={{ color: 'var(--color-7)' }}>
             web&nbsp;development&nbsp;
             <ExportOutlined
@@ -178,7 +176,7 @@ const FrontendTopText = () => {
     <>
       {lenguage === 'en' ? (
         <p>
-          Alright, things just got serious. This is a personal project and a work in progress. I'll
+          Alright, things just got serious. This is a personal project and a work in progress. I&apos;ll
           be able to share more soon.
         </p>
       ) : (
@@ -199,25 +197,25 @@ const BackendTopText = () => {
     <>
       {lenguage === 'en' ? (
         <p>
-          An app I'm proud of. I'd love for you to{' '}
+          An app I&apos;m proud of. I&apos;d love for you to{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
             give it a try!&nbsp;
             <ExportOutlined
               style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
             />
           </a>{' '}
-          Just one thing: if you're more of a dog person, you'll need to{' '}
+          Just one thing: if you&apos;re more of a dog person, you&apos;ll need to{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
             register&nbsp;
             <ExportOutlined
               style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
             />
           </a>{' '}
-          and I'll let you know when the pups are ready.
+          and I&apos;ll let you know when the pups are ready.
         </p>
       ) : (
         <p>
-          Una aplicación de la que estoy orgulloso. ¡Me encantaría que{' '}
+          Una aplicación de la cual estoy orgulloso. ¡Me encantaría que{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
             la probaras!&nbsp;
             <ExportOutlined

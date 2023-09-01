@@ -17,6 +17,7 @@ const TechnologiesBox = ({ milestone }) => {
       mainControls.start('hidden');
       iconControls.start('iconHidden');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   //// COMPONENT

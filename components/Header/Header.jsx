@@ -27,6 +27,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleHeaderShow);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //// COMPONENT

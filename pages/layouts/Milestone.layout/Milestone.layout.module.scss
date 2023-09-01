@@ -37,7 +37,7 @@
                 margin-top: 50px;
 
                 @media(min-width: 900px) {
-                    width: 350px;
+                    width: 360px;
                 }
             }
         }
@@ -62,7 +62,7 @@
             max-width: 550px;
             font-size: 15px;
             text-align: right;
-            color: gray;
+            color: var(--color--light-grey);
             padding-bottom: 40px;
 
             a {
@@ -79,7 +79,7 @@
             }
 
             span {
-                color: gray;
+                color: var(--color--light-grey);
                 font-style: italic;
             }
 

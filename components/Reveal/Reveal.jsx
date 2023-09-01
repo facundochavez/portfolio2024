@@ -13,6 +13,7 @@ const Reveal = ({ children, delay = 0, once = true, fromTop = false }) => {
     } else {
       mainControls.start('hidden');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   //// COMPONENT

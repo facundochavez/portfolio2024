@@ -11,7 +11,7 @@
     p {
         font-size: 15px;
         text-align: right;
-        color: gray;
+        color: var(--color--light-grey);
 
         @media(min-width: 900px) {
             font-size: 17px;
@@ -31,7 +31,7 @@
         }
 
         span {
-            color: gray;
+            color: var(--color--light-grey);
             font-style: italic;
         }
     }
@@ -53,11 +53,11 @@
             &__line {
                 height: 100%;
                 width: 1px;
-                background-color: gray;
+                background-color: var(--color--light-grey);
             }
 
             &__circle {
-                background-color: gray;
+                background-color: var(--color--light-grey);
                 min-width: 7px;
                 min-height: 7px;
                 border-radius: 3.5px;
