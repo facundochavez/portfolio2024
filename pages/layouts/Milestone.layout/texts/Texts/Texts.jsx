@@ -1,6 +1,6 @@
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
-import { ArrowRightOutlined, ExportOutlined } from '@ant-design/icons';
+import { ExportOutlined } from '@ant-design/icons';
 
 const BrandsTopText = () => {
   const { lenguage } = useGlobalContext();
@@ -285,15 +285,12 @@ const BackendBottomText = () => {
 
 const texts = {
   brands: {
-    topText: <BrandsTopText />,
-    bottomText: ''
+    topText: <BrandsTopText />
   },
   youtube: {
     topText: <YoutubeTopText />,
-    bottomText: ''
   },
   prototypes: {
-    topText: '',
     bottomText: <PrototypesBottomText />
   },
   'start-coding': {
@@ -302,7 +299,6 @@ const texts = {
   },
   'front-end': {
     topText: <FrontendTopText />,
-    bottomText: ''
   },
   'back-end': {
     topText: <BackendTopText />,

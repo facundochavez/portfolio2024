@@ -3,7 +3,7 @@ import styles from './TextBox.module.scss';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
-import texts from '@/pages/layouts/Milestone.layout/texts/Texts/Texts';
+import { texts } from '@/pages/layouts/Milestone.layout/texts/Texts/Texts';
 
 const TextBox = ({ milestone, text, tailLength = 78, controls }) => {
   const { viewportWidth } = useIsMobile();
