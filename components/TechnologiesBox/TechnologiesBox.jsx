@@ -26,7 +26,7 @@ const TechnologiesBox = ({ milestone }) => {
       <motion.div
         className={styles.technologies_box__background}
         style={{
-          backgroundImage: `linear-gradient(130deg, ${milestone.firstColor} 0%, ${milestone.secondColor} 150%)`
+          backgroundImage: `linear-gradient(130deg, ${milestone?.firstColor} 0%, ${milestone?.secondColor} 150%)`
         }}
         variants={{ hidden: { minWidth: 0 }, visible: { minWidth: '100%' } }}
         initial='hidden'
@@ -34,7 +34,7 @@ const TechnologiesBox = ({ milestone }) => {
         transition={{ delay: 0.35, duration: 0.5 }}
         viewport={{ once: false }}
       />
-      {milestone.technologies.map((technology, index) => {
+      {milestone?.technologies?.map((technology, index) => {
         return (
           <div className={styles.technologies_box__technology} key={index}>
             <motion.div
@@ -46,21 +46,21 @@ const TechnologiesBox = ({ milestone }) => {
               viewport={{ once: false }}
               style={{
                 margin:
-                  technology.id === 'ant-design'
+                  technology?.id === 'ant-design'
                     ? '0 -2px'
-                    : technology.id === 'sass'
+                    : technology?.id === 'sass'
                     ? '0 -3px 0 -3px'
                     : null
               }}>
               <Image
-                src={`/icons/technologies/icon-${technology.id}.svg`}
-                alt={`${technology.name}'s icon.`}
+                src={`/icons/technologies/icon-${technology?.id}.svg`}
+                alt={`${technology?.name}'s icon.`}
                 width={0}
                 height={0}
                 style={{ width: '100%', height: '100%' }}
               />
             </motion.div>
-            <h3 className={styles.technologies_box__technology__name}>{technology.name}</h3>
+            <h3 className={styles.technologies_box__technology__name}>{technology?.name}</h3>
           </div>
         );
       })}
