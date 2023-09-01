@@ -83,8 +83,10 @@ const ClosingSection = () => {
         }, 1000); */
     handlePathSizes();
     window.addEventListener('scroll', handlePathSizes);
+    window.addEventListener('scroll', handleSubcontainerHeight);
     return () => {
       window.removeEventListener('scroll', handlePathSizes);
+      window.removeEventListener('scroll', handleSubcontainerHeight);
     };
   }, []);
 
@@ -160,13 +162,13 @@ const ClosingSection = () => {
                     don't we talk?
                   </motion.p>
                 )
-              ) : viewportWidth < 370 ? (
+              ) : viewportWidth < 376 ? (
                 <motion.p style={{ opacity: phraseOpacity }}>
                   Despues de todo, amo
                   <br />
                   resolver problemas con
                   <br />
-                  diseño y código. Así que
+                  diseño y código. Entonces,
                   <br />
                   ¿por qué no hablamos?
                 </motion.p>
@@ -176,7 +178,7 @@ const ClosingSection = () => {
                   <br />
                   problemas con diseño y código.
                   <br />
-                  Así que, ¿por qué no hablamos?
+                  Entonces, ¿por qué no hablamos?
                 </motion.p>
               )}
 

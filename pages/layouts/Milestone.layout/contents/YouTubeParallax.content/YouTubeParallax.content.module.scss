@@ -8,7 +8,7 @@
     padding-bottom: 30px;
 
     @media(min-width: 820px) {
-        padding-top: 150px;
+        padding-top: 110px;
         padding-bottom: 100px;
     }
 
@@ -38,12 +38,13 @@
         &__top_text {
             width: 100%;
             height: fit-content;
-            max-width: 400px;
+            max-width: 310px;
             margin-left: auto;
             z-index: 20;
 
 
             @media(min-width: 820px) {
+                margin-top: 50px;
                 max-width: 370px;
                 padding-top: 1vw;
             }
@@ -80,11 +81,10 @@
 
     &__mo_website {
         width: 100%;
-        margin-top: 40px;
+        margin-top: 30px;
 
         @media(min-width: 500px) {
             padding-left: 75px;
-            margin-top: -40px;
         }
 
         @media(min-width: 820px) {

@@ -1,6 +1,6 @@
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
-import { ExportOutlined } from '@ant-design/icons';
+import { ArrowRightOutlined, ExportOutlined } from '@ant-design/icons';
 
 const BrandsTopText = () => {
   const { lenguage } = useGlobalContext();
@@ -26,6 +26,7 @@ const BrandsTopText = () => {
 
 const YoutubeTopText = () => {
   const { lenguage } = useGlobalContext();
+  const { isMobile } = useIsMobile();
   //// COMPONENT
   return (
     <>
@@ -37,7 +38,10 @@ const YoutubeTopText = () => {
             target='_blank'
             onclick='return false'
             style={{ color: 'var(--color-7)' }}>
-            YouTube&nbsp;channel
+            YouTube&nbsp;channel&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           to discuss branding and design approaches. That was also my initial foray into{' '}
           <a
@@ -45,7 +49,11 @@ const YoutubeTopText = () => {
             target='_blank'
             onclick='return false'
             style={{ color: 'var(--color-7)' }}>
-            web&nbsp;development.
+            web&nbsp;development&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
+            .
           </a>{' '}
           <br />
           <span>Margin, padding...</span> okay, got it.
@@ -57,7 +65,10 @@ const YoutubeTopText = () => {
             href='https://www.youtube.com/marcaoptimizada'
             target='_blank'
             style={{ color: 'var(--color-7)' }}>
-            canal de YouTube
+            canal de YouTube&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           para hablar sobre <span>branding</span> y enfoques de diseño. Ese también fue mi primer
           acercamiento al{' '}
@@ -65,7 +76,11 @@ const YoutubeTopText = () => {
             href='http://www.marcaoptimizada.com'
             target='_blank'
             style={{ color: 'var(--color-7)' }}>
-            desarrollo web.
+            desarrollo web&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
+            .
           </a>{' '}
           <br />
           <span>Margin, padding...</span> okay, lo tengo.
@@ -82,13 +97,13 @@ const PrototypesBottomText = () => {
     <>
       {lenguage === 'en' ? (
         <p>
-          Sometimes for work, sometimes for fun. I&nbsp;learned that less is less and more is more, you
-          just need to understand how much is necessary.
+          Sometimes for work, sometimes for fun. I&nbsp;learned that less is less and more is more,
+          you just have to understand how much is necessary.
         </p>
       ) : (
         <p>
           A veces por trabajo, a veces por diversión. Aprendí que menos es menos y más es más, sólo
-          necesitas entender cuánto se necesita.
+          debes entender cuánto se necesario.
         </p>
       )}
     </>
@@ -102,7 +117,7 @@ const StartCodingTopText = () => {
     <>
       {lenguage === 'en' ? (
         <p>
-          Design may be quite simple, but being responsive was my challenge. Over time, layouts and{' '}
+          Design may be quite simple, but being <span>responsive</span> was my challenge. Over time, <span>layouts</span> and{' '}
           <span>media queries</span> became my newfound hobby.
         </p>
       ) : (
@@ -118,6 +133,7 @@ const StartCodingTopText = () => {
 
 const StartCodingBottomText = () => {
   const { lenguage } = useGlobalContext();
+  const { isMobile } = useIsMobile();
 
   //// COMPONENT
   return (
@@ -130,7 +146,10 @@ const StartCodingBottomText = () => {
             href='https://www.behance.net/gallery/123745661/The-Atrium-Project-Collaboration-Platform?tracking_source=search_projects_recommended%7CAtrium+Design'
             target='_blank'
             style={{ color: 'var(--color-8)' }}>
-            The&nbsp;Atrium
+            The&nbsp;Atrium&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-8)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>
         </p>
       ) : (
@@ -141,7 +160,10 @@ const StartCodingBottomText = () => {
             href='https://www.behance.net/gallery/123745661/The-Atrium-Project-Collaboration-Platform?tracking_source=search_projects_recommended%7CAtrium+Design'
             target='_blank'
             style={{ color: 'var(--color-8)' }}>
-            The&nbsp;Atrium
+            The&nbsp;Atrium&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-8)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
         </p>
       )}
@@ -171,6 +193,7 @@ const FrontendTopText = () => {
 
 const BackendTopText = () => {
   const { lenguage } = useGlobalContext();
+  const { isMobile } = useIsMobile();
   //// COMPONENT
   return (
     <>
@@ -178,11 +201,17 @@ const BackendTopText = () => {
         <p>
           An app I'm proud of. I'd love for you to{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
-            give it a try!
+            give it a try!&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           Just one thing: if you're more of a dog person, you'll need to{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
-            register
+            register&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           and I'll let you know when the pups are ready.
         </p>
@@ -190,11 +219,17 @@ const BackendTopText = () => {
         <p>
           Una aplicación de la que estoy orgulloso. ¡Me encantaría que{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
-            la probaras!
+            la probaras!&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           Eso sí: si te gustan más los perros, deberás{' '}
           <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
-            registrarte
+            registrarte&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           y te avisaré cuando los canes estén listos.
         </p>
@@ -205,6 +240,7 @@ const BackendTopText = () => {
 
 const BackendBottomText = () => {
   const { lenguage } = useGlobalContext();
+  const { isMobile } = useIsMobile();
   //// COMPONENT
   return (
     <>
@@ -212,24 +248,36 @@ const BackendBottomText = () => {
         <p>
           This work was made possible by the team at{' '}
           <a href='https://thatapicompany.com/' target='_blank' style={{ color: 'var(--color-7)' }}>
-            That API Company
+            That&nbsp;API&nbsp;Company&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           <br />
           Used API:{' '}
           <a href='https://www.thecatapi.com/' target='_blank' style={{ color: 'var(--color-7)' }}>
-            The Cat API
+            The&nbsp;Cat&nbsp;API&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
         </p>
       ) : (
         <p>
           Este trabajo fue posible gracias al equipo de{' '}
           <a href='https://thatapicompany.com/' target='_blank' style={{ color: 'var(--color-7)' }}>
-            That API Company
+            That&nbsp;API&nbsp;Company&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
           <br />
           API utilizada:{' '}
           <a href='https://www.thecatapi.com/' target='_blank' style={{ color: 'var(--color-7)' }}>
-            The Cat API
+            The&nbsp;Cat&nbsp;API&nbsp;
+            <ExportOutlined
+              style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
+            />
           </a>{' '}
         </p>
       )}

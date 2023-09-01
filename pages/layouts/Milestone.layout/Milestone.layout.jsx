@@ -101,7 +101,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.35, duration: 0.5, mass: 0.2 }}>
+          transition={{ delay: 0.2, duration: 0.5, mass: 0.2 }}>
           {contents[milestone.id]}
         </motion.main>
         <motion.footer
@@ -109,7 +109,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.4, duration: 0.5, mass: 0.2 }}
+          transition={{ delay: 0.3, duration: 0.5, mass: 0.2 }}
           style={{
             paddingRight:
               milestone.id === 'prototypes' || milestone.id === 'start-coding'

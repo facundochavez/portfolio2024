@@ -1,0 +1,107 @@
+.scroll_message {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #141414c7;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        p {
+            font-size: 23px;
+        }
+    }
+}
+
+.scrolling_mouse {
+    width: 70px;
+    height: 110px;
+    border-radius: 35px;
+    border: solid 4px white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__wheel {
+        position: relative;
+        width: 12px;
+        height: 12px;
+        background-color: white;
+        border-radius: 6px;
+        animation: scrolling 1.2s infinite;
+
+        @keyframes scrolling {
+            0% {
+                top: 10px;
+                opacity: 0;
+                height: 12px;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            25% {
+                height: 25px;
+            }
+
+            75%{
+                height: 12px;
+            }
+
+            100% {
+                top: 50px;
+                opacity: 0;
+                
+            }
+        }
+    }
+}
+
+.dragging_tap {
+    width: 70px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__tap {
+        position: relative;
+        width: 26px;
+        background-color: white;
+        border-radius: 13px;
+        animation: dragging 1.2s infinite ;
+
+        @keyframes dragging {
+            0% {
+                top: 200px;
+                opacity: 0;
+                height: 26px;
+            }
+
+            1% {
+                opacity: 1;
+            }
+
+            50% {
+                height: 50px;
+            }
+
+            100% {
+                top: 20px;
+                opacity: 0;
+                height: 26px;
+            }
+        }
+    }
+}

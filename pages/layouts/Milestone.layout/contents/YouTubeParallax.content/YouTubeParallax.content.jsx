@@ -70,7 +70,7 @@ const YoutubeParallax = () => {
         <motion.div
           className={styles.youtube_parallax__top_container__top_text}
           ref={topTextRef}
-          style={{ y: topTextTranslationY }}>
+          /* style={{ y: topTextTranslationY }} */>
           <TextBox
             milestone={milestones.find((milestone) => milestone.id === 'youtube')}
             tailLength={tailLength}
@@ -79,9 +79,9 @@ const YoutubeParallax = () => {
         <div className={styles.youtube_parallax__top_container__mo_channel}>
           <motion.div
             className={styles.youtube_parallax__top_container__mo_channel__video}
-            style={{
+           /*  style={{
               y: videoTranslationY
-            }}>
+            }} */>
             <video muted autoPlay loop src='/videos/video-mo-channel.mp4' />
           </motion.div>
         </div>

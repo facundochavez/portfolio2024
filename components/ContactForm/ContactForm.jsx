@@ -126,8 +126,8 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
             className={styles.contact_form}
             style={{
               borderColor: `var(${colorOne})`,
-              background: overlaid
-                ? 'linear-gradient(to top, var(--color-dark-background) 0, var(--color-dark-background) 30%, transparent 50%)'
+              backgroundColor: overlaid
+                ? 'var(--color-dark-background)'
                 : null
             }}
             onFinish={onFinish}
@@ -281,6 +281,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   ref={recaptchaRef}
                   sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
                   theme='dark'
+                  
                   onChange={sendEmail}
                 />
               </motion.div>

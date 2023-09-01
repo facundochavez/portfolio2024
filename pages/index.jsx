@@ -6,6 +6,7 @@ import milestones from '@/data/milestones.data.json';
 import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
 import DottedBackground from '@/components/DottedBackground/DottedBackground';
+import ScrollMessage from '@/components/ScrollMessage/ScrollMessage';
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
       })}
       <ClosingLayout />
       <ScrollToTopButton />
+      <ScrollMessage />
     </div>
   );
 };
