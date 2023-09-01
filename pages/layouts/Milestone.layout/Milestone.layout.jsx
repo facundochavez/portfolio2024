@@ -69,9 +69,9 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
         <PathLine milestone={milestone} />
         <header className={styles.milestone__header}>
           {lenguage === 'en' ? (
-            <RevealTitle title={milestone.titleEn} isOnce={true} />
+            <RevealTitle title={milestone?.titleEn} isOnce={true} />
           ) : (
-            <RevealTitle title={milestone.titleEs} isOnce={true} />
+            <RevealTitle title={milestone?.titleEs} isOnce={true} />
           )}
           <div className={styles.milestone__header__subcontainer}>
             <div className={styles.milestone__header__subcontainer__technologies_box}>
