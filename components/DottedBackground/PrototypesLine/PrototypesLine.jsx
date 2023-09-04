@@ -1,5 +1,4 @@
 import styles from './PrototypesLine.module.scss';
-import Image from 'next/image';
 import { motion, useTransform, useMotionValue } from 'framer-motion';
 import { wrap } from '@motionone/utils';
 import { handleTranslationX } from '@/utils/handleTranslationX.js';

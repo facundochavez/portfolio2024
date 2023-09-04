@@ -3,7 +3,7 @@ import styles from './Milestone.layout.module.scss';
 import TextBox from '@/components/TextBox/TextBox';
 import RevealTitle from '@/components/RevealTitle/RevealTitle';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
 import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
@@ -26,7 +26,6 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
 
   const { viewportWidth } = useIsMobile();
   const { lenguage } = useGlobalContext();
-  /*   const [isOnce, setIsOnce] = useState(false); */
   const mainRef = useRef();
   const mainControls = useAnimation();
   const variants = {
@@ -47,20 +46,6 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
-
-  /*   useEffect(() => {
-    const handleIsOnce = () => {
-      const milestoneRect = document.querySelector(`.${styles.milestone}`).getBoundingClientRect();
-      const newIsOnce = window.scrollY > milestoneRect.top;
-      setIsOnce(newIsOnce);
-    };
-    handleIsOnce();
-    window.addEventListener('scroll', handleIsOnce);
-    return () => {
-      window.removeEventListener('scroll', handleIsOnce);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); */
 
   //// COMPONENT
   return (
@@ -103,7 +88,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.2, duration: 0.5, mass: 0.2 }}>
+          transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
           {contents[milestone?.id]}
         </motion.main>
         <motion.footer
@@ -111,7 +96,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.3, duration: 0.5, mass: 0.2 }}
+          transition={{ delay: 0.2, duration: 0.5, mass: 0.2 }}
           style={{
             paddingRight:
               milestone?.id === 'prototypes' || milestone?.id === 'start-coding'
@@ -129,35 +114,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
 
 const PathLine = ({ milestone }) => {
   const pathRef = useRef();
-  const circleControls = useAnimation();
-  const lineControls = useAnimation();
-  const isInView = useInView(pathRef, { once: true });
 
-  useEffect(() => {
-    if (isInView) {
-      circleControls.start('circleVisible');
-      lineControls.start('lineVisible');
-    } else {
-      circleControls.start('circleHidden');
-      lineControls.start('lineHidden');
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isInView]);
-
-  /*   useEffect(() => {
-    const handelIsOnce = () => {
-      const pathRect = pathRef.current.getBoundingClientRect();
-      if (window.scrollY < pathRect.top) {
-        circleControls.start('circleHidden');
-        lineControls.start('lineHidden');
-      }
-    }
-    handelIsOnce();
-    window.addEventListener('scroll', handelIsOnce);
-    return () => {
-      window.removeEventListener('scroll', handelIsOnce);
-    }
-  }) */
   //// COMPONENT
   return (
     <div className={styles.pathline} ref={pathRef}>
@@ -170,10 +127,6 @@ const PathLine = ({ milestone }) => {
       <div
         className={styles.pathline__circle}
         style={{ backgroundColor: milestone?.firstColor }}
-        variants={{ circleHidden: { scale: 0 }, circleVisible: { scale: 1 } }}
-        initial='circleHidden'
-        animate={circleControls}
-        transition={{ delay: 0.2 }}
       />
       <div
         className={styles.pathline__bottom_line}
@@ -182,13 +135,6 @@ const PathLine = ({ milestone }) => {
           height:
             milestone?.id !== 'back-end' ? 'calc(100% - 38px + 10vh)' : 'calc(100% - 38px + 5vh)'
         }}
-        variants={{
-          lineHidden: { clipPath: 'polygon(0 0, 100% 0%, 100% 0, 0 0)' },
-          lineVisible: { clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0 100%)' }
-        }}
-        initial='lineHidden'
-        animate={lineControls}
-        transition={{ delay: 0.25, duration: 1 }}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './TechnologiesBox.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 
 const TechnologiesBox = ({ milestone }) => {
@@ -31,7 +31,7 @@ const TechnologiesBox = ({ milestone }) => {
         variants={{ hidden: { minWidth: 0 }, visible: { minWidth: '100%' } }}
         initial='hidden'
         animate={mainControls}
-        transition={{ delay: 0.35, duration: 0.5 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
         viewport={{ once: false }}
       />
       {milestone?.technologies?.map((technology, index) => {
@@ -42,7 +42,7 @@ const TechnologiesBox = ({ milestone }) => {
               variants={{ iconHidden: { opacity: 0 }, iconVisible: { opacity: 1 } }}
               initial='iconHidden'
               animate={iconControls}
-              transition={{ delay: 0.5 + index * 0.07 }}
+              transition={{ delay: 0.35 + index * 0.07 }}
               viewport={{ once: false }}
               style={{
                 margin:

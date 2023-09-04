@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 const ScrollMessage = () => {
   const { isMobile } = useIsMobile();
   const [showMessage, setShowMessage] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -17,7 +16,6 @@ const ScrollMessage = () => {
     };
 
     const stopInerval = () => {
-      setScrolled(true);
       setShowMessage(false);
       clearInterval(interval);
     };

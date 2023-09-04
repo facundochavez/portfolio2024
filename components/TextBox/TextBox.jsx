@@ -1,13 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './TextBox.module.scss';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
 import { texts } from '@/pages/layouts/Milestone.layout/texts/Texts/Texts';
 
-const TextBox = ({ milestone, text, tailLength = 78, controls }) => {
+const TextBox = ({ milestone, tailLength = 78, controls }) => {
   const { viewportWidth } = useIsMobile();
-  const { lenguage } = useGlobalContext();
   const marginRight = milestone.topTextMarginRight || 0;
   const boxRef = useRef();
   const isInView = useInView(boxRef, { once: true });
@@ -42,7 +40,7 @@ const TextBox = ({ milestone, text, tailLength = 78, controls }) => {
         variants={{ textHidden: { opacity: 0 }, textVisible: { opacity: 1 } }}
         initial='textHidden'
         animate={milestone.id === 'youtube' ? mainControls : controls}
-        transition={{ delay: viewportWidth < 900 ? 0.4 : 0.5, duration: 1 }}
+        transition={{ delay: viewportWidth < 900 ? 0.15 : 0.25, duration: 1 }}
         style={{
           marginLeft: milestone.id === 'youtube' ? (viewportWidth < 820 ? '-9%' : '5%') : '8%'
         }}>

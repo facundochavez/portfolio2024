@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styles from "./DottedBackground.module.scss";
-import { motion } from "framer-motion";
 
 const DottedBackground = () => {
-  const [translationX, setTranslationX] = useState(0);
-  const [translationY, setTranslationY] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -17,20 +14,10 @@ const DottedBackground = () => {
       dottedBackground.style.setProperty('--mouse-y', `${y}px`);
     }
 
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight;
-      const viewportHeight = window.innerHeight;
-      const scrollPosition = window.scrollY;
-
-      setTranslationY(scrollPosition*-0.1);
-    }
-
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
