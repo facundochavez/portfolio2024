@@ -149,7 +149,7 @@ export default function LazyMilestoneLayout({ milestone }) {
     };
 
     const observer = new IntersectionObserver(onChange, {
-      rootMargin: '100px'
+      rootMargin: '200px'
     });
 
     observer.observe(document.getElementById(milestone?.id));
