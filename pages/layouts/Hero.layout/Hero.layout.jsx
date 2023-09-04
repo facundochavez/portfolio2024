@@ -26,10 +26,6 @@ const HeroSection = () => {
   );
   const phraseOpacity = useTransform(scrollYProgressStart, [0.35, 0.6], [0, 1]);
 
-  /*   const subcontainerTranslationY = useTransform(scrollYProgressStart, [0, 1], ['0%', '100%']);
-  const physics = { damping: 15, mass: 0.27, stiffness: 55 };
-  const subcontainerTranslationX = useSpring(transform, physics); */
-
   // PATH INITIAL VALUES
   const [nameBoxWidth, setNameBoxWidth] = useState(0);
   const [nameBoxHeight, setNameBoxHeight] = useState(0);
