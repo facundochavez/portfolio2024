@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import HeroLayout from '@/pages/layouts/Hero.layout/Hero.layout';
-import MilestoneLayout from '@/pages/layouts/Milestone.layout/Milestone.layout';
-import ClosingLayout from '@/pages/layouts/Closing.layout/Closing.layout';
+import LazyMilestoneLayout from '@/pages/layouts/Milestone.layout/Milestone.layout';
+import LazyClosingLayout from '@/pages/layouts/Closing.layout/Closing.layout';
 import milestones from '@/data/milestones.data.json';
 import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
@@ -23,12 +23,12 @@ const Home = () => {
         if (milestone.id !== 'back-end') {
           return (
             <div key={index}>
-              <MilestoneLayout index={index} milestone={milestone} />
+              <LazyMilestoneLayout index={index} milestone={milestone} />
             </div>
           );
         }
       })}
-      <ClosingLayout />
+      <LazyClosingLayout />
       <ScrollToTopButton />
       <ScrollMessage />
     </div>

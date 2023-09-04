@@ -1,5 +1,5 @@
 import styles from './Closing.layout.module.scss';
-import MilestoneLayout from '../Milestone.layout/Milestone.layout';
+import { MilestoneLayout } from '../Milestone.layout/Milestone.layout';
 import milestones from '@/data/milestones.data.json';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -7,7 +7,7 @@ import useIsMobile from '@/hooks/useIsMobile';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import { useGlobalContext } from '@/context/global.context';
 
-const ClosingSection = () => {
+const ClosingLayout = () => {
   const { viewportWidth, viewportHeight, isMobile } = useIsMobile();
   const { lenguage, isContactFormShow, setIsContactFormShow, setClosingBtnDirection } =
     useGlobalContext();
@@ -220,4 +220,22 @@ const ClosingSection = () => {
   );
 };
 
-export default ClosingSection;
+export default function LazyClosingLayout() {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onChange = (entries) => {
+      const el = entries[0];
+      if (el.isIntersecting) {
+        setShow(true);
+      }
+    };
+
+    const observer = new IntersectionObserver(onChange, {
+      rootMargin: '100px'
+    });
+
+    observer.observe(document.getElementById('LazyClosing'));
+  });
+  return <div id='LazyClosing'>{show ? <ClosingLayout /> : null}</div>;
+}

@@ -3,7 +3,7 @@ import styles from './Milestone.layout.module.scss';
 import TextBox from '@/components/TextBox/TextBox';
 import RevealTitle from '@/components/RevealTitle/RevealTitle';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
 import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
@@ -124,10 +124,7 @@ const PathLine = ({ milestone }) => {
           style={{ backgroundColor: milestone?.firstColor }}
         />
       )}
-      <div
-        className={styles.pathline__circle}
-        style={{ backgroundColor: milestone?.firstColor }}
-      />
+      <div className={styles.pathline__circle} style={{ backgroundColor: milestone?.firstColor }} />
       <div
         className={styles.pathline__bottom_line}
         style={{
@@ -140,4 +137,24 @@ const PathLine = ({ milestone }) => {
   );
 };
 
-export default MilestoneLayout;
+export default function LazyMilestoneLayout({ milestone }) {
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onChange = (entries) => {
+      const el = entries[0];
+      if (el.isIntersecting) {
+        setShow(true);
+      }
+    };
+
+    const observer = new IntersectionObserver(onChange, {
+      rootMargin: '100px'
+    });
+
+    observer.observe(document.getElementById(milestone?.id));
+  });
+  return <div id={milestone?.id}>{show ? <MilestoneLayout milestone={milestone} /> : null}</div>;
+}
+
+export { MilestoneLayout };
