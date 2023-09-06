@@ -71,7 +71,7 @@ const HeroSection = () => {
   const [isFinalStretch, setIsFinalStretch] = useState(false);
   const phrasePathOffset = isFinalStretch ? phrasePathOffsetTwo : phrasePathOffsetOne;
 
-  const verticalPathLength = useTransform(scrollYProgressStart, [0.8, 1], [0, 1]);
+  const verticalPathLength = useTransform(scrollYProgressStart, [0.8, 0.95], [0, 1]);
 
   //  RESPONSIVE CHANGES
   useEffect(() => {
@@ -94,7 +94,7 @@ const HeroSection = () => {
       setPhraseBoxMarginBottom(newMarginBottom);
 
       const newHorizontalLength = phraseBoxRect.left - nameBoxRect.right + 25;
-      const newVerticalLineLength = newMarginBottom + window.innerHeight * 0.05 + 13;
+      const newVerticalLineLength = newMarginBottom + window.innerHeight * 0.05 + 15;
       setHorizontalLineLength(newHorizontalLength);
       setVerticalLineLength(newVerticalLineLength);
 

@@ -139,6 +139,7 @@ const PathLine = ({ milestone }) => {
 
 export default function LazyMilestoneLayout({ milestone }) {
   const [show, setShow] = useState(false);
+  const [rootMargin, setRootMargin] = useState('200px');
 
   useEffect(() => {
     const onChange = (entries) => {
@@ -146,6 +147,8 @@ export default function LazyMilestoneLayout({ milestone }) {
       if (el.isIntersecting) {
         setShow(true);
       }
+
+      setRootMargin(`${window.innerHeight}px`);
     };
 
     const observer = new IntersectionObserver(onChange, {

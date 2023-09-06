@@ -55,11 +55,11 @@ const YoutubeParallax = () => {
         <a href='http://www.marcaoptimizada.com' target='_blank'>
           <div className={styles.youtube_parallax__mo_website__video}>
             {viewportWidth < 400 ? (
-              <video muted src='/videos/video-mo-website-mobile.mp4' />
+              <video muted autoPlay src='/videos/video-mo-website-mobile.mp4' />
             ) : viewportWidth < 650 ? (
-              <video muted src='/videos/video-mo-website-tablet.mp4' />
+              <video muted autoPlay src='/videos/video-mo-website-tablet.mp4' />
             ) : (
-              <video muted src='/videos/video-mo-website-desktop.mp4' />
+              <video muted autoPlay src='/videos/video-mo-website-desktop.mp4' />
             )}
           </div>
         </a>

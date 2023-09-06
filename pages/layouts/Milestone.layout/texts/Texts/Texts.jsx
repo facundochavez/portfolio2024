@@ -101,7 +101,7 @@ const PrototypesBottomText = () => {
       ) : (
         <p>
           A veces por trabajo, a veces por diversión. Aprendí que menos es menos y más es más, sólo
-          debes entender cuánto se necesario.
+          debes entender cuánto se necesita.
         </p>
       )}
     </>

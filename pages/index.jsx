@@ -7,6 +7,7 @@ import Header from '@/components/Header/Header';
 import ScrollToTopButton from '@/components/ScrollToTopButton/ScrollToTopButton';
 import DottedBackground from '@/components/DottedBackground/DottedBackground';
 import ScrollMessage from '@/components/ScrollMessage/ScrollMessage';
+import { useEffect } from 'react';
 
 const Home = () => {
 
@@ -15,6 +16,9 @@ const Home = () => {
       <Head>
         <title>Facundo Chavez | PORTFOLIO 2023</title>
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'></meta>
       </Head>
       <DottedBackground />
       <Header />
