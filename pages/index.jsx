@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import HeroLayout from '@/pages/layouts/Hero.layout/Hero.layout';
-import LazyMilestoneLayout from '@/pages/layouts/Milestone.layout/Milestone.layout';
+import LazyMilestoneLayout, {
+  MilestoneLayout
+} from '@/pages/layouts/Milestone.layout/Milestone.layout';
 import LazyClosingLayout from '@/pages/layouts/Closing.layout/Closing.layout';
 import milestones from '@/data/milestones.data.json';
 import Header from '@/components/Header/Header';
@@ -10,7 +12,6 @@ import ScrollMessage from '@/components/ScrollMessage/ScrollMessage';
 import { useEffect } from 'react';
 
 const Home = () => {
-
   return (
     <div id='smoother-container'>
       <Head>
@@ -23,8 +24,9 @@ const Home = () => {
       <DottedBackground />
       <Header />
       <HeroLayout />
+      <MilestoneLayout milestone={milestones.find((milestone) => milestone.id === 'brands')}/>
       {milestones.map((milestone, index) => {
-        if (milestone.id !== 'back-end') {
+        if (milestone.id !== 'back-end' && milestone.id !== 'brands') {
           return (
             <div key={index}>
               <LazyMilestoneLayout index={index} milestone={milestone} />
