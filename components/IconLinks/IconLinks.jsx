@@ -20,7 +20,7 @@ const IconLinks = () => {
       <a
         className={styles.icon_links__icon}
         style={{ marginRight: '5px' }}
-        href='https://github.com/facukun'
+        href='https://github.com/facundochavez'
         target='_blank'>
         <Image
           src={`/icons/icon-github.svg`}
