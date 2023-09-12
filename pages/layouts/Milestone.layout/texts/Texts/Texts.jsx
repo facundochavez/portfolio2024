@@ -198,14 +198,14 @@ const BackendTopText = () => {
       {lenguage === 'en' ? (
         <p>
           An app I&apos;m proud of. I&apos;d love for you to{' '}
-          <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
+          <a href='https://petpath.vercel.app/' target='_blank' style={{ color: 'var(--color-7)' }}>
             give it a try!&nbsp;
             <ExportOutlined
               style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
             />
           </a>{' '}
           Just one thing: if you&apos;re more of a dog person, you&apos;ll need to{' '}
-          <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
+          <a href='https://petpath.vercel.app/' target='_blank' style={{ color: 'var(--color-7)' }}>
             register&nbsp;
             <ExportOutlined
               style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
@@ -216,14 +216,14 @@ const BackendTopText = () => {
       ) : (
         <p>
           Una aplicación de la cual estoy orgulloso. ¡Me encantaría que{' '}
-          <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
+          <a href='https://petpath.vercel.app/' target='_blank' style={{ color: 'var(--color-7)' }}>
             la probaras!&nbsp;
             <ExportOutlined
               style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
             />
           </a>{' '}
           Eso sí: si te gustan más los perros, deberás{' '}
-          <a href='http://www.petpath.app' target='_blank' style={{ color: 'var(--color-7)' }}>
+          <a href='https://petpath.vercel.app/' target='_blank' style={{ color: 'var(--color-7)' }}>
             registrarte&nbsp;
             <ExportOutlined
               style={{ filter: 'var(--filter-color-7)', fontSize: isMobile ? '14px' : '15px' }}
