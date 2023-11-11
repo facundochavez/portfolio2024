@@ -12,12 +12,20 @@
         "name": "Superdescuentos"
     },
     {
+        "id": "three-words-mug",
+        "name": "Three Words Mug"
+    },
+    {
         "id": "kimero",
         "name": "Kimero"
     },
     {
         "id": "mamma-gaucha",
         "name": "Mamma Gaucha"
+    },
+    {
+        "id": "cp-arquitectos",
+        "name": "CP Arquitectos"
     },
     {
         "id": "pan-delfino",
@@ -36,12 +44,24 @@
         "name": "HazMak"
     },
     {
+        "id": "pinches-waffles",
+        "name": "Pinches Waffles"
+    },
+    {
+        "id": "edelab",
+        "name": "EdeLab"
+    },
+    {
         "id": "hidronoa",
         "name": "Hidronoa"
     },
     {
         "id": "de-mata-guemes",
         "name": "De Mata Güemes"
+    },
+    {
+        "id": "volten",
+        "name": "Volten"
     },
     {
         "id": "nias-treats",

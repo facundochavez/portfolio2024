@@ -7,13 +7,13 @@ const BrandsCarousel = () => {
   const { isMobile } = useIsMobile();
 
   const firstLineMobile = brands.slice(0, 4);
-  const secondLineMobile = brands.slice(4, 8);
-  const thirdLineMobile = brands.slice(8, 12);
-  const fourthLineMobile = brands.slice(12, 17);
+  const secondLineMobile = brands.slice(5, 9);
+  const thirdLineMobile = brands.slice(9, 13);
+  const fourthLineMobile = brands.slice(13, 19);
 
-  const firstLineDesktop = brands.slice(0, 5); 
-  const secondLineDesktop = brands.slice(5, 10);
-  const thirdLineDesktop = brands.slice(10, 17);
+  const firstLineDesktop = brands.slice(0, 7); 
+  const secondLineDesktop = brands.slice(7, 14);
+  const thirdLineDesktop = brands.slice(14, 20);
 
   //// COMPONENT
   return (
@@ -29,7 +29,7 @@ const BrandsCarousel = () => {
         <>
           <BrandsLine brands={firstLineDesktop} baseVelocity={-0.5} />
           <BrandsLine brands={secondLineDesktop} baseVelocity={0.5} />
-          <BrandsLine brands={thirdLineDesktop} baseVelocity={1} />
+          <BrandsLine brands={thirdLineDesktop} baseVelocity={1.1} />
         </>
       )}
     </div>
