@@ -52,6 +52,27 @@
             }
         ],
         "firstColor": "var(--color-2)",
+        "secondColor": "var(--color-4)"
+    },
+    {
+        "id": "store",
+        "titleEn": "set up an online store,",
+        "titleEs": "montar una tienda online,",
+        "technologies": [
+            {
+                "id": "shopify",
+                "name": "Shopify"
+            },
+            {
+                "id": "printify",
+                "name": "Printify"
+            },
+            {
+                "id": "google-ads",
+                "name": "Google\u00A0Ads"
+            }
+        ],
+        "firstColor": "var(--color-4)",
         "secondColor": "var(--color-3)"
     },
     {

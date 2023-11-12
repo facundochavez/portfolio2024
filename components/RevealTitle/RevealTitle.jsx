@@ -16,7 +16,7 @@ const RevealTitle = ({ title, isOnce = false }) => {
       const calculatedDelays = spanRefs.current.map((spanRef) => {
         if (spanRef) {
           const spanTop = spanRef.getBoundingClientRect().top;
-          const delay = 0.1 + (spanTop - fatherTop) * 0.002;
+          const delay =/*  0.1 + */ (spanTop - fatherTop) * 0.002;
           return delay;
         } else {
           return 0.45;

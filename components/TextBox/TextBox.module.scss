@@ -11,6 +11,7 @@
     p {
         font-size: 15px;
         text-align: right;
+        text-wrap: balance;
         color: var(--color--light-grey);
 
         @media(min-width: 900px) {

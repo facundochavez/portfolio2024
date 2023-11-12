@@ -6,14 +6,14 @@ import useIsMobile from '@/hooks/useIsMobile';
 const BrandsCarousel = () => {
   const { isMobile } = useIsMobile();
 
-  const firstLineMobile = brands.slice(0, 4);
-  const secondLineMobile = brands.slice(5, 9);
-  const thirdLineMobile = brands.slice(9, 13);
-  const fourthLineMobile = brands.slice(13, 19);
+  const firstLineMobile = brands.slice(0, 5);
+  const secondLineMobile = brands.slice(5, 11);
+  const thirdLineMobile = brands.slice(11, 16);
+  const fourthLineMobile = brands.slice(16, 22);
 
   const firstLineDesktop = brands.slice(0, 7); 
   const secondLineDesktop = brands.slice(7, 14);
-  const thirdLineDesktop = brands.slice(14, 20);
+  const thirdLineDesktop = brands.slice(14, 22);
 
   //// COMPONENT
   return (

@@ -7,8 +7,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useGlobalContext } from '@/context/global.context';
 import useIsMobile from '@/hooks/useIsMobile';
 import BrandsCarousel from './contents/BrandsCarousel.content/BrandsCarousel.content';
-import YoutubeParallax from './contents/YouTubeParallax.content/YouTubeParallax.content';
+import YouTubeLayout from './contents/YouTubeLayout.content/YouTubeLayout.content';
 import PrototypesCarousel from './contents/PrototypesCarousel.content/PrototypesCarousel.content';
+import StoreLayout from './contents/StoreeLayout.content copy/StoreLayout.content';
 import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVideo.content';
 import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
 import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
@@ -17,8 +18,9 @@ import { texts } from './texts/Texts/Texts';
 const MilestoneLayout = ({ milestone, milestoneRef }) => {
   const contents = {
     brands: <BrandsCarousel />,
-    youtube: <YoutubeParallax />,
+    youtube: <YouTubeLayout />,
     prototypes: <PrototypesCarousel />,
+    store: < StoreLayout/>,
     'start-coding': <StartCodingVideo />,
     'front-end': <FrontendVideo />,
     'back-end': <BackendVideo />
@@ -62,7 +64,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
             <div className={styles.milestone__header__subcontainer__technologies_box}>
               <TechnologiesBox milestone={milestone} />
             </div>
-            {texts[milestone?.id]?.topText && milestone?.id !== 'youtube' && (
+            {texts[milestone?.id]?.topText && milestone?.id !== 'youtube' && milestone?.id !== 'store' &&(
               <div
                 className={styles.milestone__header__subcontainer__top_text}
                 style={{
@@ -77,6 +79,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
                   milestone={milestone}
                   text={texts[milestone?.id]?.topText}
                   controls={mainControls}
+                  tailLength={milestone?.id === 'youtube' || milestone?.id === 'store' ? 100 : 78}
                 />
               </div>
             )}
@@ -88,7 +91,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.15, duration: 0.5, mass: 0.2 }}>
+          transition={{ /* delay: 0.15, */ duration: 0.5, mass: 0.2 }}>
           {contents[milestone?.id]}
         </motion.main>
         <motion.footer
@@ -96,7 +99,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
           variants={variants}
           initial='mainHidden'
           animate={mainControls}
-          transition={{ delay: 0.2, duration: 0.5, mass: 0.2 }}
+          transition={{ /* delay: 0.2, */ duration: 0.5, mass: 0.2 }}
           style={{
             paddingRight:
               milestone?.id === 'prototypes' || milestone?.id === 'start-coding'

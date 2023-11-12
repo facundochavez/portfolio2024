@@ -4,7 +4,7 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import useIsMobile from '@/hooks/useIsMobile';
 import { texts } from '@/pages/layouts/Milestone.layout/texts/Texts/Texts';
 
-const TextBox = ({ milestone, tailLength = 78, controls }) => {
+const TextBox = ({ milestone, tailLength, controls }) => {
   const { viewportWidth } = useIsMobile();
   const marginRight = milestone.topTextMarginRight || 0;
   const boxRef = useRef();
@@ -39,17 +39,17 @@ const TextBox = ({ milestone, tailLength = 78, controls }) => {
       <motion.div
         variants={{ textHidden: { opacity: 0 }, textVisible: { opacity: 1 } }}
         initial='textHidden'
-        animate={milestone.id === 'youtube' ? mainControls : controls}
+        animate={milestone.id === 'youtube' || milestone.id === 'store' ? mainControls : controls}
         transition={{ delay: viewportWidth < 900 ? 0.15 : 0.25, duration: 1 }}
         style={{
-          marginLeft: milestone.id === 'youtube' ? (viewportWidth < 820 ? '-9%' : '5%') : '8%'
+          marginLeft: milestone.id === 'youtube' || milestone.id === 'store' ? (viewportWidth < 820 ? '-9%' : '5%') : '8%'
         }}>
         {texts[milestone.id]?.topText}
       </motion.div>
       <div
         className={styles.text_box__path}
         style={{
-          height: milestone.id === 'brands' ? 'calc(100% + 100px)' : `calc(100% + ${tailLength}px)`
+          height: `calc(100% + ${tailLength}px)`
         }}>
         <motion.div
           className={styles.text_box__path__wrapper}
@@ -58,8 +58,8 @@ const TextBox = ({ milestone, tailLength = 78, controls }) => {
             pathVisible: { height: '100%', marginTop: '0px' }
           }}
           initial='pathHidden'
-          animate={milestone.id === 'youtube' ? pathControls : controls}
-          transition={{ delay: viewportWidth < 900 ? 0.5 : 0.6, duration: 0.5 }}>
+          animate={milestone.id === 'youtube' || milestone.id === 'store' ? pathControls : controls}
+          transition={{ delay: viewportWidth < 900 ? 0.4 : 0.5, duration: 0.5 }}>
           <div className={styles.text_box__path__wrapper__line}></div>
           <div className={styles.text_box__path__wrapper__circle}></div>
         </motion.div>
