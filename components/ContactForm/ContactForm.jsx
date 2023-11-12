@@ -279,7 +279,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                 exit={recaptchaControls}>
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+                  sitekey='6LcPzgwpAAAAAKzcTvCxHlnux_NAJub3xESPPEPv'
                   theme='dark'
                   
                   onChange={sendEmail}
