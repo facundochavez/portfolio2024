@@ -44,7 +44,7 @@ const StoreLayout = () => {
           />
         </motion.div>
         <div className={styles.store__top_container__three_words_mug}>
-          <a href='https://threewordsmug.com//' target='_blank'>
+          <a href='https://threewordsmug.com/' target='_blank'>
             <motion.div
               className={styles.store__top_container__three_words_mug__video}
             >
@@ -54,7 +54,7 @@ const StoreLayout = () => {
         </div>
       </div>
       <motion.div className={styles.store__twm_website} ref={bottomContainerStoreRef}>
-        <a href='http://www.threewordsmug.com' target='_blank'>
+        <a href='https://threewordsmug.com/' target='_blank'>
           <div className={styles.store__twm_website__video}>
             {viewportWidth < 400 ? (
               <video muted autoPlay src='/videos/video-twm-mobile.mp4' />
