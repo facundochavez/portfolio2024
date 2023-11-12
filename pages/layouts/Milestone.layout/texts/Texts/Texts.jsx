@@ -158,7 +158,7 @@ const StoreTopText = () => {
         <p>
           Un idea simple escaló rápidamente: ofrecer tazas con frases de tres
           palabras y un toque de humor. Desde el diseño de los productos hasta
-          la campaña de marketing, disfruté cada paso de la creación de{" "}
+          la campaña de <span>marketing,</span> disfruté cada paso de la creación de{" "}
           <a
             href="https://threewordsmug.com/"
             target="_blank"
