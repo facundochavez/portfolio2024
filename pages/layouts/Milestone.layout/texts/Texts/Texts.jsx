@@ -136,7 +136,7 @@ const StoreTopText = () => {
     <>
       {lenguage === "en" ? (
         <p>
-          <span>"Drink, code, repeat"...</span> A simple idea escalated quickly:
+          <span>&quot;Drink, code, repeat&quot;...</span> A simple idea escalated quickly:
           mugs with three-word phrases and a touch of humor. From product design
           to marketing campaign, I enjoyed every step of creating{" "}
           <a
@@ -156,7 +156,7 @@ const StoreTopText = () => {
         </p>
       ) : (
         <p>
-          <span>"Drink, code, repeat"...</span> Un idea simple escaló rápidamente:
+          <span>&quot;Drink, code, repeat&quot;...</span> Un idea simple escaló rápidamente:
           tazas con frases de tres palabras y un toque de humor. Desde el diseño
           de productos hasta la campaña de <span>marketing,</span> disfruté
           cada paso de la creación de{" "}
