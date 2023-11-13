@@ -91,8 +91,8 @@
 
         &__mug_video {
           right: unset;
-          left: -150px;
-          top: -10px;
+          left: -160px;
+          top: -15px;
         }
       }
     }
@@ -109,6 +109,10 @@
     &__top_container {
       &__top_text {
         max-width: 350px;
+        &__mug_video {
+          top: -25px;
+          left: -170px;
+        }
       }
       &__twm_ad {
         padding-left: 20px;
