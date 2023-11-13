@@ -28,6 +28,11 @@
         &__icon {
             position: relative;
             height: 30px;
+            transition: all 0.3s;
+            
+            &:hover {
+                filter: brightness(100);
+            }
         }
 
         &__name {
@@ -44,11 +49,10 @@
             pointer-events: none;
         }
 
-        &:hover {
-            filter: brightness(100);
-        }
+
 
         &:hover &__name {
+            filter: brightness(100);
             margin-top: 45px;
             opacity: 1;
         }

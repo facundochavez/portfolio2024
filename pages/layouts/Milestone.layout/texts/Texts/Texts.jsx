@@ -9,16 +9,16 @@ const BrandsTopText = () => {
     <>
       {lenguage === "en" ? (
         <p>
-          For years, I focused on studying and crafting graphic brands with a
-          pragmatic approach. I came to realize that analyzing the market and
-          building a robust strategy form the cornerstone for achieving a
-          high&ndash;performance brand.
+          For years, I focused on studying and crafting graphic brands from a
+          pragmatic approach. I realized that analyzing the market and building
+          a solid strategy are the cornerstone of a high&ndash;performing
+          brand.
         </p>
       ) : (
         <p>
-          Durante años, me dediqué al estudio y diseño de marcas gráficas con un
-          enfoque pragmático. Comprendí que analizar el mercado y desarrollar
-          una sólida estrategia son la base para lograr una marca de alto
+          Durante años, me dediqué al estudio y diseño de marcas gráficas desde
+          un enfoque pragmático. Comprendí que analizar el mercado y desarrollar
+          una sólida estrategia son la piedra angular de una marca de alto
           rendimiento.
         </p>
       )}
@@ -136,9 +136,9 @@ const StoreTopText = () => {
     <>
       {lenguage === "en" ? (
         <p>
-          A simple idea escalated quickly: to offer mugs with three-word phrases
-          and a touch of humor. From product design to marketing campaign, I
-          enjoyed every step of creating{" "}
+          <span>"Drink, code, repeat"...</span> A simple idea escalated quickly:
+          mugs with three-word phrases and a touch of humor. From product design
+          to marketing campaign, I enjoyed every step of creating{" "}
           <a
             href="https://threewordsmug.com/"
             target="_blank"
@@ -156,9 +156,10 @@ const StoreTopText = () => {
         </p>
       ) : (
         <p>
-          Un idea simple escaló rápidamente: ofrecer tazas con frases de tres
-          palabras y un toque de humor. Desde el diseño de los productos hasta
-          la campaña de <span>marketing,</span> disfruté cada paso de la creación de{" "}
+          <span>"Drink, code, repeat"...</span> Un idea simple escaló rápidamente:
+          tazas con frases de tres palabras y un toque de humor. Desde el diseño
+          de productos hasta la campaña de <span>marketing,</span> disfruté
+          cada paso de la creación de{" "}
           <a
             href="https://threewordsmug.com/"
             target="_blank"
