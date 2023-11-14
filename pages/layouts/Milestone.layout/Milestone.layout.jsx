@@ -79,7 +79,7 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
                   milestone={milestone}
                   text={texts[milestone?.id]?.topText}
                   controls={mainControls}
-                  tailLength={milestone?.id === 'youtube' || milestone?.id === 'store' ? 100 : 78}
+                  tailLength={milestone?.id === 'brands' ? 100 : 78}
                 />
               </div>
             )}
