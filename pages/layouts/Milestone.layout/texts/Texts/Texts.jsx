@@ -49,7 +49,8 @@ const YoutubeTopText = () => {
             />
           </a>{" "}
           to discuss branding and design approaches. That was also my initial
-          foray into{" "}
+          foray into web development. 
+         {/*  {" "}
           <a
             href="http://www.marcaoptimizada.com"
             target="_blank"
@@ -63,7 +64,7 @@ const YoutubeTopText = () => {
               }}
             />
             .
-          </a>{" "}
+          </a>{" "} */}
           <br />
           <span>Margin, padding...</span> okay, got it.
         </p>
@@ -84,7 +85,8 @@ const YoutubeTopText = () => {
             />
           </a>{" "}
           para hablar sobre <span>branding</span> y enfoques de diseño. Ese
-          también fue mi primer acercamiento al{" "}
+          también fue mi primer acercamiento al desarrollo web.
+          {/* {" "}
           <a
             href="http://www.marcaoptimizada.com"
             target="_blank"
@@ -98,7 +100,7 @@ const YoutubeTopText = () => {
               }}
             />
             .
-          </a>{" "}
+          </a>{" "} */}
           <br />
           <span>Margin, padding...</span> okay, lo tengo.
         </p>

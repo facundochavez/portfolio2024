@@ -1,15 +1,19 @@
-import styles from './Header.module.scss';
-import IconLinks from '../IconLinks/IconLinks';
-import LenguageSwitcher from '../LenguageSwitcher/LenguageSwitcher';
-import { useEffect, useState } from 'react';
-import { useGlobalContext } from '@/context/global.context';
-import ContactForm from '../ContactForm/ContactForm';
-import { AnimatePresence, motion } from 'framer-motion';
+import styles from "./Header.module.scss";
+import IconLinks from "../IconLinks/IconLinks";
+import LenguageSwitcher from "../LenguageSwitcher/LenguageSwitcher";
+import { useEffect, useState } from "react";
+import { useGlobalContext } from "@/context/global.context";
+import ContactForm from "../ContactForm/ContactForm";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const [isHeaderShow, setIsHeaderShow] = useState(true);
-  const { lenguage, contactFormHeight, isContactFormOpen, setIsContactFormOpen } =
-    useGlobalContext();
+  const {
+    lenguage,
+    contactFormHeight,
+    isContactFormOpen,
+    setIsContactFormOpen,
+  } = useGlobalContext();
   const [isFirstRender, setIsFirstRender] = useState(true);
 
   useEffect(() => {
@@ -23,12 +27,31 @@ const Header = () => {
       setIsFirstRender(false);
     };
     handleHeaderShow();
-    window.addEventListener('scroll', handleHeaderShow);
+    window.addEventListener("scroll", handleHeaderShow);
     return () => {
-      window.removeEventListener('scroll', handleHeaderShow);
+      window.removeEventListener("scroll", handleHeaderShow);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleDownload = () => {
+    const englishPdfPath = "/files/cv-english.pdf";
+    const spanishPdfPath = "/files/cv-spanish.pdf";
+
+    const englishDownloadLink = document.createElement("a");
+    englishDownloadLink.href = englishPdfPath;
+    englishDownloadLink.download = "CV Facundo Chavez - english";
+    document.body.appendChild(englishDownloadLink);
+    englishDownloadLink.click();
+    document.body.removeChild(englishDownloadLink);
+
+    const spanishDownloadLink = document.createElement("a");
+    spanishDownloadLink.href = spanishPdfPath;
+    spanishDownloadLink.download = "CV Facundo Chavez - español";
+    document.body.appendChild(spanishDownloadLink);
+    spanishDownloadLink.click();
+    document.body.removeChild(spanishDownloadLink);
+  };
 
   //// COMPONENT
   return (
@@ -36,23 +59,33 @@ const Header = () => {
       {isHeaderShow && (
         <motion.div
           className={styles.header}
-          initial={{ opacity: 0, y: '-100px' }}
+          initial={{ opacity: 0, y: "-100px" }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: '-100px' }}
+          exit={{ opacity: 0, y: "-100px" }}
           transition={{
-            type: 'spring',
+            type: "spring",
             mass: 0.2,
-            delay: isFirstRender ? 0.7 : 0
-          }}>
+            delay: isFirstRender ? 0.7 : 0,
+          }}
+        >
           <div className={styles.header__wrapper}>
             <nav className={styles.header__wrapper__nav}>
               <LenguageSwitcher />
               <IconLinks />
+
+              <span
+                className={styles.header__wrapper__nav__cv}
+                onClick={handleDownload}
+              >
+                CV
+              </span>
+
               <span
                 className={styles.header__wrapper__nav__contact}
-                style={isContactFormOpen ? { color: 'var(--color-3)' } : null}
-                onClick={() => setIsContactFormOpen(!isContactFormOpen)}>
-                {lenguage === 'en' ? 'Contact' : 'Contacto'}
+                style={isContactFormOpen ? { color: "var(--color-3)" } : null}
+                onClick={() => setIsContactFormOpen(!isContactFormOpen)}
+              >
+                {lenguage === "en" ? "Contact" : "Contacto"}
               </span>
             </nav>
 
@@ -60,11 +93,12 @@ const Header = () => {
               {isContactFormOpen && (
                 <div
                   className={styles.header__wrapper__contact_form}
-                  style={{ height: `${contactFormHeight}px` }}>
+                  style={{ height: `${contactFormHeight}px` }}
+                >
                   <ContactForm
-                    colorOne={'--color-2'}
-                    colorTwo={'--color-3'}
-                    colorThree={'--color-2'}
+                    colorOne={"--color-2"}
+                    colorTwo={"--color-3"}
+                    colorThree={"--color-2"}
                     overlaid={contactFormHeight === 330}
                   />
                 </div>

@@ -7,7 +7,7 @@ const IconLinks = () => {
     <div className={styles.icon_links}>
       <a
         className={styles.icon_links__icon}
-        href='https://www.linkedin.com/in/facundo-chavez-a46b55b5/'
+        href='https://www.linkedin.com/in/facundo-chavez-dev/'
         target='_blank'>
         <Image
           src={`/icons/icon-linkedin.svg`}
