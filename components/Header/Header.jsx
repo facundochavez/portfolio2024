@@ -35,19 +35,19 @@ const Header = () => {
   }, []);
 
   const handleDownload = () => {
-    const englishPdfPath = "/files/cv-english.pdf";
-    const spanishPdfPath = "/files/cv-spanish.pdf";
+    const englishPdfPath = "/files/CV_Facundo_Chavez_English.pdf";
+    const spanishPdfPath = "/files/CV_Facundo_Chavez_Spanish.pdf";
 
     const englishDownloadLink = document.createElement("a");
     englishDownloadLink.href = englishPdfPath;
-    englishDownloadLink.download = "CV Facundo Chavez - english";
+    englishDownloadLink.download = "CV Facundo Chavez - English";
     document.body.appendChild(englishDownloadLink);
     englishDownloadLink.click();
     document.body.removeChild(englishDownloadLink);
 
     const spanishDownloadLink = document.createElement("a");
     spanishDownloadLink.href = spanishPdfPath;
-    spanishDownloadLink.download = "CV Facundo Chavez - español";
+    spanishDownloadLink.download = "CV Facundo Chavez - Español";
     document.body.appendChild(spanishDownloadLink);
     spanishDownloadLink.click();
     document.body.removeChild(spanishDownloadLink);
