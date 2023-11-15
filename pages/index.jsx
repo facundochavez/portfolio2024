@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div id='smoother-container'>
       <Head>
-        <title>Facundo Chavez | PORTFOLIO 2023</title>
+        <title>Facundo Chavez | PORTFOLIO 2024</title>
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
         <meta
           name='viewport'
