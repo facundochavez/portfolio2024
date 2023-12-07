@@ -14,10 +14,12 @@ const YoutubeLayout = () => {
   useEffect(() => {
     const handleTailLength = () => {
       const topTextRect = topTextRef.current.getBoundingClientRect();
-      const bottomContainerRect = bottomContainerRef.current.getBoundingClientRect();
+      const bottomContainerRect =
+        bottomContainerRef.current.getBoundingClientRect();
 
       const extraTailLength = window.innerWidth < 820 ? 15 : 35;
-      const newTailLength = bottomContainerRect.top - topTextRect.bottom + extraTailLength;
+      const newTailLength =
+        bottomContainerRect.top - topTextRect.bottom + extraTailLength;
       setTailLength(newTailLength);
     };
     handleTailLength();
@@ -37,7 +39,9 @@ const YoutubeLayout = () => {
           ref={topTextRef}
         >
           <TextBox
-            milestone={milestones.find((milestone) => milestone.id === 'youtube')}
+            milestone={milestones.find(
+              (milestone) => milestone.id === 'youtube'
+            )}
             tailLength={tailLength}
           />
         </motion.div>
@@ -51,18 +55,19 @@ const YoutubeLayout = () => {
           </a>
         </div>
       </div>
-      <motion.div className={styles.youtube__mo_website} ref={bottomContainerRef}>
-        <a href='http://www.marcaoptimizada.com' target='_blank'>
-          <div className={styles.youtube__mo_website__video}>
-            {viewportWidth < 400 ? (
-              <video muted autoPlay src='/videos/video-mo-website-mobile.mp4' />
-            ) : viewportWidth < 650 ? (
-              <video muted autoPlay src='/videos/video-mo-website-tablet.mp4' />
-            ) : (
-              <video muted autoPlay src='/videos/video-mo-website-desktop.mp4' />
-            )}
-          </div>
-        </a>
+      <motion.div
+        className={styles.youtube__mo_website}
+        ref={bottomContainerRef}
+      >
+        <div className={styles.youtube__mo_website__video}>
+          {viewportWidth < 400 ? (
+            <video muted autoPlay src='/videos/video-mo-website-mobile.mp4' />
+          ) : viewportWidth < 650 ? (
+            <video muted autoPlay src='/videos/video-mo-website-tablet.mp4' />
+          ) : (
+            <video muted autoPlay src='/videos/video-mo-website-desktop.mp4' />
+          )}
+        </div>
       </motion.div>
     </div>
   );
