@@ -197,7 +197,7 @@ const StartCodingTopText = () => {
         <p>
           El diseño puede resultar simple, pero ser <span>responsive</span> era
           mi desafío. De a poco, los <span>layouts</span> y{" "}
-          <span>media queries</span> se convirtieron en mi nuevo hobbie.
+          <span>media queries</span> se convirtieron en mi nuevo <span>hobby.</span>
         </p>
       )}
     </>
