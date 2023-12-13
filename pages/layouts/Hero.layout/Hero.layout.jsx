@@ -249,7 +249,7 @@ const HeroSection = () => {
                   : 'De hecho, soy un ingeniero'}
               </motion.p>
               <motion.p style={{ opacity: phraseOpacity }}>
-                {lenguage === 'en' ? 'who one day wanted to...' : 'civil que un día quizo...'}
+                {lenguage === 'en' ? 'who one day wanted to...' : 'civil que un día quiso...'}
               </motion.p>
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
