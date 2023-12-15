@@ -23,13 +23,6 @@ const PrototypesLine = ({
             className={styles.prototypes_line__box}
             style={{ height: `${prototype?.heightFactor * height}px` }}>
             <video muted autoPlay loop src={`/videos/video-${prototype?.id}.mp4`} />
-            {/*             <Image
-              src={`/videos/video-${prototype.id}.mp4`}
-              alt={`${prototype.name}'s image.`}
-              width={500}
-              height={prototype.heightFactor * height}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            /> */}
           </div>
         );
       })}
