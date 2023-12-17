@@ -50,7 +50,7 @@ const LenguageSwitcher = ({ isDropdownShow }) => {
         menu={{
           items,
           selectable: true,
-          defaultSelectedKeys: ['1'],
+          defaultSelectedKeys: lenguage === 'en' ? ['1'] : ['2'],
           style: {
             width: '100px',
             fontSize: '20px',
