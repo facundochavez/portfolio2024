@@ -112,13 +112,12 @@
         top: 30px;
         right: 0;
 
-        p,
-        span {
-          font-size: 20px;
+        p {
+          font-size: 17px;
           color: var(--color--light-grey);
         }
         a {
-          font-size: 18px;
+          font-size: 15px;
           color: var(--color-8);
           text-decoration: none;
           &:hover {
@@ -207,6 +206,15 @@
       }
 
       &__right {
+        &__notation {
+          p {
+            font-size: 20px;
+          }
+          a {
+            font-size: 18px;
+          }
+        }
+
         &__phrase_box {
           padding: 30px 35px;
 

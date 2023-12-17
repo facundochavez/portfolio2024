@@ -9,6 +9,7 @@ import { ExportOutlined } from '@ant-design/icons';
 const HeroSection = () => {
   const { lenguage, setContactFormHeight, setHeroBtnDirection } =
     useGlobalContext();
+  const { isMobile } = useGlobalContext();
 
   // HORIZONTAL SCROLLING
   const heroSectionRef = useRef();
@@ -307,9 +308,7 @@ const HeroSection = () => {
             >
               {lenguage === 'en' ? (
                 <>
-                  <p>
-                    Built with Next.js
-                  </p>
+                  <p>Built with Next.js</p>
                   <a
                     href='https://github.com/facundochavez/portfolio2024.git'
                     target='_blank'
@@ -325,9 +324,7 @@ const HeroSection = () => {
                 </>
               ) : (
                 <>
-                  <p>
-                    Creado con Next.js
-                  </p>
+                  <p>Creado con Next.js</p>
                   <a
                     href='https://github.com/facundochavez/portfolio2024.git'
                     target='_blank'
