@@ -8,18 +8,6 @@ const LenguageSwitcher = ({ isDropdownShow }) => {
   const { lenguage, setLenguage } = useGlobalContext();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    const handleDropDownOpen = () => {
-      setDropdownOpen(false);
-    };
-
-    window.addEventListener('scroll', handleDropDownOpen);
-
-    return () => {
-      window.removeEventListener('scroll', handleDropDownOpen);
-    };
-  }, []);
-
   /*   const toggleLenguage = () => {
     if (lenguage === 'en') {
       setLenguage('es');
