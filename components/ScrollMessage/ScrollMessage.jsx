@@ -2,10 +2,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styles from './ScrollMessage.module.scss';
 import useIsMobile from '@/hooks/useIsMobile';
 import { useEffect, useState } from 'react';
+import { useGlobalContext } from '@/context/global.context';
 
 const ScrollMessage = () => {
   const { isMobile } = useIsMobile();
   const [showMessage, setShowMessage] = useState(false);
+  const {lenguage} = useGlobalContext();
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -20,7 +22,7 @@ const ScrollMessage = () => {
       clearInterval(interval);
     };
 
-    const interval = setInterval(scrollHandler, 8000);
+    const interval = setInterval(scrollHandler, 15000);
     window.addEventListener('scroll', stopInerval);
 
     return () => {
@@ -39,7 +41,7 @@ const ScrollMessage = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}>
           <div className={styles.scroll_message__content}>
-            <p>Scroll to go</p>
+            <p>{lenguage === 'en' ? 'Scroll to go' : 'Haz scroll para avanzar'}</p>
             {isMobile ? <DraggingTap /> : <ScrollingMouse />}
           </div>
         </motion.div>

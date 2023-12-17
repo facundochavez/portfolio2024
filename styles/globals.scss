@@ -17,9 +17,14 @@
   --color-gray-hover: rgba(255, 255, 255, 0.1);
   --color-gray-active: rgba(255, 255, 255, 0.2);
 
-  --filter-color-3: brightness(0) saturate(100%) invert(22%) sepia(59%) saturate(5468%) hue-rotate(293deg) brightness(103%) contrast(132%);
-  --filter-color-7: brightness(0) saturate(100%) invert(73%) sepia(53%) saturate(651%) hue-rotate(95deg) brightness(96%) contrast(96%);
-  --filter-color-8: brightness(0) saturate(100%) invert(67%) sepia(38%) saturate(7078%) hue-rotate(326deg) brightness(124%) contrast(95%);;
+  --filter-color-2: brightness(0) saturate(100%) invert(57%) sepia(35%)
+    saturate(1913%) hue-rotate(155deg) brightness(106%) contrast(104%);
+  --filter-color-3: brightness(0) saturate(100%) invert(22%) sepia(59%)
+    saturate(5468%) hue-rotate(293deg) brightness(103%) contrast(132%);
+  --filter-color-7: brightness(0) saturate(100%) invert(73%) sepia(53%)
+    saturate(651%) hue-rotate(95deg) brightness(96%) contrast(96%);
+  --filter-color-8: brightness(0) saturate(100%) invert(67%) sepia(38%)
+    saturate(7078%) hue-rotate(326deg) brightness(124%) contrast(95%);
 
   --primary-color-green: #15b54a;
   --secondary-color-blue: #69bff6;
@@ -29,12 +34,11 @@
   --selection-green: #3ace67;
 }
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: white;
 }
@@ -47,7 +51,6 @@ html {
   &::-webkit-scrollbar {
     width: 12px !important;
     height: 0 !important;
-
 
     &-thumb {
       width: 10px;
@@ -62,7 +65,6 @@ html {
     &-button {
       height: 15px;
     }
-
   }
 }
 
@@ -74,14 +76,14 @@ section {
   align-items: center;
   justify-content: flex-start;
   overflow: visible;
-  z-index: 10
+  z-index: 10;
 }
 
 .ant-input {
   background-color: var(--color-gray) !important;
-  font-family: "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 100;
-  width: 100%; 
+  width: 100%;
   margin-bottom: -3px;
 
   &::placeholder {
@@ -105,7 +107,6 @@ section {
     &-button {
       height: 0px;
     }
-
   }
 }
 
@@ -115,7 +116,7 @@ section {
   padding: 8px 0 5px 0;
 }
 
-@media(min-width: 900px) {
+@media (min-width: 900px) {
   .ant-input {
     font-size: 18px;
     padding: 8px 18px;
@@ -124,7 +125,6 @@ section {
 
   .ant-form-item-explain-error {
     padding: 10px 0 5px 0;
-
   }
 }
 
@@ -137,7 +137,7 @@ section {
 }
 
 .ant-btn:active {
-  background-color: var(--color-gray-active)!important;
+  background-color: var(--color-gray-active) !important;
 }
 
 .ant-switch {
@@ -146,4 +146,13 @@ section {
 
 .ant-switch-handle::before {
   background-color: var(--color-dark-background) !important;
+}
+
+.ant-dropdown {
+  z-index: 140 !important;
+  position: fixed;
+}
+
+.ant-dropdown-menu-title-content {
+  font-size: 16px !important;
 }

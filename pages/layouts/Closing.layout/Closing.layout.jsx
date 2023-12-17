@@ -138,6 +138,7 @@ const ClosingLayout = () => {
                     colorOne='--color-1'
                     colorTwo='--color-2'
                     colorThree='--color-7'
+                    filterThree='--filter-color-7'
                   />
                 </div>
               )}

@@ -1,7 +1,7 @@
 .lenguage_switcher {
     display: flex;
     align-items: center;
-    margin-right: 6px;
+    margin-right: -3px;
     cursor: pointer;
 
     &:hover {
@@ -13,7 +13,7 @@
     }
 
     span {
-        padding-right: 8px;
+        padding-right: 5px;
         font-size: 20px;
         user-select: none;
     }

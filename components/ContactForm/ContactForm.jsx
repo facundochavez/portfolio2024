@@ -1,5 +1,13 @@
 import styles from './ContactForm.module.scss';
-import { Button, ConfigProvider, theme, Form, Input, message } from 'antd';
+import {
+  Button,
+  ConfigProvider,
+  theme,
+  Form,
+  Input,
+  message,
+  Tooltip,
+} from 'antd';
 import useIsMobile from '@/hooks/useIsMobile';
 import { useEffect, useState, useRef } from 'react';
 import IconLinks from '../IconLinks/IconLinks';
@@ -7,8 +15,16 @@ import { motion, useAnimation } from 'framer-motion';
 import { useGlobalContext } from '@/context/global.context';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
+import { CopyOutlined } from '@ant-design/icons';
 
-const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid = false }) => {
+const ContactForm = ({
+  icons = false,
+  colorOne,
+  colorTwo,
+  colorThree,
+  filterThree,
+  overlaid = false,
+}) => {
   const { lenguage, setIsHeaderContactFormOpen } = useGlobalContext();
   const { viewportWidth, viewportHeight } = useIsMobile();
   const [form] = Form.useForm();
@@ -26,7 +42,7 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
 
   const childrenAnimation = {
     hidden: { opacity: 0 },
-    show: { opacity: 1 }
+    show: { opacity: 1 },
   };
 
   //// ANT MESSAGES
@@ -41,7 +57,15 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
   function errorAntMessage() {
     messageApi.open({
       type: 'error',
-      content: lenguage === 'en' ? 'Message not sended!' : '¡Mensaje no enviado!',
+      content:
+        lenguage === 'en' ? 'Message not sended!' : '¡Mensaje no enviado!',
+    });
+  }
+
+  function copiedAntMessage() {
+    messageApi.open({
+      type: 'success',
+      content: lenguage === 'en' ? 'E-mail copied!' : '¡E-mail copiado!',
     });
   }
 
@@ -56,7 +80,12 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
   const sendEmail = () => {
     setLoading(true);
     emailjs
-      .sendForm('service_ypcahma', 'template_du3ymvo', emailjsFormRef.current, '-CnEHK3O5IogwMNGA')
+      .sendForm(
+        'service_ypcahma',
+        'template_du3ymvo',
+        emailjsFormRef.current,
+        '-CnEHK3O5IogwMNGA'
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -73,9 +102,16 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
     setIsHeaderContactFormOpen(false);
   };
 
+  const copyEmail = () => {
+    navigator.clipboard.writeText('facundochavez.dev@gmail.com');
+    copiedAntMessage();
+  };
+
   useEffect(() => {
     const handleMessageRows = () => {
-      const message = document.querySelector(`.${styles.contact_form__header__message}`);
+      const message = document.querySelector(
+        `.${styles.contact_form__header__message}`
+      );
       if (message) {
         const messageHeight = message.clientHeight;
         const newRows = Math.floor(
@@ -94,8 +130,9 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
   return (
     <ConfigProvider
       theme={{
-        algorithm: theme.darkAlgorithm
-      }}>
+        algorithm: theme.darkAlgorithm,
+      }}
+    >
       {contextHolder}
       <motion.div
         className={styles.wrapper}
@@ -104,8 +141,9 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
         exit={{ opacity: 0 }}
         transition={{
           type: 'spring',
-          mass: 0.2
-        }}>
+          mass: 0.2,
+        }}
+      >
         <form ref={emailjsFormRef} className={styles.wrapper__emailjs_form}>
           <input name='user_name' value={userName} />
           <input name='user_company' value={userCompany} />
@@ -115,28 +153,29 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
         <motion.div
           transition={{
             staggerChildren: 0.1,
-            delayChildren: 0.2
+            delayChildren: 0.2,
           }}
           initial='hidden'
           animate='show'
-          className={styles.wrapper__subcontainer}>
+          className={styles.wrapper__subcontainer}
+        >
           <Form
             form={form}
             name='contactForm'
             className={styles.contact_form}
             style={{
               borderColor: `var(${colorOne})`,
-              backgroundColor: overlaid
-                ? 'var(--color-dark-background)'
-                : null
+              backgroundColor: overlaid ? 'var(--color-dark-background)' : null,
             }}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
-            autoComplete='off'>
+            autoComplete='off'
+          >
             <motion.header className={styles.contact_form__header}>
               <motion.div
                 className={styles.contact_form__header__name_and_company}
-                variants={childrenAnimation}>
+                variants={childrenAnimation}
+              >
                 <Form.Item
                   name='user_name'
                   style={{ width: '100%' }}
@@ -146,9 +185,10 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                       message:
                         lenguage === 'en'
                           ? 'Please input your name.'
-                          : 'Por favor, ingresa tu nombre.'
-                    }
-                  ]}>
+                          : 'Por favor, ingresa tu nombre.',
+                    },
+                  ]}
+                >
                   <Input
                     placeholder={lenguage === 'en' ? 'Name' : 'Nombre'}
                     size='large'
@@ -168,9 +208,10 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                       message:
                         lenguage === 'en'
                           ? 'Please input your company.'
-                          : 'Por favor, ingresa tu empresa.'
-                    }
-                  ]}>
+                          : 'Por favor, ingresa tu empresa.',
+                    },
+                  ]}
+                >
                   <Input
                     placeholder={lenguage === 'en' ? 'Company' : 'Empresa'}
                     size='large'
@@ -182,7 +223,10 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   />
                 </Form.Item>
               </motion.div>
-              <motion.div className={styles.contact_form__email} variants={childrenAnimation}>
+              <motion.div
+                className={styles.contact_form__email}
+                variants={childrenAnimation}
+              >
                 <Form.Item
                   name='user_email'
                   rules={[
@@ -191,16 +235,17 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                       message:
                         lenguage === 'en'
                           ? 'Please input your E-mail.'
-                          : 'Por favor, ingresa tu E-mail.'
+                          : 'Por favor, ingresa tu E-mail.',
                     },
                     {
                       type: 'email',
                       message:
                         lenguage === 'en'
                           ? 'Please input a valid E-mail.'
-                          : 'Por favor, ingresa un E-mail válido.'
-                    }
-                  ]}>
+                          : 'Por favor, ingresa un E-mail válido.',
+                    },
+                  ]}
+                >
                   <Input
                     placeholder='E-mail'
                     size='large'
@@ -214,7 +259,8 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
               </motion.div>
               <motion.div
                 className={styles.contact_form__header__message}
-                variants={childrenAnimation}>
+                variants={childrenAnimation}
+              >
                 <div className={styles.contact_form__header__message__wrapper}>
                   <Form.Item
                     name='user_message'
@@ -224,16 +270,17 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                         message:
                           lenguage === 'en'
                             ? 'Please write your message.'
-                            : 'Por favor, escribe tu mensaje.'
-                      }
-                    ]}>
+                            : 'Por favor, escribe tu mensaje.',
+                      },
+                    ]}
+                  >
                     <Input.TextArea
                       placeholder={lenguage === 'en' ? 'Message' : 'Mensaje'}
                       size='large'
                       bordered={false}
                       rows={messageRows}
                       style={{
-                        resize: 'none'
+                        resize: 'none',
                       }}
                       onChange={(e) => setUserMessage(e.target.value)}
                       onFocus={() => {
@@ -247,22 +294,33 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
             <motion.footer
               className={styles.contact_form__footer}
               variants={childrenAnimation}
-              style={{ '--align-items': !icons ? 'center' : 'flex-end' }}>
+              style={{ '--align-items': !icons ? 'center' : 'flex-end' }}
+            >
               <div className={styles.contact_form__footer__left}>
                 {icons && <IconLinks />}
-                <a
-                  href='mailto:facundochavez.dev@gmail.com'
-                  className={styles.contact_form__footer__left__link}
-                  style={{ color: `var(${colorThree})` }}>
-                  {lenguage === 'en' ? 'Or send an E-mail' : 'O envía un E-mail'}
-                </a>
+                <Tooltip title='facundochavez.dev@gmail.com' color='#282828'>
+                  <p
+                    className={styles.contact_form__footer__left__link}
+                    style={{ color: `var(${colorThree})` }}
+                    onClick={() => copyEmail()}
+                  >
+                    {lenguage === 'en' ? 'Or copy e-mail' : 'O copiar e-mail'}
+                    <CopyOutlined
+                      style={{
+                        filter: `var(${filterThree})`,
+                        paddingLeft: '6px',
+                      }}
+                    />
+                  </p>
+                </Tooltip>
               </div>
               <Button
                 type='text'
                 htmlType='submit'
                 size='large'
                 className={styles.contact_form__footer__button}
-                loading={loading}>
+                loading={loading}
+              >
                 {lenguage === 'en' ? 'Send' : 'Enviar'}
               </Button>
               <motion.div
@@ -271,17 +329,22 @@ const ContactForm = ({ icons = false, colorOne, colorTwo, colorThree, overlaid =
                   hidden: { opacity: 0, scale: 0.5 },
                   visible: {
                     opacity: 1,
-                    scale: viewportWidth < 370 ? 0.85 : viewportWidth < 900 ? 0.94 : 1
-                  }
+                    scale:
+                      viewportWidth < 370
+                        ? 0.85
+                        : viewportWidth < 900
+                        ? 0.94
+                        : 1,
+                  },
                 }}
                 initial='hidden'
                 animate={recaptchaControls}
-                exit={recaptchaControls}>
+                exit={recaptchaControls}
+              >
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey='6LcPzgwpAAAAAKzcTvCxHlnux_NAJub3xESPPEPv'
                   theme='dark'
-                  
                   onChange={sendEmail}
                 />
               </motion.div>

@@ -4,19 +4,21 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Reveal from '@/components/Reveal/Reveal';
+import { ExportOutlined } from '@ant-design/icons';
 
 const HeroSection = () => {
-  const { lenguage, setContactFormHeight, setHeroBtnDirection } = useGlobalContext();
+  const { lenguage, setContactFormHeight, setHeroBtnDirection } =
+    useGlobalContext();
 
   // HORIZONTAL SCROLLING
   const heroSectionRef = useRef();
   const { scrollYProgress: scrollYProgressStart } = useScroll({
     target: heroSectionRef,
-    offset: ['start start', 'end end']
+    offset: ['start start', 'end end'],
   });
   const { scrollYProgress: scrollYProgressEnd } = useScroll({
     target: heroSectionRef,
-    offset: ['end end', 'end start']
+    offset: ['end end', 'end start'],
   });
 
   const subcontainerTranslationX = useTransform(
@@ -43,17 +45,25 @@ const HeroSection = () => {
 
   const nameRectangle = `M${A - 10} ${B} h${-A + 22} a10 10 0 0 1 -10 -10 v${
     -B + 22
-  } a10 10 0 0 1 10 -10 h${A - 22} a10 10 0 0 1 10 10 v${B - 22} a10 10 0 0 1 -10 10`;
+  } a10 10 0 0 1 10 -10 h${A - 22} a10 10 0 0 1 10 10 v${
+    B - 22
+  } a10 10 0 0 1 -10 10`;
   const phraseRectangleOne = `M12 ${D} h${C - 22} a10 10 0 0 0 10 -10 v${
     -D + 22
-  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} a10 10 0 0 0 10 10`;
+  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${
+    D - 22
+  } a10 10 0 0 0 10 10`;
 
-  const phraseRectangleTwo = `M2 ${D - 10} a10 10 0 0 0 10 10 h${C - 22} a10 10 0 0 0 10 -10 v${
-    -D + 22
-  } a10 10 0 0 0 -10 -10 h${-C + 22} a10 10 0 0 0 -10 10 v${D - 22} `;
+  const phraseRectangleTwo = `M2 ${D - 10} a10 10 0 0 0 10 10 h${
+    C - 22
+  } a10 10 0 0 0 10 -10 v${-D + 22} a10 10 0 0 0 -10 -10 h${
+    -C + 22
+  } a10 10 0 0 0 -10 10 v${D - 22} `;
 
   const [isInitialStretch, setIsInitialStretch] = useState(true);
-  const phraseRectangle = isInitialStretch ? phraseRectangleOne : phraseRectangleTwo;
+  const phraseRectangle = isInitialStretch
+    ? phraseRectangleOne
+    : phraseRectangleTwo;
 
   const horizontalLine = `M${A - 11} ${B} h${horizontalLineLength} v0.001`;
   const verticalLine = `M2 ${D - 12}  v${verticalLineLength} h0.001`;
@@ -61,23 +71,53 @@ const HeroSection = () => {
   // PATH ANIMATION
   const namePathLength = useTransform(scrollYProgressStart, [0, 0.4], [1, 0]);
 
-  const horizontalPathLength = useTransform(scrollYProgressStart, [0, 0.25], [0, 1]);
-  const horizontalPathOffset = useTransform(scrollYProgressStart, [0.4, 0.6], [0, 1]);
+  const horizontalPathLength = useTransform(
+    scrollYProgressStart,
+    [0, 0.25],
+    [0, 1]
+  );
+  const horizontalPathOffset = useTransform(
+    scrollYProgressStart,
+    [0.4, 0.6],
+    [0, 1]
+  );
 
-  const phrasePathLength = useTransform(scrollYProgressStart, [0.25, 0.6], [0, 1]);
+  const phrasePathLength = useTransform(
+    scrollYProgressStart,
+    [0.25, 0.6],
+    [0, 1]
+  );
 
-  const phrasePathOffsetOne = useTransform(scrollYProgressStart, [0.8, 1], [0, 0.5]);
-  const phrasePathOffsetTwo = useTransform(scrollYProgressEnd, [0, 0.85], [0.5, 1]);
+  const phrasePathOffsetOne = useTransform(
+    scrollYProgressStart,
+    [0.8, 1],
+    [0, 0.5]
+  );
+  const phrasePathOffsetTwo = useTransform(
+    scrollYProgressEnd,
+    [0, 0.85],
+    [0.5, 1]
+  );
   const [isFinalStretch, setIsFinalStretch] = useState(false);
-  const phrasePathOffset = isFinalStretch ? phrasePathOffsetTwo : phrasePathOffsetOne;
+  const phrasePathOffset = isFinalStretch
+    ? phrasePathOffsetTwo
+    : phrasePathOffsetOne;
 
-  const verticalPathLength = useTransform(scrollYProgressStart, [0.8, 0.95], [0, 1]);
+  const verticalPathLength = useTransform(
+    scrollYProgressStart,
+    [0.8, 0.95],
+    [0, 1]
+  );
 
   //  RESPONSIVE CHANGES
   useEffect(() => {
     const handlePathSizes = () => {
-      const nameBox = document.querySelector(`.${styles.hero__subcontainer__left__name_box}`);
-      const phraseBox = document.querySelector(`.${styles.hero__subcontainer__right__phrase_box}`);
+      const nameBox = document.querySelector(
+        `.${styles.hero__subcontainer__left__name_box}`
+      );
+      const phraseBox = document.querySelector(
+        `.${styles.hero__subcontainer__right__phrase_box}`
+      );
       const nameBoxRect = nameBox.getBoundingClientRect();
       const phraseBoxRect = phraseBox.getBoundingClientRect();
 
@@ -94,16 +134,22 @@ const HeroSection = () => {
       setPhraseBoxMarginBottom(newMarginBottom);
 
       const newHorizontalLength = phraseBoxRect.left - nameBoxRect.right + 25;
-      const newVerticalLineLength = newMarginBottom + window.innerHeight * 0.05 + 15;
+      const newVerticalLineLength =
+        newMarginBottom + window.innerHeight * 0.05 + 15;
       setHorizontalLineLength(newHorizontalLength);
       setVerticalLineLength(newVerticalLineLength);
 
       handlePhraseRectangleKind();
 
       // CONTEXT MODIFICATIONS
-      const leftTop = document.querySelector(`.${styles.hero__subcontainer__left__top}`);
+      const leftTop = document.querySelector(
+        `.${styles.hero__subcontainer__left__top}`
+      );
       setContactFormHeight(
-        Math.max(leftTop.clientHeight - (window.innerWidth < 900 ? 40 : 60), 330)
+        Math.max(
+          leftTop.clientHeight - (window.innerWidth < 900 ? 40 : 60),
+          330
+        )
       );
     };
 
@@ -153,7 +199,10 @@ const HeroSection = () => {
   // COMPONENT
   return (
     <div ref={heroSectionRef} className={styles.hero} data-scroll-section>
-      <motion.div className={styles.hero__subcontainer} style={{ x: subcontainerTranslationX }}>
+      <motion.div
+        className={styles.hero__subcontainer}
+        style={{ x: subcontainerTranslationX }}
+      >
         <section>
           <div className={styles.hero__subcontainer__left}>
             <div className={styles.hero__subcontainer__left__top} />
@@ -204,7 +253,11 @@ const HeroSection = () => {
 
             <div className={styles.hero__subcontainer__left__titles_container}>
               <Reveal delay={0.3} fromTop once={false}>
-                <div className={styles.hero__subcontainer__left__titles_container__titles}>
+                <div
+                  className={
+                    styles.hero__subcontainer__left__titles_container__titles
+                  }
+                >
                   {lenguage === 'en' ? (
                     <>
                       <h1>
@@ -231,8 +284,16 @@ const HeroSection = () => {
                 </div>
               </Reveal>
               <Reveal delay={0.2} fromTop once={false}>
-                <div className={styles.hero__subcontainer__left__titles_container__portrait}>
-                  <Image src={'/images/portrait.png'} alt='Facundo Chavez portrait' fill />
+                <div
+                  className={
+                    styles.hero__subcontainer__left__titles_container__portrait
+                  }
+                >
+                  <Image
+                    src={'/images/portrait.png'}
+                    alt='Facundo Chavez portrait'
+                    fill
+                  />
                 </div>
               </Reveal>
             </div>
@@ -240,16 +301,61 @@ const HeroSection = () => {
         </section>
         <section>
           <div className={styles.hero__subcontainer__right}>
+            <motion.div
+              className={styles.hero__subcontainer__right__notation}
+              style={{ opacity: phraseOpacity }}
+            >
+              {lenguage === 'en' ? (
+                <>
+                  <p>
+                    Built with Next.js
+                  </p>
+                  <a
+                    href='https://github.com/facundochavez/portfolio2024.git'
+                    target='_blank'
+                  >
+                    View code{' '}
+                    <ExportOutlined
+                      style={{
+                        filter: 'var(--filter-color-8)',
+                        fontSize: '14px',
+                      }}
+                    />
+                  </a>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Creado con Next.js
+                  </p>
+                  <a
+                    href='https://github.com/facundochavez/portfolio2024.git'
+                    target='_blank'
+                  >
+                    Ver código{' '}
+                    <ExportOutlined
+                      style={{
+                        filter: 'var(--filter-color-8)',
+                        fontSize: '14px',
+                      }}
+                    />
+                  </a>
+                </>
+              )}
+            </motion.div>
             <div
               className={styles.hero__subcontainer__right__phrase_box}
-              style={{ marginBottom: phraseBoxMarginBottom }}>
+              style={{ marginBottom: phraseBoxMarginBottom }}
+            >
               <motion.p style={{ opacity: phraseOpacity }}>
                 {lenguage === 'en'
                   ? 'Actually, I’m a civil engineer'
                   : 'De hecho, soy un ingeniero'}
               </motion.p>
               <motion.p style={{ opacity: phraseOpacity }}>
-                {lenguage === 'en' ? 'who one day wanted to...' : 'civil que un día quiso...'}
+                {lenguage === 'en'
+                  ? 'who one day wanted to...'
+                  : 'civil que un día quiso...'}
               </motion.p>
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
@@ -257,7 +363,13 @@ const HeroSection = () => {
                     <stop offset='0%' stopColor='var(--color-3)' />
                     <stop offset='100%' stopColor='var(--color-6)' />
                   </linearGradient>
-                  <linearGradient id='verticalLineGradient' x1='0%' y1='0%' x2='0%' y2='100%'>
+                  <linearGradient
+                    id='verticalLineGradient'
+                    x1='0%'
+                    y1='0%'
+                    x2='0%'
+                    y2='100%'
+                  >
                     <stop offset='0%' stopColor='var(--color-3)' />
                     <stop offset='100%' stopColor='var(--color-5)' />
                   </linearGradient>
