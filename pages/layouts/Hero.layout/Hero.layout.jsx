@@ -28,6 +28,7 @@ const HeroSection = () => {
     ['0%', '-35%', '-50%']
   );
   const phraseOpacity = useTransform(scrollYProgressStart, [0.35, 0.6], [0, 1]);
+  const notationOpacity = useTransform(scrollYProgressStart, [0.55, 0.6], [0, 1]);
 
   // PATH INITIAL VALUES
   const [nameBoxWidth, setNameBoxWidth] = useState(0);
@@ -304,7 +305,7 @@ const HeroSection = () => {
           <div className={styles.hero__subcontainer__right}>
             <motion.div
               className={styles.hero__subcontainer__right__notation}
-              style={{ opacity: phraseOpacity }}
+              style={{ opacity: notationOpacity }}
             >
               {lenguage === 'en' ? (
                 <>
