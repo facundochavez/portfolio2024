@@ -14,7 +14,7 @@
 
 .dotted_background_behind {
     @include dotted_background;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1.8px, transparent 2.5px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.065) 1.8px, transparent 2.5px);
     opacity: 0.5;
     
     @media(min-width: '900px') {
