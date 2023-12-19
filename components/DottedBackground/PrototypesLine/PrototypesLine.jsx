@@ -17,17 +17,27 @@ const PrototypesLine = ({
   return (
     <motion.div className={styles.prototypes_line} style={{ x }}>
       {prototypes.map((prototype, index) => {
-        return (
-          <div
-            key={index}
-            className={styles.prototypes_line__box}
-            style={{ height: `${prototype?.heightFactor * height}px` }}>
-            <video muted autoPlay loop src={`/videos/video-${prototype?.id}.mp4`} />
-          </div>
-        );
+        try {
+          return (
+            <div
+              key={index}
+              className={styles.prototypes_line__box}
+              style={{ height: `${prototype?.heightFactor * height}px` }}>
+              <video muted autoPlay loop src={`/videos/video-${prototype?.id}.mp4`} />
+            </div>
+          );
+        } catch (error) {
+          console.error(`Error al cargar el video ${prototype?.id}:`, error);
+          return (
+            <div key={index} className={styles.prototypes_line__box}>
+              <p>Error al cargar el video</p>
+            </div>
+          );
+        }
       })}
     </motion.div>
   );
 };
 
 export default PrototypesLine;
+
