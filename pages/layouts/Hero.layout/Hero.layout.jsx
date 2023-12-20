@@ -28,7 +28,7 @@ const HeroSection = () => {
     ['0%', '-35%', '-50%']
   );
   const phraseOpacity = useTransform(scrollYProgressStart, [0.35, 0.6], [0, 1]);
-  const notationOpacity = useTransform(scrollYProgressStart, [0.55, 0.6], [0, 1]);
+  const notationOpacity = useTransform(scrollYProgressStart, [0.525, 0.6], [0, 1]);
 
   // PATH INITIAL VALUES
   const [nameBoxWidth, setNameBoxWidth] = useState(0);
@@ -309,7 +309,7 @@ const HeroSection = () => {
             >
               {lenguage === 'en' ? (
                 <>
-                  <p>Built with Next.js</p>
+                  <p>Portfolio 2024 | Built with Next.js</p>
                   <a
                     href='https://github.com/facundochavez/portfolio2024.git'
                     target='_blank'
@@ -325,7 +325,7 @@ const HeroSection = () => {
                 </>
               ) : (
                 <>
-                  <p>Creado con Next.js</p>
+                  <p>Portfolio 2024 | Creado con Next.js</p>
                   <a
                     href='https://github.com/facundochavez/portfolio2024.git'
                     target='_blank'
