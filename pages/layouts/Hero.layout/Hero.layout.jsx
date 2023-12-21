@@ -265,7 +265,7 @@ const HeroSection = () => {
                       <h1>
                         Front-end developer
                         <br />
-                        Ux/Ui designer
+                        UX/UI designer
                         <br />
                         Brand consultant
                       </h1>
@@ -276,7 +276,7 @@ const HeroSection = () => {
                       <h1 style={{ fontSize: '16.5px', lineHeight: '18px' }}>
                         Desarrollador front-end
                         <br />
-                        Diseñador Ux/Ui
+                        Diseñador UX/UI
                         <br />
                         Consultor de marca
                       </h1>
