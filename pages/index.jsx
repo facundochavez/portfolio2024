@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import HeroLayout from '@/pages/layouts/Hero.layout/Hero.layout';
 import LazyMilestoneLayout, {
-  MilestoneLayout
+  MilestoneLayout,
 } from '@/pages/layouts/Milestone.layout/Milestone.layout';
 import LazyClosingLayout from '@/pages/layouts/Closing.layout/Closing.layout';
 import milestones from '@/data/milestones.data.json';
@@ -19,12 +19,16 @@ const Home = () => {
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
         <meta
           name='viewport'
-          content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'></meta>
+          content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0'
+        />
+        <meta property='og:image' content='/images/ogimage.png' />
       </Head>
       <DottedBackground />
       <Header />
       <HeroLayout />
-      <MilestoneLayout milestone={milestones.find((milestone) => milestone.id === 'brands')}/>
+      <MilestoneLayout
+        milestone={milestones.find((milestone) => milestone.id === 'brands')}
+      />
       {milestones.map((milestone, index) => {
         if (milestone.id !== 'back-end' && milestone.id !== 'brands') {
           return (
