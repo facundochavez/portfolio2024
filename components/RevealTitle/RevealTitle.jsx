@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './RevealTitle.module.scss';
-import Reveal from '../Reveal/Reveal';
+import Reveal from '@/components/Reveal/Reveal';
 import { useGlobalContext } from '@/context/global.context';
 
 const RevealTitle = ({ title, isOnce = false }) => {

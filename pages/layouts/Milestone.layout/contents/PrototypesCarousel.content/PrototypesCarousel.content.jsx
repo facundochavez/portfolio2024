@@ -1,4 +1,4 @@
-import PrototypesLine from '@/components/DottedBackground/PrototypesLine/PrototypesLine';
+import PrototypesLine from '@/components/PrototypesLine/PrototypesLine';
 import styles from './PrototypesCarousel.content.module.scss';
 import prototypes from '@/data/prototypes.data.json';
 import useIsMobile from '@/hooks/useIsMobile';

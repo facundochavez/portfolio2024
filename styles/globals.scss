@@ -2,7 +2,7 @@
 
 :root {
   --color-dark-background: #141414;
-  --color--light-grey: #999999;
+  --color--light-grey: #afafaf;
   --color-1: #3df968;
   --color-2: #00cfff;
   --color-3: #f239da;
@@ -87,7 +87,7 @@ section {
   margin-bottom: -3px;
 
   &::placeholder {
-    color: gray;
+    color: var(--color--light-greyh);
   }
 
   &::-webkit-scrollbar {

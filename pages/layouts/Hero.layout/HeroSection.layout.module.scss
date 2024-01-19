@@ -115,7 +115,9 @@
         p {
           font-size: 16px;
           color: var(--color--light-grey);
+          display: flex;
         }
+
         a {
           font-size: 14px;
           color: var(--color-8);
@@ -127,6 +129,14 @@
           &:active {
             opacity: 0.45;
           }
+        }
+
+        &__logo {
+          font-size: 16px;
+          position: relative;
+          height: 13px;
+          margin-left: 6px;
+          margin-top: 2px;
         }
       }
 
@@ -213,6 +223,12 @@
           }
           a {
             font-size: 17px;
+          }
+
+          &__logo {
+            font-size: 19px;
+            height: 15px;
+            margin-left: 7px;
           }
         }
 

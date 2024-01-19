@@ -28,7 +28,11 @@ const HeroSection = () => {
     ['0%', '-35%', '-50%']
   );
   const phraseOpacity = useTransform(scrollYProgressStart, [0.35, 0.6], [0, 1]);
-  const notationOpacity = useTransform(scrollYProgressStart, [0.525, 0.6], [0, 1]);
+  const notationOpacity = useTransform(
+    scrollYProgressStart,
+    [0.525, 0.6],
+    [0, 1]
+  );
 
   // PATH INITIAL VALUES
   const [nameBoxWidth, setNameBoxWidth] = useState(0);
@@ -292,7 +296,7 @@ const HeroSection = () => {
                   }
                 >
                   <Image
-                    src={'/images/portrait.png'}
+                    src={'/images/portrait.jpg'}
                     alt='Facundo Chavez portrait'
                     fill
                   />
@@ -309,7 +313,24 @@ const HeroSection = () => {
             >
               {lenguage === 'en' ? (
                 <>
-                  <p>Portfolio 2024 | Built with Next.js</p>
+                  <p>
+                    Portfolio 2024 | Built with{' '}
+                    <a
+                      className={
+                        styles.hero__subcontainer__right__notation__logo
+                      }
+                      href='https://nextjs.org/'
+                      target='_blank'
+                    >
+                      <Image
+                        src={`/icons/logo-nextjs.svg`}
+                        alt={`Logo Next.js`}
+                        width={0}
+                        height={0}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </a>
+                  </p>
                   <a
                     href='https://github.com/facundochavez/portfolio2024.git'
                     target='_blank'
