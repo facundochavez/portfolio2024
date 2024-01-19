@@ -346,7 +346,24 @@ const HeroSection = () => {
                 </>
               ) : (
                 <>
-                  <p>Portfolio 2024 | Creado con Next.js</p>
+                  <p>
+                    Portfolio 2024 | Creado con{' '}
+                    <a
+                      className={
+                        styles.hero__subcontainer__right__notation__logo
+                      }
+                      href='https://nextjs.org/'
+                      target='_blank'
+                    >
+                      <Image
+                        src={`/icons/logo-nextjs.svg`}
+                        alt={`Logo Next.js`}
+                        width={0}
+                        height={0}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </a>
+                  </p>
                   <a
                     href='https://github.com/facundochavez/portfolio2024.git'
                     target='_blank'
