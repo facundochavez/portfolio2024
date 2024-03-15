@@ -27,6 +27,7 @@ const Home = () => {
           property='og:description'
           content='I am a front-end developer and UX/UI designer specialized in crafting visually appealing and high-performance web applications. My trajectory has been built upon a solid background in design, engineering, and content creation.'
         />
+        <meta name='google' content='notranslate' />
       </Head>
       <DottedBackground />
       <Header />
@@ -35,7 +36,7 @@ const Home = () => {
         milestone={milestones.find((milestone) => milestone.id === 'brands')}
       />
       {milestones.map((milestone, index) => {
-        if (milestone.id !== 'back-end' && milestone.id !== 'brands') {
+        if (milestone.id !== 'brands' && milestone.id !== 'gradient-border') {
           return (
             <div key={index}>
               <LazyMilestoneLayout index={index} milestone={milestone} />

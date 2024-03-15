@@ -6,7 +6,7 @@ const BackendVideo = () => {
     <div className={styles.backend_video}>
       <a href='https://petpath.vercel.app/' target='_blank'>
         <div className={styles.backend_video__wrapper}>
-          <video muted autoPlay loop src='/videos/video-petpath.mp4' />
+          <video muted autoPlay loop src='/videos/video-petpath.webm' />
         </div>
       </a>
     </div>

@@ -50,7 +50,7 @@ const YoutubeLayout = () => {
             <motion.div
               className={styles.youtube__top_container__mo_channel__video}
             >
-              <video muted autoPlay loop src='/videos/video-mo-channel.mp4' />
+              <video muted autoPlay loop src='/videos/video-mo-channel.webm' />
             </motion.div>
           </a>
         </div>
@@ -61,11 +61,11 @@ const YoutubeLayout = () => {
       >
         <div className={styles.youtube__mo_website__video}>
           {viewportWidth < 400 ? (
-            <video muted autoPlay src='/videos/video-mo-website-mobile.mp4' />
+            <video muted autoPlay src='/videos/video-mo-website-mobile.webm' />
           ) : viewportWidth < 650 ? (
-            <video muted autoPlay src='/videos/video-mo-website-tablet.mp4' />
+            <video muted autoPlay src='/videos/video-mo-website-tablet.webm' />
           ) : (
-            <video muted autoPlay src='/videos/video-mo-website-desktop.mp4' />
+            <video muted autoPlay src='/videos/video-mo-website-desktop.webm' />
           )}
         </div>
       </motion.div>

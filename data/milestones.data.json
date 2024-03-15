@@ -116,10 +116,6 @@
             {
                 "id": "framer-motion",
                 "name": "Framer\u00A0Motion"
-            },
-            {
-                "id": "vercel",
-                "name": "Vercel"
             }
         ],
         "firstColor": "var(--color-6)",
@@ -128,8 +124,8 @@
     },
     {
         "id": "back-end",
-        "titleEn": "and learn some back-end.",
-        "titleEs": "y aprender algo de back-end.",
+        "titleEn": "learn some back-end,",
+        "titleEs": "aprender algo de back-end,",
         "technologies": [
             {
                 "id": "next-js",
@@ -138,14 +134,6 @@
             {
                 "id": "sass",
                 "name": "Sass"
-            },
-            {
-                "id": "ant-design",
-                "name": "Ant\u00A0Design"
-            },
-            {
-                "id": "framer-motion",
-                "name": "Framer\u00A0Motion"
             },
             {
                 "id": "django",
@@ -162,10 +150,44 @@
             {
                 "id": "vercel",
                 "name": "Vercel"
+            },
+            {
+                "id": "render",
+                "name": "Render"
             }
         ],
         "firstColor": "var(--color-5)",
         "secondColor": "var(--color-1)",
+        "topTextMarginRight": 15
+    },
+    {
+        "id": "gradient-border",
+        "titleEn": "and create a tool for developers.",
+        "titleEs": "y crear una herramienta para desarrolladores.",
+        "technologies": [
+            {
+                "id": "next-js",
+                "name": "Next.js"
+            },
+            {
+                "id": "typescript",
+                "name": "TypeScript"
+            },
+            {
+                "id": "tailwind",
+                "name": "Tailwind"
+            },
+            {
+                "id": "ant-design",
+                "name": "Ant\u00A0Design"
+            },
+            {
+                "id": "vercel",
+                "name": "Vercel"
+            }
+        ],
+        "firstColor": "var(--color-1)",
+        "secondColor": "var(--color-2)",
         "topTextMarginRight": 15
     }
 ]

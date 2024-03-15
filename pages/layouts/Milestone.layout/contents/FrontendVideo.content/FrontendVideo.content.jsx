@@ -8,11 +8,11 @@ const FrontendVideo = () => {
     <div className={styles.frontend_video}>
       <div className={styles.frontend_video__wrapper}>
         {
-          viewportWidth < 430
-            ? <video muted autoPlay loop src='/videos/video-infodevs-mobile.mp4' />
+          viewportWidth < 500
+            ? <video muted autoPlay loop src='/videos/video-infodevs-mobile.webm' />
             : viewportWidth < 840
-              ? <video muted autoPlay loop src='/videos/video-infodevs-tablet.mp4' />
-              : <video muted autoPlay loop src='/videos/video-infodevs-desktop.mp4' />
+              ? <video muted autoPlay loop src='/videos/video-infodevs-tablet.webm' />
+              : <video muted autoPlay loop src='/videos/video-infodevs-desktop.webm' />
         }
       </div>
     </div>

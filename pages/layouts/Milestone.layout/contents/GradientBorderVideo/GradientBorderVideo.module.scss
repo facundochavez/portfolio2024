@@ -1,0 +1,39 @@
+.gradient_border_video {
+    position: relative;
+    width: 100%;
+    padding: 40px 0px 30px 25px;
+
+    @media(min-width: 900px) {
+        padding: 40px 0px 30px 40px;
+    }
+
+    @media(min-width: 1200px) {
+        padding: 40px 0px 30px 60px;
+    }
+
+    &__wrapper {
+        width: 100%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        aspect-ratio: 422/840;
+        
+        @media(min-width: 500px) {
+            aspect-ratio: 700/750;
+        }
+
+        @media(min-width: 840px) {
+            height: 600px;
+            aspect-ratio: unset;
+        }
+
+        video {
+            height: 100%;
+        }
+
+    }
+
+}

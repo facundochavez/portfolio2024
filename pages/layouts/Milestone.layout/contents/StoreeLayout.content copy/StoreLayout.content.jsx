@@ -71,7 +71,7 @@ const StoreLayout = () => {
                 muted
                 autoPlay
                 loop
-                src="/videos/video-twm-marketing.mp4"
+                src="/videos/video-twm-marketing.webm"
               />
             </motion.div>
           </a>
@@ -83,12 +83,12 @@ const StoreLayout = () => {
       >
         <a href="https://threewordsmug.com/" target="_blank">
           <div className={styles.store__twm_website__video}>
-            {viewportWidth < 400 ? (
-              <video muted autoPlay src="/videos/video-twm-mobile.mp4" />
+            {viewportWidth < 500 ? (
+              <video muted autoPlay src="/videos/video-twm-mobile.webm" />
             ) : viewportWidth < 650 ? (
-              <video muted autoPlay src="/videos/video-twm-tablet.mp4" />
+              <video muted autoPlay src="/videos/video-twm-tablet.webm" />
             ) : (
-              <video muted autoPlay src="/videos/video-twm-desktop.mp4" />
+              <video muted autoPlay src="/videos/video-twm-desktop.webm" />
             )}
           </div>
         </a>

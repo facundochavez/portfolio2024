@@ -120,7 +120,7 @@ const ClosingLayout = () => {
         <div className={styles.closing__subcontainer__left}>
           <MilestoneLayout
             milestoneRef={milestoneRef}
-            milestone={milestones.find((milestone) => milestone.id === 'back-end')}
+            milestone={milestones.find((milestone) => milestone.id === 'gradient-border')}
           />
           <section style={{ height: '100%', paddingTop: '0', paddingBottom: '7.5vh' }}>
             <div className={styles.closing__subcontainer__left__bottom} />
@@ -188,8 +188,7 @@ const ClosingLayout = () => {
               <svg xmlns='http://www.w3.org/2000/svg'>
                 <defs>
                   <linearGradient id='horizontalLineTwoGradient'>
-                    <stop offset='0%' stopColor='var(--color-1)' />
-                    <stop offset='50%' stopColor='var(--color-2)' />
+                    <stop offset='0%' stopColor='var(--color-2)' />
                     <stop offset='100%' stopColor='var(--color-3)' />
                   </linearGradient>
                   <linearGradient id='phraseTwoGradient'>

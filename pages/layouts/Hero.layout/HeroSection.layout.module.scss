@@ -135,7 +135,10 @@
           position: relative;
           height: 12px;
           margin-left: 5px;
-          margin-top: 2px;
+          margin-top: 0;
+          color: inherit !important;
+          font-size: inherit !important;
+/*           margin-top: 2px; */
         }
       }
 

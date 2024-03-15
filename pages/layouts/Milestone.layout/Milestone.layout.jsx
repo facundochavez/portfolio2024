@@ -14,6 +14,7 @@ import StartCodingVideo from './contents/StartCodingVideo.content/StartCodingVid
 import FrontendVideo from './contents/FrontendVideo.content/FrontendVideo.content';
 import BackendVideo from './contents/BackendVideo.content/BackendVideo.content';
 import { texts } from './texts/Texts/Texts';
+import GradientBorderVideo from './contents/GradientBorderVideo/GradientBorderVideo';
 
 const MilestoneLayout = ({ milestone, milestoneRef }) => {
   const contents = {
@@ -23,7 +24,8 @@ const MilestoneLayout = ({ milestone, milestoneRef }) => {
     store: < StoreLayout/>,
     'start-coding': <StartCodingVideo />,
     'front-end': <FrontendVideo />,
-    'back-end': <BackendVideo />
+    'back-end': <BackendVideo />,
+    'gradient-border': <GradientBorderVideo />
   };
 
   const { viewportWidth } = useIsMobile();
@@ -133,7 +135,7 @@ const PathLine = ({ milestone }) => {
         style={{
           backgroundImage: `linear-gradient(to bottom, ${milestone?.firstColor}, ${milestone?.secondColor})`,
           height:
-            milestone?.id !== 'back-end' ? 'calc(100% - 38px + 10vh)' : 'calc(100% - 38px + 5vh)'
+            milestone?.id !== 'gradient-border' ? 'calc(100% - 38px + 10vh)' : 'calc(100% - 38px + 5vh)'
         }}
       />
     </div>

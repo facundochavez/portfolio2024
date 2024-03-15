@@ -23,7 +23,7 @@ const PrototypesLine = ({
               key={index}
               className={styles.prototypes_line__box}
               style={{ height: `${prototype?.heightFactor * height}px` }}>
-              <video muted autoPlay loop src={`/videos/video-${prototype?.id}.mp4`} />
+              <video muted autoPlay loop src={`/videos/video-${prototype?.id}.webm`} />
             </div>
           );
         } catch (error) {

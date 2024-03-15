@@ -322,13 +322,14 @@ const HeroSection = () => {
                       href='https://nextjs.org/'
                       target='_blank'
                     >
-                      <Image
+                      Next.js
+{/*                       <Image
                         src={`/icons/logo-nextjs.svg`}
                         alt={`Logo Next.js`}
                         width={0}
                         height={0}
                         style={{ width: '100%', height: '100%' }}
-                      />
+                      /> */}
                     </a>
                   </p>
                   <a
@@ -347,7 +348,7 @@ const HeroSection = () => {
               ) : (
                 <>
                   <p>
-                    Portfolio 2024 | Creado con{' '}
+                    Portafolio 2024 | Creado con{' '}
                     <a
                       className={
                         styles.hero__subcontainer__right__notation__logo
@@ -355,13 +356,14 @@ const HeroSection = () => {
                       href='https://nextjs.org/'
                       target='_blank'
                     >
-                      <Image
+                      Next.js
+                      {/* <Image
                         src={`/icons/logo-nextjs.svg`}
                         alt={`Logo Next.js`}
                         width={0}
                         height={0}
                         style={{ width: '100%', height: '100%' }}
-                      />
+                      /> */}
                     </a>
                   </p>
                   <a
